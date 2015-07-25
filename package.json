@@ -1,0 +1,26 @@
+{
+  "name": "danny-util",
+  "version": "0.0.1",
+  "description": "Project-agnostic utility functions for Node.js",
+  "main": "danny-util.js",
+  "dependencies": {
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DannyNemer/danny-util.git"
+  },
+  "keywords": [
+    "util"
+  ],
+  "author": "Danny Nemer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DannyNemer/danny-util/issues"
+  },
+  "homepage": "https://github.com/DannyNemer/danny-util#readme"
+}
