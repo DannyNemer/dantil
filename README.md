@@ -41,13 +41,22 @@ Prints descriptive, helpful errors when `opts` is ill-formed.
 
 **Example**  
 ```js
-// Example `schema`:
-{
+var schema = {
   num: Number,                                  // Must be of type `Number`
   list: { type: Array },                        // Must be of type `Array` (identical to previous parameter)
   strings: { type: Array, arrayType: String },  // Must be `Array` containing only String
   str: { type: String, optional: true },        // Parameter can be omitted
   val: [ 'red', 'yellow', 'blue' ]              // Must be one of predefined values
+}
+
+function myFunc(opts) {
+  if (dannyUtil.illFormedOpts(schema, opts)) {
+    // Descriptive, helpful errors are printed to console
+    // Handle ill-formed `opts` how you choose
+    throw 'ill-formed opts'
+  }
+
+  // ...stuff...
 }
 ```
 <a name="module_danny-util.getLine"></a>
@@ -75,7 +84,7 @@ Compare shallow-level elements in a pair of arrays.
 
 <a name="module_danny-util.log"></a>
 ### dannyUtil.log([...valN])
-Print-print objects (on separate lines).
+Pretty-print (with color) objects (on separate lines).
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
@@ -146,13 +155,13 @@ Print like `console.log()`, but color first argument red, prepend message with "
 
 <a name="module_danny-util.printWarning"></a>
 ### dannyUtil.printWarning([msg], [...valN])
-Print like `console.log()`, but color first argument yellow, prepend with 'Warning:'.
+Print like `console.log()`, but color first argument yellow, prepend with "Warning:".
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [msg] | <code>String</code> | Warning message to color yellow and append to 'Warning:'. |
+| [msg] | <code>String</code> | Warning message to color yellow and append to "Warning:". |
 | [...valN] | <code>Mixed</code> | Values to print following warning message. |
 
 <a name="module_danny-util.printErrWithLine"></a>
@@ -163,7 +172,7 @@ Print error message like `printErr()` and line from which the parent function wa
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [msg] | <code>String</code> | Error message to color red and append to 'Err:'. |
+| [msg] | <code>String</code> | Error message to color red and append to "Err:". |
 | [...valN] | <code>Mixed</code> | Values to print following error message. |
 
 <a name="module_danny-util.logTrace"></a>

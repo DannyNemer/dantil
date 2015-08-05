@@ -25,13 +25,22 @@ var colors = require('colors/safe')
  * @param  {Object} opts  The options object to check if conforms to `schema`.
  * @return {Boolean}  Whether `opts` is ill-formed.
  * @example
- * // Example `schema`:
- * {
+ * var schema = {
  *   num: Number,                                  // Must be of type `Number`
  *   list: { type: Array },                        // Must be of type `Array` (identical to previous parameter)
  *   strings: { type: Array, arrayType: String },  // Must be `Array` containing only String
  *   str: { type: String, optional: true },        // Parameter can be omitted
  *   val: [ 'red', 'yellow', 'blue' ]              // Must be one of predefined values
+ * }
+ *
+ * function myFunc(opts) {
+ *   if (dannyUtil.illFormedOpts(schema, opts)) {
+ *     // Descriptive, helpful errors are printed to console
+ *     // Handle ill-formed `opts` how you choose
+ *     throw 'ill-formed opts'
+ *   }
+ *
+ *   // ...stuff...
  * }
  */
 exports.illFormedOpts = function (schema, opts) {
@@ -146,7 +155,7 @@ exports.arraysMatch = function (a, b) {
 }
 
 /**
- * Print-print objects (on separate lines).
+ * Pretty-print (with color) objects (on separate lines).
  *
  * @param {...Mixed} [valN]  Values to print.
  */
@@ -249,9 +258,9 @@ exports.printErr = function (msg) {
 }
 
 /**
- * Print like `console.log()`, but color first argument yellow, prepend with 'Warning:'.
+ * Print like `console.log()`, but color first argument yellow, prepend with "Warning:".
  *
- * @param {String} [msg]  Warning message to color yellow and append to 'Warning:'.
+ * @param {String} [msg]  Warning message to color yellow and append to "Warning:".
  * @param {...Mixed} [valN]  Values to print following warning message.
  */
 exports.printWarning = function (msg) {
@@ -259,7 +268,7 @@ exports.printWarning = function (msg) {
 }
 
 /**
- * Print like `console.log()`, but color first argument and prepend with a label (e.g., "Err:"").
+ * Print like `console.log()`, but color first argument and prepend with a label (e.g., "Err:").
  *
  * @private
  * @param {String} color  Color to stylize `label`.
@@ -289,7 +298,7 @@ function logPrependColorMsg(color, label, msg, args) {
 /**
  * Print error message like `printErr()` and line from which the parent function was called (using `getLine()`).
  *
- * @param {String} [msg]  Error message to color red and append to 'Err:'.
+ * @param {String} [msg]  Error message to color red and append to "Err:".
  * @param {...Mixed} [valN]  Values to print following error message.
  */
 exports.printErrWithLine = function () {
