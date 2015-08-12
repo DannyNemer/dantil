@@ -17,13 +17,13 @@ var colors = require('colors/safe')
 
 
 /**
- * Check if an `opts` object matches a `schema`.
+ * Checks if an `opts` object adheres to a `schema`.
  * Simulates static function arguments (i.e., type checking and parameter count).
  * Prints descriptive, helpful errors when `opts` is ill-formed.
  *
- * @param  {Object} schema  Definition of required or optional properties and their expected values in `opts`.
- * @param  {Object} opts  The options object to check if conforms to `schema`.
- * @return {Boolean}  Whether `opts` is ill-formed.
+ * @param {Object} schema Definition of required or optional properties and their expected values in `opts`.
+ * @param {Object} opts The options object to check if conforms to `schema`.
+ * @return {Boolean} `true` if `opts` is ill-formed, else `false`.
  * @example
  * var schema = {
  *   num: Number,                                  // Must be of type `Number`
@@ -96,10 +96,10 @@ exports.illFormedOpts = function (schema, opts) {
 }
 
 /**
- * Get file path and line number of the first item in the stack of the parent module from where this function was called.
+ * Gets the file path and line number of the first item in the stack of the parent module from where this function was called.
  *
- * @param  {Boolean} getCallingLine  If true, return line of where this function was called (i.e., not parent module).
- * @return {String}  File path and line number of calling line.
+ * @param {Boolean} getCallingLine If `true`, return line of where this function was called, else the line of the parent module.
+ * @return {String} The file path and line number of calling line.
  */
 exports.getLine = function (getCallingLine) {
   var stack = Error().stack.split('\n').slice(2)
@@ -129,13 +129,13 @@ exports.getLine = function (getCallingLine) {
 }
 
 /**
- * Compare shallow-level elements in a pair of arrays.
+ * Performs a shallow comparison between two arrays to determine if they are equivalent.
  *
- * @param  {Array} a  Array to compare.
- * @param  {Array} b  Array to compare.
- * @return {Boolean}  Whether arrays contain identical contents.
+ * @param {Array} a The array to compare.
+ * @param {Array} b The other array to compare.
+ * @return {Boolean} `true` if the arrays are equivalent, else `false`.
  */
-exports.arraysMatch = function (a, b) {
+exports.arraysEqual = function (a, b) {
   // Identical arrays (or, both undefined)
   if (a === b) return true
 
@@ -155,9 +155,9 @@ exports.arraysMatch = function (a, b) {
 }
 
 /**
- * Pretty-print (with color) objects (on separate lines).
+ * Pretty-prints (with color) objects (on separate lines).
  *
- * @param {...Mixed} [valN]  Values to print.
+ * @param {...Mixed} [valN] The values to print.
  */
 exports.log = function () {
   Array.prototype.slice.call(arguments).forEach(function (arg) {
@@ -175,19 +175,19 @@ exports.log = function () {
 }
 
 /**
- * Print calling file path and line number to mark reaching a section of code, prepended by `msg`.
+ * Prints calling file path and line number to mark reaching a section of code, prepended by `msg`.
  *
- * @param {String} [msg]  Optional message to prepend line.
+ * @param {String} [msg] The optional message to prepend line.
  */
 exports.assert = function (msg) {
   console.log(colors.red((msg || 'Reached') + ':'), exports.getLine(true))
 }
 
 /**
- * Print calling file path and line number if `value` is truthy, prepended by `msg`.
+ * Prints calling file path and line number if `value` is truthy, prepended by `msg`.
  *
- * @param {Boolean} value  Value to check if truthy.
- * @param {String} [msg]  Optional message to prepend line.
+ * @param {Boolean} value The value to check if truthy.
+ * @param {String} [msg] The optional message to prepend line.
  */
 exports.assertTrue = function (value, msg) {
   if (value) exports.assert(msg)
@@ -202,10 +202,10 @@ exports.assertTrue = function (value, msg) {
 var counts = {}
 
 /**
- * Count number of times a section of code is reached, identified by `key`.
+ * Counts the number of times a section of code is reached, identified by `key`.
  * Use `printCount(key)` to print value.
  *
- * @param {String} key  Id to refer to a section of code.
+ * @param {String} key The id to refer to a section of code.
  */
 exports.count = function (key) {
   if (counts.hasOwnProperty(key)) {
@@ -216,10 +216,10 @@ exports.count = function (key) {
 }
 
 /**
- * Print number of calls of `count()` with `key`.
- * Reset the count of calls to `key` when called.
+ * Prints the number of calls of `count()` with `key`.
+ * Resets the count of calls to `key` when called.
  *
- * @param {String} key  Id to refer to calls to `count()`.
+ * @param {String} key The id to refer to calls to `count()`.
  */
 exports.printCount = function (key) {
   var label = (key || 'count') + ':'
@@ -234,7 +234,7 @@ exports.printCount = function (key) {
 }
 
 /**
- * Print values of all counters used on `count()`.
+ * Prints the values of all counters used on `count()`.
  * Will not print counters that are never reached (and never have their keys initialized).
  * Reset all counts.
  */
@@ -248,33 +248,33 @@ exports.printCounts = function () {
 }
 
 /**
- * Print like `console.log()`, but color first argument red, prepend message with "Err:".
+ * Prints like `console.log()`, but color first argument red, prepend message with "Err:".
  *
- * @param {String} [msg]  Error message to color red and append to "Err:".
- * @param {...Mixed} [valN]  Values to print following error message.
+ * @param {String} [msg] THe error message to color red and append to "Err:".
+ * @param {...Mixed} [valN] The values to print following error message.
  */
 exports.printErr = function (msg) {
   logPrependColorMsg('red', 'Err', msg, Array.prototype.slice.call(arguments, 1))
 }
 
 /**
- * Print like `console.log()`, but color first argument yellow, prepend with "Warning:".
+ * Prints like `console.log()`, but color first argument yellow, prepend with "Warning:".
  *
- * @param {String} [msg]  Warning message to color yellow and append to "Warning:".
- * @param {...Mixed} [valN]  Values to print following warning message.
+ * @param {String} [msg] The warning message to color yellow and append to "Warning:".
+ * @param {...Mixed} [valN] The values to print following warning message.
  */
 exports.printWarning = function (msg) {
   logPrependColorMsg('yellow', 'Warning', msg, Array.prototype.slice.call(arguments, 1))
 }
 
 /**
- * Print like `console.log()`, but color first argument and prepend with a label (e.g., "Err:").
+ * Prints like `console.log()`, but color first argument and prepend with a label (e.g., "Err:").
  *
  * @private
- * @param {String} color  Color to stylize `label`.
- * @param {String} label  A label to prepend the values to print (e.g., "Err").
- * @param {String} [msg]  Message to color and append to `label`.
- * @param {Array} [args]  Values to print following `msg`.
+ * @param {String} color The color to stylize `label`.
+ * @param {String} label The label to prepend the values to print (e.g., "Err").
+ * @param {String} [msg] The message to color and append to `label`.
+ * @param {Array} [args] The values to print following `msg`.
  */
 function logPrependColorMsg(color, label, msg, args) {
   // Append ':' to `label`
@@ -296,10 +296,10 @@ function logPrependColorMsg(color, label, msg, args) {
 }
 
 /**
- * Print error message like `printErr()` and line from which the parent function was called (using `getLine()`).
+ * Prints error message like `printErr()` and line from which the parent function was called (using `getLine()`).
  *
- * @param {String} [msg]  Error message to color red and append to "Err:".
- * @param {...Mixed} [valN]  Values to print following error message.
+ * @param {String} [msg] The error message to color red and append to "Err:".
+ * @param {...Mixed} [valN] The values to print following error message.
  */
 exports.printErrWithLine = function () {
   exports.printErr.apply(null, arguments)
@@ -309,10 +309,10 @@ exports.printErrWithLine = function () {
 }
 
 /**
- * Print stack trace to the current position.
- * Remove parentheses from stack for iTerm open-file-path shortcut.
+ * Prints stack trace to the current position.
+ * Removes parentheses from stack for iTerm open-file-path shortcut.
  *
- * @param {String} [msg]  Optional message to print above stack.
+ * @param {String} [msg] The optional message to print above stack.
  */
 exports.logTrace = function (msg) {
   console.log('Trace' + (msg ? ': ' + msg : ''))
@@ -326,10 +326,10 @@ exports.logTrace = function (msg) {
 }
 
 /**
- * Write an object to a JSON file.
+ * Writes an object to a JSON file.
  *
- * @param {String} path  Path to write file.
- * @param {Object} obj  Object to save to file.
+ * @param {String} path The path to write file.
+ * @param {Object} obj The object to save to file.
  */
 exports.writeJSONFile = function (path, obj) {
   fs.writeFileSync(path, JSON.stringify(obj, function (key, val) {
@@ -341,11 +341,11 @@ exports.writeJSONFile = function (path, obj) {
 }
 
 /**
- * Execute the passed function within a `try` block.
- * Remove parentheses from error stack for iTerm open-file-path shortcut.
+ * Executes the passed function within a `try` block.
+ * Removes parentheses from error stack for iTerm open-file-path shortcut.
  *
- * @param {Function} callback  Function to execute within `try` block.
- * @return {Mixed}  Value returned by `callback`.
+ * @param {Function} callback The function to execute within `try` block.
+ * @return {Mixed} The value returned by `callback`.
  */
 exports.tryCatchWrapper = function (callback) {
   try {
@@ -365,10 +365,10 @@ exports.tryCatchWrapper = function (callback) {
 }
 
 /**
- * Delete modules from cache, forcing them to be reloaded at next `require()` call.
+ * Deletes modules from cache, forcing them to be reloaded at next `require()` call.
  * Useful for debugging code on a server without restarting the server.
  *
- * @param {...String} pathN  Paths of modules to remove from cache.
+ * @param {...String} pathN The paths of modules to remove from cache.
  */
 exports.deleteModuleCache = function () {
   Array.prototype.slice.call(arguments).forEach(function (path) {
