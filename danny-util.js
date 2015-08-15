@@ -37,7 +37,7 @@ var colors = require('colors/safe')
  *   if (dannyUtil.illFormedOpts(schema, opts)) {
  *     // Descriptive, helpful errors are printed to console
  *     // Handle ill-formed `opts` how you choose
- *     throw 'ill-formed opts'
+ *     throw Error('ill-formed opts')
  *   }
  *
  *   // ...stuff...
@@ -102,7 +102,8 @@ exports.illFormedOpts = function (schema, opts) {
  * @return {String} The file path and line number of calling line.
  */
 exports.getLine = function (getCallingLine) {
-  var stack = Error().stack.split('\n').slice(2)
+  // Get stack sans lines for `Error` and this file
+  var stack = Error().stack.split('\n').slice(3)
   var callingFileName
 
   for (var i = 0, stackLength = stack.length; i < stackLength; ++i) {
@@ -114,7 +115,7 @@ exports.getLine = function (getCallingLine) {
     // Ignore if `getLine()` called from this file
     if (line.indexOf(__filename) !== -1) continue
 
-    // Remove parenthesis surrounding paths in trace for iTerm open-file-path shortcut
+    // Remove parentheses surrounding paths in trace for iTerm open-file-path shortcut
     if (getCallingLine || (callingFileName && line.indexOf(callingFileName) === -1)) {
       return line.replace(/[()]/g, '').slice(line.lastIndexOf(' ') + 1)
     }
@@ -317,12 +318,13 @@ exports.printErrWithLine = function () {
 exports.logTrace = function (msg) {
   console.log('Trace' + (msg ? ': ' + msg : ''))
 
-  // Remove lines for `Error` and current file
-  var stack = Error().stack.split('\n').slice(2)
+  // Get stack sans lines for `Error` and this file
+  var stack = Error().stack.split('\n').slice(3)
 
-  stack.forEach(function (stackLine) {
-    console.log(stackLine.replace(/[()]/g, ''))
-  })
+  // Remove parentheses
+  stack = stack.join('\n').replace(/[()]/gm, '')
+
+  console.log(stack)
 }
 
 /**
@@ -356,7 +358,7 @@ exports.tryCatchWrapper = function (callback) {
     if (e.stack) {
       e.stack.split('\n').forEach(function (stackLine) {
         // Only remove parentheses from the stack, avoiding lines in `Error.message`
-        console.log(/^\s/.test(stackLine) ? stackLine.replace(/[()]/g, '') : stackLine)
+        console.log(/^\s+at/.test(stackLine) ? stackLine.replace(/[()]/g, '') : stackLine)
       })
     } else {
       console.log(e)

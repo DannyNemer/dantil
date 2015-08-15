@@ -53,7 +53,7 @@ function myFunc(opts) {
   if (dannyUtil.illFormedOpts(schema, opts)) {
     // Descriptive, helpful errors are printed to console
     // Handle ill-formed `opts` how you choose
-    throw 'ill-formed opts'
+    throw Error('ill-formed opts')
   }
 
   // ...stuff...
