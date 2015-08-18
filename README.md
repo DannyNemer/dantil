@@ -11,6 +11,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.illFormedOpts(schema, opts)](#module_danny-util.illFormedOpts) ⇒ <code>Boolean</code>
   * [.getLine(getCallingLine)](#module_danny-util.getLine) ⇒ <code>String</code>
   * [.arraysEqual(a, b)](#module_danny-util.arraysEqual) ⇒ <code>Boolean</code>
+  * [.dir([...valN])](#module_danny-util.dir)
   * [.log([...valN])](#module_danny-util.log)
   * [.assert([msg])](#module_danny-util.assert)
   * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
@@ -53,7 +54,7 @@ function myFunc(opts) {
   if (dannyUtil.illFormedOpts(schema, opts)) {
     // Descriptive, helpful errors are printed to console
     // Handle ill-formed `opts` how you choose
-    throw Error('ill-formed opts')
+    throw new Error('ill-formed opts')
   }
 
   // ...stuff...
@@ -82,9 +83,19 @@ Performs a shallow comparison between two arrays to determine if they are equiva
 | a | <code>Array</code> | The array to compare. |
 | b | <code>Array</code> | The other array to compare. |
 
+<a name="module_danny-util.dir"></a>
+### dannyUtil.dir([...valN])
+Prints objects in color (on separate lines), recursing 2 times while formatting the object (which is identical to `console.log()`).
+
+**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [...valN] | <code>Mixed</code> | The values to print. |
+
 <a name="module_danny-util.log"></a>
 ### dannyUtil.log([...valN])
-Pretty-prints (with color) objects (on separate lines).
+Prints objects in color (on separate lines), recursing indefinitely while formatting the object. This is useful for inspecting large, complicated objects.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 

@@ -37,7 +37,7 @@ var colors = require('colors/safe')
  *   if (dannyUtil.illFormedOpts(schema, opts)) {
  *     // Descriptive, helpful errors are printed to console
  *     // Handle ill-formed `opts` how you choose
- *     throw Error('ill-formed opts')
+ *     throw new Error('ill-formed opts')
  *   }
  *
  *   // ...stuff...
@@ -156,23 +156,42 @@ exports.arraysEqual = function (a, b) {
 }
 
 /**
- * Pretty-prints (with color) objects (on separate lines).
+ * Prints objects in color (on separate lines), recursing 2 times while formatting the object (which is identical to `console.log()`).
+ *
+ * @param {...Mixed} [valN] The values to print.
+ */
+exports.dir = function () {
+  prettyPrint(arguments, { colors: true })
+}
+
+/**
+ * Prints objects in color (on separate lines), recursing indefinitely while formatting the object. This is useful for inspecting large, complicated objects.
  *
  * @param {...Mixed} [valN] The values to print.
  */
 exports.log = function () {
-  Array.prototype.slice.call(arguments).forEach(function (arg) {
-    // Print strings normally to avoid unnecessary styling
-    // - Use `typeof` to account for `undefined`
-    if (typeof arg === 'string') {
-      console.log(arg)
-    } else {
-      console.dir(arg, { depth: null, colors: true })
-    }
-  })
+  prettyPrint(arguments, { depth: null, colors: true })
 
   // Print trailing blank line
   console.log()
+}
+
+/**
+ * Prints objects according to the formattings options of `opts` (as defined for `console.dir()`) on seperate lines.
+ *
+ * @private
+ * @param {Object} args The `arguments` object (passed to the callee) with the values to print.
+ * @param {Object} opts The options object (as defined for `console.dir()`).
+ */
+function prettyPrint(args, opts) {
+  Array.prototype.slice.call(args).forEach(function (arg) {
+    // Print strings passed as arguments (i.e., not Object properties) without styling
+    if (typeof arg === 'string') {
+      console.log(arg)
+    } else {
+      console.dir(arg, opts)
+    }
+  })
 }
 
 /**
