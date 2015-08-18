@@ -11,8 +11,8 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.illFormedOpts(schema, opts)](#module_danny-util.illFormedOpts) ⇒ <code>Boolean</code>
   * [.getLine(getCallingLine)](#module_danny-util.getLine) ⇒ <code>String</code>
   * [.arraysEqual(a, b)](#module_danny-util.arraysEqual) ⇒ <code>Boolean</code>
-  * [.dir([...valN])](#module_danny-util.dir)
   * [.log([...valN])](#module_danny-util.log)
+  * [.dir([...valN])](#module_danny-util.dir)
   * [.assert([msg])](#module_danny-util.assert)
   * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
   * [.count(key)](#module_danny-util.count)
@@ -83,8 +83,8 @@ Performs a shallow comparison between two arrays to determine if they are equiva
 | a | <code>Array</code> | The array to compare. |
 | b | <code>Array</code> | The other array to compare. |
 
-<a name="module_danny-util.dir"></a>
-### dannyUtil.dir([...valN])
+<a name="module_danny-util.log"></a>
+### dannyUtil.log([...valN])
 Prints objects in color (on separate lines), recursing 2 times while formatting the object (which is identical to `console.log()`).
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
@@ -93,8 +93,8 @@ Prints objects in color (on separate lines), recursing 2 times while formatting 
 | --- | --- | --- |
 | [...valN] | <code>Mixed</code> | The values to print. |
 
-<a name="module_danny-util.log"></a>
-### dannyUtil.log([...valN])
+<a name="module_danny-util.dir"></a>
+### dannyUtil.dir([...valN])
 Prints objects in color (on separate lines), recursing indefinitely while formatting the object. This is useful for inspecting large, complicated objects.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  

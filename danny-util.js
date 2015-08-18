@@ -160,7 +160,7 @@ exports.arraysEqual = function (a, b) {
  *
  * @param {...Mixed} [valN] The values to print.
  */
-exports.dir = function () {
+exports.log = function () {
   prettyPrint(arguments, { colors: true })
 }
 
@@ -169,7 +169,7 @@ exports.dir = function () {
  *
  * @param {...Mixed} [valN] The values to print.
  */
-exports.log = function () {
+exports.dir = function () {
   prettyPrint(arguments, { depth: null, colors: true })
 
   // Print trailing blank line
