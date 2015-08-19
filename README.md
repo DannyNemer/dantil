@@ -16,7 +16,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.assert([msg])](#module_danny-util.assert)
   * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
   * [.count(label)](#module_danny-util.count)
-  * [.printCount(label)](#module_danny-util.printCount)
+  * [.countEnd(label)](#module_danny-util.countEnd)
   * [.printCounts()](#module_danny-util.printCounts)
   * [.printErr([msg], [...valN])](#module_danny-util.printErr)
   * [.printWarning([msg], [...valN])](#module_danny-util.printWarning)
@@ -127,7 +127,7 @@ Prints calling file path and line number if `value` is truthy, prepended by `msg
 <a name="module_danny-util.count"></a>
 ### dannyUtil.count(label)
 Counts the number of times a section of code is reached, identified by `label`.
-Use `printCount(label)` to print value.
+Use `countEnd(label)` to print value.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
@@ -135,8 +135,8 @@ Use `printCount(label)` to print value.
 | --- | --- | --- |
 | label | <code>String</code> | The id to refer to a section of code. |
 
-<a name="module_danny-util.printCount"></a>
-### dannyUtil.printCount(label)
+<a name="module_danny-util.countEnd"></a>
+### dannyUtil.countEnd(label)
 Prints the number of calls of `count()` with `label`.
 Resets the count of calls to `label` when called.
 
