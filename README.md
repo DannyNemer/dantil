@@ -161,7 +161,7 @@ Prints like `console.log()`, but color first argument red, prepend message with 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [msg] | <code>String</code> | THe error message to color red and append to "Err:". |
+| [msg] | <code>String</code> | The error message to color red and append to "Err:". |
 | [...valN] | <code>Mixed</code> | The values to print following error message. |
 
 <a name="module_danny-util.printWarning"></a>
