@@ -15,8 +15,8 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.dir([...valN])](#module_danny-util.dir)
   * [.assert([msg])](#module_danny-util.assert)
   * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
-  * [.count(key)](#module_danny-util.count)
-  * [.printCount(key)](#module_danny-util.printCount)
+  * [.count(label)](#module_danny-util.count)
+  * [.printCount(label)](#module_danny-util.printCount)
   * [.printCounts()](#module_danny-util.printCounts)
   * [.printErr([msg], [...valN])](#module_danny-util.printErr)
   * [.printWarning([msg], [...valN])](#module_danny-util.printWarning)
@@ -62,7 +62,7 @@ function myFunc(opts) {
 ```
 <a name="module_danny-util.getLine"></a>
 ### dannyUtil.getLine(getCallingLine) ⇒ <code>String</code>
-Gets the file path and line number of the first item in the stack of the parent module from where this function was called.
+Gets the file path and line number of the first item in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>String</code> - The file path and line number of calling line.  
@@ -125,26 +125,26 @@ Prints calling file path and line number if `value` is truthy, prepended by `msg
 | [msg] | <code>String</code> | The optional message to prepend line. |
 
 <a name="module_danny-util.count"></a>
-### dannyUtil.count(key)
-Counts the number of times a section of code is reached, identified by `key`.
-Use `printCount(key)` to print value.
+### dannyUtil.count(label)
+Counts the number of times a section of code is reached, identified by `label`.
+Use `printCount(label)` to print value.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>String</code> | The id to refer to a section of code. |
+| label | <code>String</code> | The id to refer to a section of code. |
 
 <a name="module_danny-util.printCount"></a>
-### dannyUtil.printCount(key)
-Prints the number of calls of `count()` with `key`.
-Resets the count of calls to `key` when called.
+### dannyUtil.printCount(label)
+Prints the number of calls of `count()` with `label`.
+Resets the count of calls to `label` when called.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>String</code> | The id to refer to calls to `count()`. |
+| label | <code>String</code> | The id to refer to calls to `count()`. |
 
 <a name="module_danny-util.printCounts"></a>
 ### dannyUtil.printCounts()
