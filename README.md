@@ -17,7 +17,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
   * [.count(label)](#module_danny-util.count)
   * [.countEnd(label)](#module_danny-util.countEnd)
-  * [.printCounts()](#module_danny-util.printCounts)
+  * [.countEndAll()](#module_danny-util.countEndAll)
   * [.printErr([msg], [...valN])](#module_danny-util.printErr)
   * [.printWarning([msg], [...valN])](#module_danny-util.printWarning)
   * [.printErrWithLine([msg], [...valN])](#module_danny-util.printErrWithLine)
@@ -146,8 +146,8 @@ Resets the count of calls to `label` when called.
 | --- | --- | --- |
 | label | <code>String</code> | The id to refer to calls to `count()`. |
 
-<a name="module_danny-util.printCounts"></a>
-### dannyUtil.printCounts()
+<a name="module_danny-util.countEndAll"></a>
+### dannyUtil.countEndAll()
 Prints the values of all counters used on `count()`.
 Will not print counters that are never reached (and never have their keys initialized).
 Reset all counts.
