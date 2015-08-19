@@ -212,6 +212,7 @@ Writes an object to a JSON file.
 ### dannyUtil.tryCatchWrapper(callback) ⇒ <code>Mixed</code>
 Executes the passed function within a `try` block.
 Removes parentheses from error stack for iTerm open-file-path shortcut.
+Colors error type name red (e.g., 'ReferenceError').
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>Mixed</code> - The value returned by `callback`.  
