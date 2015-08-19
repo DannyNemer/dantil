@@ -25,6 +25,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.writeJSONFile(path, obj)](#module_danny-util.writeJSONFile)
   * [.tryCatchWrapper(callback)](#module_danny-util.tryCatchWrapper) ⇒ <code>Mixed</code>
   * [.deleteModuleCache(...pathN)](#module_danny-util.deleteModuleCache)
+  * [.cleanNumber(number)](#module_danny-util.cleanNumber) ⇒ <code>Number</code>
 
 <a name="module_danny-util.illFormedOpts"></a>
 ### dannyUtil.illFormedOpts(schema, opts) ⇒ <code>Boolean</code>
@@ -232,3 +233,19 @@ Useful for debugging code on a server without restarting the server.
 | --- | --- | --- |
 | ...pathN | <code>String</code> | The paths of modules to remove from cache. |
 
+<a name="module_danny-util.cleanNumber"></a>
+### dannyUtil.cleanNumber(number) ⇒ <code>Number</code>
+Remove extraneous digits from numbers resulting from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
+
+**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Returns**: <code>Number</code> - The number trimmed.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| number | <code>Number</code> | The number to trim. |
+
+**Example**  
+```js
+var number = 0.1 * 0.2 // 0.020000000000000004
+number = dannyUtil.cleanFloat(number) // 0.02
+```
