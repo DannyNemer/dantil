@@ -26,6 +26,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.tryCatchWrapper(callback)](#module_danny-util.tryCatchWrapper) ⇒ <code>Mixed</code>
   * [.deleteModuleCache(...pathN)](#module_danny-util.deleteModuleCache)
   * [.cleanNumber(number)](#module_danny-util.cleanNumber) ⇒ <code>Number</code>
+  * [.dashedToCamelCase(dashedString)](#module_danny-util.dashedToCamelCase) ⇒ <code>String</code>
 
 <a name="module_danny-util.illFormedOpts"></a>
 ### dannyUtil.illFormedOpts(schema, opts) ⇒ <code>Boolean</code>
@@ -246,6 +247,21 @@ Remove extraneous digits from numbers resulting from operations limited by JavaS
 
 **Example**  
 ```js
-var number = 0.1 * 0.2 // 0.020000000000000004
-number = dannyUtil.cleanFloat(number) // 0.02
+var number = 0.1 * 0.2 // -> 0.020000000000000004
+number = dannyUtil.cleanFloat(number) // -> 0.02
+```
+<a name="module_danny-util.dashedToCamelCase"></a>
+### dannyUtil.dashedToCamelCase(dashedString) ⇒ <code>String</code>
+Convert a dash-separated string to camelCase.
+
+**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Returns**: <code>String</code> - The input string in camelCase.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| dashedString | <code>String</code> | The dash-separated string to convert. |
+
+**Example**  
+```js
+dannyUtil.camelCase('my-long-variable-name') // -> 'myLongVariableName'
 ```
