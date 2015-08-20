@@ -225,8 +225,8 @@ Colors error type name red (e.g., 'ReferenceError').
 
 <a name="module_danny-util.deleteModuleCache"></a>
 ### dannyUtil.deleteModuleCache(...pathN)
-Deletes modules from cache, forcing them to be reloaded at next `require()` call.
-Useful for debugging code on a server without restarting the server.
+Deletes modules from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s).
+This is useful for debugging code on a server without restarting the server.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
@@ -234,6 +234,17 @@ Useful for debugging code on a server without restarting the server.
 | --- | --- | --- |
 | ...pathN | <code>String</code> | The paths of modules to remove from cache. |
 
+**Example**  
+```js
+// Load module
+var myModule = require('./myModule.js')
+
+// Remove module from cache
+dannyUtil.deleteModuleCache('./myModule.js')
+
+// Load module again, enabling changes to './myModule.js'
+myModule = require('./myModule.js')
+```
 <a name="module_danny-util.cleanNumber"></a>
 ### dannyUtil.cleanNumber(number) ⇒ <code>Number</code>
 Remove extraneous digits from numbers resulting from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
