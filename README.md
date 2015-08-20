@@ -13,6 +13,8 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.arraysEqual(a, b)](#module_danny-util.arraysEqual) ⇒ <code>Boolean</code>
   * [.log([...valN])](#module_danny-util.log)
   * [.dir([...valN])](#module_danny-util.dir)
+  * [.time(label)](#module_danny-util.time)
+  * [.timeEnd(label)](#module_danny-util.timeEnd)
   * [.assert([msg])](#module_danny-util.assert)
   * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
   * [.count(label)](#module_danny-util.count)
@@ -104,6 +106,41 @@ Prints objects in color (on separate lines), recursing indefinitely while format
 | Param | Type | Description |
 | --- | --- | --- |
 | [...valN] | <code>Mixed</code> | The values to print. |
+
+<a name="module_danny-util.time"></a>
+### dannyUtil.time(label)
+Starts a high-resolution timer (with precision in nanoseconds) identified by `label`. Use `dannyUtil.timeEnd(label)` to print the timer's current value.
+
+**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | The identifier of the timer. |
+
+**Example**  
+```js
+// Start timer
+dannyUtil.time('my test')
+
+// ...stuff...
+
+// Prints "my test: 23.264491ms"
+dannyUtil.timeEnd('my test')
+
+// ...more stuff...
+
+// Prints "my test: 36.183837ms"
+dannyUtil.timeEnd('my test')
+```
+<a name="module_danny-util.timeEnd"></a>
+### dannyUtil.timeEnd(label)
+Prints the current high-resolution value of a timer initiated with `dannyUtil.time(label)`.
+
+**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | The identifier of the timer. |
 
 <a name="module_danny-util.assert"></a>
 ### dannyUtil.assert([msg])
