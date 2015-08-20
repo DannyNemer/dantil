@@ -56,7 +56,7 @@ var schema = {
 
 function myFunc(opts) {
   if (dannyUtil.illFormedOpts(schema, opts)) {
-    // Descriptive, helpful errors are printed to console
+    // Prints descriptive, helpful error messages
     // Handle ill-formed `opts` how you choose
     throw new Error('ill-formed opts')
   }
@@ -165,8 +165,7 @@ Prints calling file path and line number if `value` is truthy, prepended by `msg
 
 <a name="module_danny-util.count"></a>
 ### dannyUtil.count(label)
-Counts the number of times a section of code is reached, identified by `label`.
-Use `countEnd(label)` to print value.
+Counts the number of times a section of code is reached, identified by `label`. Use `dannyUtil.countEnd(label)` to print value. This is useful for profiling complex programs.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
@@ -176,7 +175,7 @@ Use `countEnd(label)` to print value.
 
 <a name="module_danny-util.countEnd"></a>
 ### dannyUtil.countEnd(label)
-Prints the number of calls of `count()` with `label`.
+Prints the number of calls of `dannyUtil.count(label)`.
 Resets the count of calls to `label` when called.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
@@ -263,7 +262,7 @@ Colors error type name red (e.g., 'ReferenceError').
 <a name="module_danny-util.deleteModuleCache"></a>
 ### dannyUtil.deleteModuleCache(...pathN)
 Deletes modules from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s).
-This is useful for debugging code on a server without restarting the server.
+This is useful for enabling changes on a server without restarting the server.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
@@ -284,7 +283,7 @@ myModule = require('./myModule.js')
 ```
 <a name="module_danny-util.cleanNumber"></a>
 ### dannyUtil.cleanNumber(number) ⇒ <code>Number</code>
-Remove extraneous digits from numbers resulting from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
+Removes extraneous digits from numbers resulting from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>Number</code> - The number trimmed.  
@@ -300,7 +299,7 @@ number = dannyUtil.cleanFloat(number) // -> 0.02
 ```
 <a name="module_danny-util.dashedToCamelCase"></a>
 ### dannyUtil.dashedToCamelCase(dashedString) ⇒ <code>String</code>
-Convert a dash-separated string to camelCase.
+Converts a dash-separated string to camelCase.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>String</code> - The input string in camelCase.  
