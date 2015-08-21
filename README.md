@@ -87,6 +87,22 @@ Performs a shallow comparison between two arrays to determine if they are equiva
 | a | <code>Array</code> | The array to compare. |
 | b | <code>Array</code> | The other array to compare. |
 
+**Example**  
+```js
+dannyUtil.arraysEqual([], []) // -> true
+
+dannyUtil.arraysEqual([1, 2, 3, 'danny'], [1, 2, 3, 'danny']) // -> true
+
+dannyUtil.arraysEqual([ false, true ], [ true ]) // -> false
+
+// A shallow comparison will not compare object properties
+var objA = { prop: 'val' }
+var objB = { prop: 'val' }
+dannyUtil.arraysEqual([ 1, 2, objA ], [ 1, 2, objB ]) // -> false
+
+// Rather, objects are only equal if they are the same instance
+dannyUtil.arraysEqual([ objA, objB ], [ objA, objB ]) // -> true
+```
 <a name="module_danny-util.log"></a>
 ### dannyUtil.log([...valN])
 Prints objects in color (on separate lines), recursing 2 times while formatting the object (which is identical to `console.log()`).
