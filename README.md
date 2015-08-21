@@ -198,11 +198,11 @@ Resets the count of calls to `label` when called.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| label | <code>String</code> | The id to refer to calls to `count()`. |
+| label | <code>String</code> | The id to refer to calls to `dannyUtil.count()`. |
 
 <a name="module_danny-util.countEndAll"></a>
 ### dannyUtil.countEndAll()
-Prints the values of all counters used on `count()`.
+Prints the values of all counters used on `dannyUtil.count()`.
 Will not print counters that are never reached (and never have their keys initialized).
 Reset all counts.
 
