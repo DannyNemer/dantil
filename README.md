@@ -29,6 +29,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.deleteModuleCache(...pathN)](#module_danny-util.deleteModuleCache)
   * [.cleanNumber(number)](#module_danny-util.cleanNumber) ⇒ <code>Number</code>
   * [.dashedToCamelCase(dashedString)](#module_danny-util.dashedToCamelCase) ⇒ <code>String</code>
+  * [.redirectOutputToFile(path, callback)](#module_danny-util.redirectOutputToFile) ⇒ <code>Mixed</code>
   * [.expandHomeDir(path)](#module_danny-util.expandHomeDir) ⇒ <code>String</code>
 
 <a name="module_danny-util.illFormedOpts"></a>
@@ -270,7 +271,7 @@ Removes parentheses from error stack for iTerm open-file-path shortcut.
 Colors error type name red (e.g., 'ReferenceError').
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
-**Returns**: <code>Mixed</code> - The value returned by `callback`.  
+**Returns**: <code>Mixed</code> - The value returned by `callback`, if any.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -328,6 +329,36 @@ Converts a dash-separated string to camelCase.
 **Example**  
 ```js
 dannyUtil.camelCase('my-long-variable-name') // -> 'myLongVariableName'
+```
+<a name="module_danny-util.redirectOutputToFile"></a>
+### dannyUtil.redirectOutputToFile(path, callback) ⇒ <code>Mixed</code>
+Synchronously writes the output of a function to a file instead of the console. Overwrites the file if it already exists.
+
+**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Returns**: <code>Mixed</code> - The value returned by `callback`, if any.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| path | <code>String</code> | The path where to write output. |
+| callback | <code>function</code> | The function producing output. |
+
+**Example**  
+```js
+// Prints to console
+console.log('Begin output to file')
+
+// Redirects process output from console to file
+dannyUtil.redirectOutputToFile('~/Desktop/out.txt', function () {
+  // Writes to '~/Desktop/out.txt'
+  console.log('Numbers:')
+  for (var i = 0; i < 100; ++i) {
+    console.log(i)
+  }
+})
+// Restores output to console and prints: "Output saved to: ~/Desktop/out.txt"
+
+// Prints to console (after restoring output)
+console.log('Output to file complete')
 ```
 <a name="module_danny-util.expandHomeDir"></a>
 ### dannyUtil.expandHomeDir(path) ⇒ <code>String</code>
