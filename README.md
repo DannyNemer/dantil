@@ -29,6 +29,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.deleteModuleCache(...pathN)](#module_danny-util.deleteModuleCache)
   * [.cleanNumber(number)](#module_danny-util.cleanNumber) ⇒ <code>Number</code>
   * [.dashedToCamelCase(dashedString)](#module_danny-util.dashedToCamelCase) ⇒ <code>String</code>
+  * [.expandHomeDir(path)](#module_danny-util.expandHomeDir) ⇒ <code>String</code>
 
 <a name="module_danny-util.illFormedOpts"></a>
 ### dannyUtil.illFormedOpts(schema, opts) ⇒ <code>Boolean</code>
@@ -273,7 +274,7 @@ Colors error type name red (e.g., 'ReferenceError').
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callback | <code>function</code> | The function to execute within `try` block. |
+| callback | <code>function</code> | The function to execute within a `try` block. |
 
 <a name="module_danny-util.deleteModuleCache"></a>
 ### dannyUtil.deleteModuleCache(...pathN)
@@ -327,4 +328,19 @@ Converts a dash-separated string to camelCase.
 **Example**  
 ```js
 dannyUtil.camelCase('my-long-variable-name') // -> 'myLongVariableName'
+```
+<a name="module_danny-util.expandHomeDir"></a>
+### dannyUtil.expandHomeDir(path) ⇒ <code>String</code>
+Replaces `'~'` in a path (if present and at the path's start) with the home directory path.
+
+**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Returns**: <code>String</code> - `path` with '~' (if present) replaced with the home directory path.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| path | <code>String</code> | The file path. |
+
+**Example**  
+```js
+dannyUtil.expandHomeDir('~/Desktop') // -> '/Users/Danny/Desktop'
 ```
