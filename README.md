@@ -190,13 +190,13 @@ Prints objects in color (on separate lines), recursing indefinitely while format
 
 <a name="module_danny-util.printErr"></a>
 ### dannyUtil.printErr(...valN)
-Prints like `console.log()` prepended with red-colored "Err: ".
+Prints like `console.log()` prepended with red-colored "Error: ".
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...valN | <code>Mixed</code> | The values to print following "Err: ". |
+| ...valN | <code>Mixed</code> | The values to print following "Error: ". |
 
 <a name="module_danny-util.printWarning"></a>
 ### dannyUtil.printWarning(...valN)
@@ -216,7 +216,7 @@ Prints error message like `dannyUtil.printErr()` followed by the file path and l
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...valN | <code>Mixed</code> | The values to print following "Err: ". |
+| ...valN | <code>Mixed</code> | The values to print following "Error: ". |
 
 <a name="module_danny-util.logTrace"></a>
 ### dannyUtil.logTrace([msg])
