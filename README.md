@@ -17,9 +17,9 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.getLine(getCallingLine)](#module_danny-util.getLine) ⇒ <code>String</code>
   * [.log([...valN])](#module_danny-util.log)
   * [.dir([...valN])](#module_danny-util.dir)
-  * [.printErr([msg], [...valN])](#module_danny-util.printErr)
-  * [.printWarning([msg], [...valN])](#module_danny-util.printWarning)
-  * [.printErrWithLine([msg], [...valN])](#module_danny-util.printErrWithLine)
+  * [.printErr(...valN)](#module_danny-util.printErr)
+  * [.printWarning(...valN)](#module_danny-util.printWarning)
+  * [.printErrWithLine(...valN)](#module_danny-util.printErrWithLine)
   * [.logTrace([msg])](#module_danny-util.logTrace)
   * [.assert([msg])](#module_danny-util.assert)
   * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
@@ -189,37 +189,34 @@ Prints objects in color (on separate lines), recursing indefinitely while format
 | [...valN] | <code>Mixed</code> | The values to print. |
 
 <a name="module_danny-util.printErr"></a>
-### dannyUtil.printErr([msg], [...valN])
-Prints like `console.log()`, but color first argument red, prepend message with "Err:".
+### dannyUtil.printErr(...valN)
+Prints like `console.log()` prepended with red-colored "Err: ".
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [msg] | <code>String</code> | The error message to color red and append to "Err:". |
-| [...valN] | <code>Mixed</code> | The values to print following error message. |
+| ...valN | <code>Mixed</code> | The values to print following "Err: ". |
 
 <a name="module_danny-util.printWarning"></a>
-### dannyUtil.printWarning([msg], [...valN])
-Prints like `console.log()`, but color first argument yellow, prepend with "Warning:".
+### dannyUtil.printWarning(...valN)
+Prints like `console.log()` prepended with yellow-colored "Warning: ".
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [msg] | <code>String</code> | The warning message to color yellow and append to "Warning:". |
-| [...valN] | <code>Mixed</code> | The values to print following warning message. |
+| ...valN | <code>Mixed</code> | The values to print following "Warning: ". |
 
 <a name="module_danny-util.printErrWithLine"></a>
-### dannyUtil.printErrWithLine([msg], [...valN])
-Prints error message like `printErr()` and line from which the parent function was called (using `getLine()`).
+### dannyUtil.printErrWithLine(...valN)
+Prints error message like `dannyUtil.printErr()` followed by the file path and line number from which the parent function was called .
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [msg] | <code>String</code> | The error message to color red and append to "Err:". |
-| [...valN] | <code>Mixed</code> | The values to print following error message. |
+| ...valN | <code>Mixed</code> | The values to print following "Err: ". |
 
 <a name="module_danny-util.logTrace"></a>
 ### dannyUtil.logTrace([msg])
