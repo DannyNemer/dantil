@@ -34,9 +34,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
 
 <a name="module_danny-util.illFormedOpts"></a>
 ### dannyUtil.illFormedOpts(schema, opts) ⇒ <code>Boolean</code>
-Checks if an `opts` object adheres to a `schema`.
-Simulates static function arguments (i.e., type checking and parameter count).
-Prints descriptive, helpful errors when `opts` is ill-formed.
+Checks if an options object adheres to a schema. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors when `opts` is ill-formed.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>Boolean</code> - `true` if `opts` is ill-formed, else `false`.  
@@ -124,9 +122,7 @@ dannyUtil.expandHomeDir('~/Desktop') // -> '/Users/Danny/Desktop'
 ```
 <a name="module_danny-util.tryCatchWrapper"></a>
 ### dannyUtil.tryCatchWrapper(callback) ⇒ <code>Mixed</code>
-Executes the passed function within a `try` block.
-Removes parentheses from error stack for iTerm open-file-path shortcut.
-Colors error type name red (e.g., `ReferenceError`).
+Executes the passed function within a `try` block. If an error is thrown, removes parentheses surrounding file paths in its stack trace for the iTerm open-file-path shortcut, and colors the error type name (e.g., "TypeError") red.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>Mixed</code> - The value returned by `callback`, if any.  
@@ -137,8 +133,7 @@ Colors error type name red (e.g., `ReferenceError`).
 
 <a name="module_danny-util.deleteModuleCache"></a>
 ### dannyUtil.deleteModuleCache(...pathN)
-Deletes modules from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s).
-This is useful for enabling changes on a server without restarting the server.
+Deletes modules from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s). This is useful for enabling changes on a server without restarting the server.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
@@ -220,14 +215,13 @@ Prints error message like `dannyUtil.printErr()` followed by the file path and l
 
 <a name="module_danny-util.logTrace"></a>
 ### dannyUtil.logTrace([msg])
-Prints stack trace to the current position.
-Removes parentheses from stack for iTerm open-file-path shortcut.
+Prints the stack trace to the current position. Removes parentheses surrounding file paths for the iTerm open-file-path shortcut.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [msg] | <code>String</code> | The optional message to print above stack. |
+| [msg] | <code>String</code> | The optional message to print above the stack trace. |
 
 <a name="module_danny-util.assert"></a>
 ### dannyUtil.assert([msg])
@@ -297,8 +291,7 @@ Counts the number of times a section of code is reached, identified by `label`. 
 
 <a name="module_danny-util.countEnd"></a>
 ### dannyUtil.countEnd(label)
-Prints the number of calls of `dannyUtil.count(label)`.
-Resets the count of calls to `label` when called.
+Prints (and clears the value of) the number of calls of `dannyUtil.count(label)`.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
@@ -308,9 +301,7 @@ Resets the count of calls to `label` when called.
 
 <a name="module_danny-util.countEndAll"></a>
 ### dannyUtil.countEndAll()
-Prints the values of all counters used on `dannyUtil.count()`.
-Will not print counters that are never reached (and never have their keys initialized).
-Reset all counts.
+Prints (and clears) the values of all counters used on `dannyUtil.count()`. Will not print counters that are never reached (and never have their keys initialized).
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 <a name="module_danny-util.arraysEqual"></a>
