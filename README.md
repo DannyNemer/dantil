@@ -68,7 +68,7 @@ function myFunc(opts) {
 ```
 <a name="module_danny-util.redirectOutputToFile"></a>
 ### dannyUtil.redirectOutputToFile(path, callback) ⇒ <code>Mixed</code>
-Synchronously writes the output of a function to a file instead of the console. Overwrites the file if it already exists.
+Synchronously writes the output of a function to a file instead of the console. Overwrites the file if it already exists. Restores output to console if an error is thrown.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>Mixed</code> - The value returned by `callback`, if any.  
