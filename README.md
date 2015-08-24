@@ -255,7 +255,7 @@ Prints calling file path and line number if `value` is truthy, prepended by `msg
 
 <a name="module_danny-util.time"></a>
 ### dannyUtil.time(label)
-Starts a high-resolution timer (with precision in nanoseconds) identified by `label`. Use `dannyUtil.timeEnd(label)` to print the timer's current value.
+Starts a high-resolution timer (with precision in microseconds) identified by `label`. Use `dannyUtil.timeEnd(label)` to print the timer's current value.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
@@ -270,12 +270,12 @@ dannyUtil.time('my test')
 
 // ...stuff...
 
-// Prints "my test: 23.264491ms"
+// Prints "my test: 13.264ms"
 dannyUtil.timeEnd('my test')
 
 // ...more stuff...
 
-// Prints "my test: 36.183837ms"
+// Prints "my test: 31.183ms"
 dannyUtil.timeEnd('my test')
 ```
 <a name="module_danny-util.timeEnd"></a>
