@@ -17,7 +17,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.getLine(getCallingLine)](#module_danny-util.getLine) ⇒ <code>String</code>
   * [.log([...valN])](#module_danny-util.log)
   * [.dir([...valN])](#module_danny-util.dir)
-  * [.printErr(...valN)](#module_danny-util.printErr)
+  * [.logError(...valN)](#module_danny-util.logError)
   * [.printWarning(...valN)](#module_danny-util.printWarning)
   * [.printErrWithLine(...valN)](#module_danny-util.printErrWithLine)
   * [.logTrace([msg])](#module_danny-util.logTrace)
@@ -192,8 +192,8 @@ Prints objects in color (on separate lines), recursing indefinitely while format
 | --- | --- | --- |
 | [...valN] | <code>Mixed</code> | The values to print. |
 
-<a name="module_danny-util.printErr"></a>
-### dannyUtil.printErr(...valN)
+<a name="module_danny-util.logError"></a>
+### dannyUtil.logError(...valN)
 Prints like `console.log()` prepended with red-colored "Error: ".
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
@@ -214,7 +214,7 @@ Prints like `console.log()` prepended with yellow-colored "Warning: ".
 
 <a name="module_danny-util.printErrWithLine"></a>
 ### dannyUtil.printErrWithLine(...valN)
-Prints error message like `dannyUtil.printErr()` followed by the file path and line number from which the parent function was called .
+Prints error message like `dannyUtil.logError()` followed by the file path and line number from which the parent function was called .
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
