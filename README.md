@@ -12,7 +12,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.redirectOutputToFile(path, callback)](#module_danny-util.redirectOutputToFile) ⇒ <code>Mixed</code>
   * [.writeJSONFile(path, obj)](#module_danny-util.writeJSONFile)
   * [.expandHomeDir(path)](#module_danny-util.expandHomeDir) ⇒ <code>String</code>
-  * [.tryCatchWrapper(callback)](#module_danny-util.tryCatchWrapper) ⇒ <code>Mixed</code>
+  * [.tryCatchWrapper(callback, rethrow)](#module_danny-util.tryCatchWrapper) ⇒ <code>Mixed</code>
   * [.deleteModuleCache(...pathN)](#module_danny-util.deleteModuleCache)
   * [.getLine(getCallingLine)](#module_danny-util.getLine) ⇒ <code>String</code>
   * [.log([...valN])](#module_danny-util.log)
@@ -121,7 +121,7 @@ Replaces `'~'` in a path (if present and at the path's start) with the home dire
 dannyUtil.expandHomeDir('~/Desktop') // -> '/Users/Danny/Desktop'
 ```
 <a name="module_danny-util.tryCatchWrapper"></a>
-### dannyUtil.tryCatchWrapper(callback) ⇒ <code>Mixed</code>
+### dannyUtil.tryCatchWrapper(callback, rethrow) ⇒ <code>Mixed</code>
 Executes the passed function within a `try` block. If an error is thrown, removes parentheses surrounding file paths in its stack trace for the iTerm open-file-path shortcut, and colors the error type name (e.g., `TypeError`) red.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
@@ -130,6 +130,7 @@ Executes the passed function within a `try` block. If an error is thrown, remove
 | Param | Type | Description |
 | --- | --- | --- |
 | callback | <code>function</code> | The function to execute within a `try` block. |
+| rethrow | <code>Boolean</code> | Specify rethrowing an error (after printing the stack trace) if caught from `callback`. |
 
 **Example**  
 ```js
