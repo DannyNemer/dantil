@@ -122,7 +122,7 @@ dannyUtil.expandHomeDir('~/Desktop') // -> '/Users/Danny/Desktop'
 ```
 <a name="module_danny-util.tryCatchWrapper"></a>
 ### dannyUtil.tryCatchWrapper(callback) ⇒ <code>Mixed</code>
-Executes the passed function within a `try` block. If an error is thrown, removes parentheses surrounding file paths in its stack trace for the iTerm open-file-path shortcut, and colors the error type name (e.g., "TypeError") red.
+Executes the passed function within a `try` block. If an error is thrown, removes parentheses surrounding file paths in its stack trace for the iTerm open-file-path shortcut, and colors the error type name (e.g., `TypeError`) red.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>Mixed</code> - The value returned by `callback`, if any.  
@@ -131,6 +131,14 @@ Executes the passed function within a `try` block. If an error is thrown, remove
 | --- | --- | --- |
 | callback | <code>function</code> | The function to execute within a `try` block. |
 
+**Example**  
+```js
+// Catches thrown error and prints a formatted stack trace
+dannyUtil.tryCatchWrapper(function () {
+  // ...stuff...
+  throw new Error('test failed')
+})
+```
 <a name="module_danny-util.deleteModuleCache"></a>
 ### dannyUtil.deleteModuleCache(...pathN)
 Deletes modules from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s). This is useful for enabling changes on a server without restarting the server.
@@ -161,7 +169,7 @@ Gets the file path and line number of the first item in the stack of the parent 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| getCallingLine | <code>Boolean</code> | If `true`, return line of where this function was called, else the line of the parent module. |
+| getCallingLine | <code>Boolean</code> | Specify getting the line where `getLine()` is called instead of the line of the parent module. |
 
 <a name="module_danny-util.log"></a>
 ### dannyUtil.log([...valN])
@@ -289,6 +297,15 @@ Counts the number of times a section of code is reached, identified by `label`. 
 | --- | --- | --- |
 | label | <code>String</code> | The id to refer to a section of code. |
 
+**Example**  
+```js
+for (var i = 0; i < 100; ++i) {
+  if (i % 2 === 0) dannyUtil.count('even')
+}
+
+// Prints "even: 50"; resets count for 'even' to 0
+dannyUtil.countEnd('even')
+```
 <a name="module_danny-util.countEnd"></a>
 ### dannyUtil.countEnd(label)
 Prints (and clears the value of) the number of calls of `dannyUtil.count(label)`.
@@ -304,6 +321,19 @@ Prints (and clears the value of) the number of calls of `dannyUtil.count(label)`
 Prints (and clears) the values of all counters used on `dannyUtil.count()`. Will not print counters that are never reached (and never have their keys initialized).
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Example**  
+```js
+for (var i = 0; i < 100; ++i) {
+  if (i % 2 === 0) dannyUtil.count('even')
+  if (i % 2 === 1) dannyUtil.count('odd')
+  if (i > 100) dannyUtil.count('never reached')
+}
+
+// Prints: "even: 50
+//          odd: 50"
+// Resets all counts to 0
+dannyUtil.countEndAll()
+```
 <a name="module_danny-util.arraysEqual"></a>
 ### dannyUtil.arraysEqual(a, b) ⇒ <code>Boolean</code>
 Performs a shallow comparison between two arrays to determine if they are equivalent.
