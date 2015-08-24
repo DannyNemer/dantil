@@ -18,7 +18,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.log([...valN])](#module_danny-util.log)
   * [.dir([...valN])](#module_danny-util.dir)
   * [.logError(...valN)](#module_danny-util.logError)
-  * [.printWarning(...valN)](#module_danny-util.printWarning)
+  * [.logWarning(...valN)](#module_danny-util.logWarning)
   * [.logErrorAndLine(...valN)](#module_danny-util.logErrorAndLine)
   * [.logTrace([msg])](#module_danny-util.logTrace)
   * [.assert([msg])](#module_danny-util.assert)
@@ -202,8 +202,8 @@ Prints like `console.log()` prepended with red-colored "Error: ".
 | --- | --- | --- |
 | ...valN | <code>Mixed</code> | The values to print following "Error: ". |
 
-<a name="module_danny-util.printWarning"></a>
-### dannyUtil.printWarning(...valN)
+<a name="module_danny-util.logWarning"></a>
+### dannyUtil.logWarning(...valN)
 Prints like `console.log()` prepended with yellow-colored "Warning: ".
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
