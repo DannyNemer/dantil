@@ -19,7 +19,7 @@ var dannyUtil = require('./danny-util/danny-util.js')
   * [.dir([...valN])](#module_danny-util.dir)
   * [.logError(...valN)](#module_danny-util.logError)
   * [.logWarning(...valN)](#module_danny-util.logWarning)
-  * [.logErrorAndLine(...valN)](#module_danny-util.logErrorAndLine)
+  * [.logErrorAndLine([...valN])](#module_danny-util.logErrorAndLine)
   * [.logTrace([msg])](#module_danny-util.logTrace)
   * [.assert([msg])](#module_danny-util.assert)
   * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
@@ -213,14 +213,14 @@ Prints like `console.log()` prepended with yellow-colored "Warning: ".
 | ...valN | <code>Mixed</code> | The values to print following "Warning: ". |
 
 <a name="module_danny-util.logErrorAndLine"></a>
-### dannyUtil.logErrorAndLine(...valN)
+### dannyUtil.logErrorAndLine([...valN])
 Prints error message like `dannyUtil.logError()` followed by the file path and line number from which the parent function was called .
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...valN | <code>Mixed</code> | The values to print following "Error: ". |
+| [...valN] | <code>Mixed</code> | The optional values to print following "Error: ". |
 
 <a name="module_danny-util.logTrace"></a>
 ### dannyUtil.logTrace([msg])
