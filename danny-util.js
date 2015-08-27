@@ -175,7 +175,7 @@ exports.writeJSONFile = function (path, obj) {
  * Replaces `'~'` in a path (if present and at the path's start) with the home directory path.
  *
  * @param {String} path The file path.
- * @return {String} `path` with '~' (if present) replaced with the home directory path.
+ * @return {String} `path` with `'~'` (if present) replaced with the home directory path.
  * @example
  * dannyUtil.expandHomeDir('~/Desktop') // -> '/Users/Danny/Desktop'
  */
@@ -247,7 +247,7 @@ exports.deleteModuleCache = function () {
 }
 
 /**
- * Gets the file path and line number of the first item in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
+ * Gets the file path and line number of the first frame in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
  *
  * @param {Boolean} getCallingLine Specify getting the line where `getLine()` is called instead of the line of the parent module.
  * @return {String} The file path and line number of calling line.
@@ -322,7 +322,7 @@ function prettyPrint(args, opts) {
 /**
  * Prints like `console.log()` prepended with red-colored "Error: ".
  *
- * @param {...Mixed} valN The values to print following "Error: ".
+ * @param {...Mixed} valN The values to concatenate and print following "Error: ".
  */
 exports.logError = function () {
   printWithColoredLabel('Error', 'red', arguments)
@@ -331,7 +331,7 @@ exports.logError = function () {
 /**
  * Prints like `console.log()` prepended with yellow-colored "Warning: ".
  *
- * @param {...Mixed} valN The values to print following "Warning: ".
+ * @param {...Mixed} valN The values to concatenate and print following "Warning: ".
  */
 exports.logWarning = function () {
   printWithColoredLabel('Warning', 'yellow', arguments)
@@ -343,7 +343,7 @@ exports.logWarning = function () {
  * @private
  * @param {String} label The label to prepend to `args` (e.g., "Error").
  * @param {String} color The color to stylize `label`.
- * @param {Array} args The values to print following `label`.
+ * @param {Array} args The values to concatenate and print following `label`.
  */
 function printWithColoredLabel(label, color, args) {
   // Temporarily remove ':' to avoid coloring it

@@ -110,7 +110,7 @@ Writes an object to a JSON file.
 Replaces `'~'` in a path (if present and at the path's start) with the home directory path.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
-**Returns**: <code>String</code> - `path` with '~' (if present) replaced with the home directory path.  
+**Returns**: <code>String</code> - `path` with `'~'` (if present) replaced with the home directory path.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -163,7 +163,7 @@ myModule = require('./myModule.js')
 ```
 <a name="module_danny-util.getLine"></a>
 ### dannyUtil.getLine(getCallingLine) ⇒ <code>String</code>
-Gets the file path and line number of the first item in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
+Gets the file path and line number of the first frame in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
 
 **Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
 **Returns**: <code>String</code> - The file path and line number of calling line.  
@@ -200,7 +200,7 @@ Prints like `console.log()` prepended with red-colored "Error: ".
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...valN | <code>Mixed</code> | The values to print following "Error: ". |
+| ...valN | <code>Mixed</code> | The values to concatenate and print following "Error: ". |
 
 <a name="module_danny-util.logWarning"></a>
 ### dannyUtil.logWarning(...valN)
@@ -210,7 +210,7 @@ Prints like `console.log()` prepended with yellow-colored "Warning: ".
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...valN | <code>Mixed</code> | The values to print following "Warning: ". |
+| ...valN | <code>Mixed</code> | The values to concatenate and print following "Warning: ". |
 
 <a name="module_danny-util.logErrorAndLine"></a>
 ### dannyUtil.logErrorAndLine([...valN])
