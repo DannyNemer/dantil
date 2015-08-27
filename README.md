@@ -242,6 +242,13 @@ Prints calling file path and line number to mark reaching a section of code, pre
 | --- | --- | --- |
 | [msg] | <code>String</code> | The optional message to prepend line. |
 
+**Example**  
+```js
+if (rareConditionIsTrue) {
+  // Prints: "Condition met: /Users/Danny/test.js:9:12"
+  dannyUtil.assert('Condition met')
+}
+```
 <a name="module_danny-util.assertTrue"></a>
 ### dannyUtil.assertTrue(value, [msg])
 Prints calling file path and line number if `value` is truthy, prepended by `msg`.
@@ -253,6 +260,11 @@ Prints calling file path and line number if `value` is truthy, prepended by `msg
 | value | <code>Boolean</code> | The value to check if truthy. |
 | [msg] | <code>String</code> | The optional message to prepend line. |
 
+**Example**  
+```js
+// If `myNumber > 100` is `true`, prints: "Condition met: /Users/Danny/test.js:9:12"
+dannyUtil.assertTrue(myNumber > 100, 'Condition met')
+```
 <a name="module_danny-util.time"></a>
 ### dannyUtil.time(label)
 Starts a high-resolution timer (with precision in microseconds) identified by `label`. Use `dannyUtil.timeEnd(label)` to print the timer's current value.
