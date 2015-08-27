@@ -1,42 +1,42 @@
-<a name="module_danny-util"></a>
-## danny-util
+<a name="module_dantil"></a>
+## dantil
 Project-agnostic utility functions for Node.js.
 
 **Example**  
 ```js
-var dannyUtil = require('./danny-util/danny-util.js')
+var dantil = require('./dantil/dantil.js')
 ```
 
-* [danny-util](#module_danny-util)
-  * [.illFormedOpts(schema, opts)](#module_danny-util.illFormedOpts) ⇒ <code>Boolean</code>
-  * [.redirectOutputToFile(path, callback)](#module_danny-util.redirectOutputToFile) ⇒ <code>Mixed</code>
-  * [.writeJSONFile(path, obj)](#module_danny-util.writeJSONFile)
-  * [.expandHomeDir(path)](#module_danny-util.expandHomeDir) ⇒ <code>String</code>
-  * [.tryCatchWrapper(callback, rethrow)](#module_danny-util.tryCatchWrapper) ⇒ <code>Mixed</code>
-  * [.deleteModuleCache(...pathN)](#module_danny-util.deleteModuleCache)
-  * [.getLine(getCallingLine)](#module_danny-util.getLine) ⇒ <code>String</code>
-  * [.log([...valN])](#module_danny-util.log)
-  * [.dir([...valN])](#module_danny-util.dir)
-  * [.logError(...valN)](#module_danny-util.logError)
-  * [.logWarning(...valN)](#module_danny-util.logWarning)
-  * [.logErrorAndLine([...valN])](#module_danny-util.logErrorAndLine)
-  * [.logTrace([msg])](#module_danny-util.logTrace)
-  * [.assert([msg])](#module_danny-util.assert)
-  * [.assertTrue(value, [msg])](#module_danny-util.assertTrue)
-  * [.time(label)](#module_danny-util.time)
-  * [.timeEnd(label)](#module_danny-util.timeEnd)
-  * [.count(label)](#module_danny-util.count)
-  * [.countEnd(label)](#module_danny-util.countEnd)
-  * [.countEndAll()](#module_danny-util.countEndAll)
-  * [.arraysEqual(a, b)](#module_danny-util.arraysEqual) ⇒ <code>Boolean</code>
-  * [.cleanNumber(number)](#module_danny-util.cleanNumber) ⇒ <code>Number</code>
-  * [.dashedToCamelCase(dashedString)](#module_danny-util.dashedToCamelCase) ⇒ <code>String</code>
+* [dantil](#module_dantil)
+  * [.illFormedOpts(schema, opts)](#module_dantil.illFormedOpts) ⇒ <code>Boolean</code>
+  * [.redirectOutputToFile(path, callback)](#module_dantil.redirectOutputToFile) ⇒ <code>Mixed</code>
+  * [.writeJSONFile(path, obj)](#module_dantil.writeJSONFile)
+  * [.expandHomeDir(path)](#module_dantil.expandHomeDir) ⇒ <code>String</code>
+  * [.tryCatchWrapper(callback, rethrow)](#module_dantil.tryCatchWrapper) ⇒ <code>Mixed</code>
+  * [.deleteModuleCache(...pathN)](#module_dantil.deleteModuleCache)
+  * [.getLine(getCallingLine)](#module_dantil.getLine) ⇒ <code>String</code>
+  * [.log([...valN])](#module_dantil.log)
+  * [.dir([...valN])](#module_dantil.dir)
+  * [.logError(...valN)](#module_dantil.logError)
+  * [.logWarning(...valN)](#module_dantil.logWarning)
+  * [.logErrorAndLine([...valN])](#module_dantil.logErrorAndLine)
+  * [.logTrace([msg])](#module_dantil.logTrace)
+  * [.assert([msg])](#module_dantil.assert)
+  * [.assertTrue(value, [msg])](#module_dantil.assertTrue)
+  * [.time(label)](#module_dantil.time)
+  * [.timeEnd(label)](#module_dantil.timeEnd)
+  * [.count(label)](#module_dantil.count)
+  * [.countEnd(label)](#module_dantil.countEnd)
+  * [.countEndAll()](#module_dantil.countEndAll)
+  * [.arraysEqual(a, b)](#module_dantil.arraysEqual) ⇒ <code>Boolean</code>
+  * [.cleanNumber(number)](#module_dantil.cleanNumber) ⇒ <code>Number</code>
+  * [.dashedToCamelCase(dashedString)](#module_dantil.dashedToCamelCase) ⇒ <code>String</code>
 
-<a name="module_danny-util.illFormedOpts"></a>
-### dannyUtil.illFormedOpts(schema, opts) ⇒ <code>Boolean</code>
+<a name="module_dantil.illFormedOpts"></a>
+### dantil.illFormedOpts(schema, opts) ⇒ <code>Boolean</code>
 Checks if an options object adheres to a schema. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors when `opts` is ill-formed.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Returns**: <code>Boolean</code> - `true` if `opts` is ill-formed, else `false`.  
 
 | Param | Type | Description |
@@ -55,7 +55,7 @@ var schema = {
 }
 
 function myFunc(opts) {
-  if (dannyUtil.illFormedOpts(schema, opts)) {
+  if (dantil.illFormedOpts(schema, opts)) {
     // Prints descriptive, helpful error messages
     // Handle ill-formed `opts` how you choose
     throw new Error('ill-formed opts')
@@ -64,11 +64,11 @@ function myFunc(opts) {
   // ...stuff...
 }
 ```
-<a name="module_danny-util.redirectOutputToFile"></a>
-### dannyUtil.redirectOutputToFile(path, callback) ⇒ <code>Mixed</code>
+<a name="module_dantil.redirectOutputToFile"></a>
+### dantil.redirectOutputToFile(path, callback) ⇒ <code>Mixed</code>
 Synchronously writes the output of a function to a file instead of the console. Overwrites the file if it already exists. Restores output to console if an error is thrown.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Returns**: <code>Mixed</code> - The value returned by `callback`, if any.  
 
 | Param | Type | Description |
@@ -82,7 +82,7 @@ Synchronously writes the output of a function to a file instead of the console. 
 console.log('Begin output to file')
 
 // Redirects process output from console to file
-dannyUtil.redirectOutputToFile('~/Desktop/out.txt', function () {
+dantil.redirectOutputToFile('~/Desktop/out.txt', function () {
   // Writes to '~/Desktop/out.txt'
   console.log('Numbers:')
   for (var i = 0; i < 100; ++i) {
@@ -94,22 +94,22 @@ dannyUtil.redirectOutputToFile('~/Desktop/out.txt', function () {
 // Prints to console (after restoring output)
 console.log('Output to file complete')
 ```
-<a name="module_danny-util.writeJSONFile"></a>
-### dannyUtil.writeJSONFile(path, obj)
+<a name="module_dantil.writeJSONFile"></a>
+### dantil.writeJSONFile(path, obj)
 Writes an object to a JSON file.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | path | <code>String</code> | The path to write file. |
 | obj | <code>Object</code> | The object to save to file. |
 
-<a name="module_danny-util.expandHomeDir"></a>
-### dannyUtil.expandHomeDir(path) ⇒ <code>String</code>
+<a name="module_dantil.expandHomeDir"></a>
+### dantil.expandHomeDir(path) ⇒ <code>String</code>
 Replaces `'~'` in a path (if present and at the path's start) with the home directory path.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Returns**: <code>String</code> - `path` with `'~'` (if present) replaced with the home directory path.  
 
 | Param | Type | Description |
@@ -118,13 +118,13 @@ Replaces `'~'` in a path (if present and at the path's start) with the home dire
 
 **Example**  
 ```js
-dannyUtil.expandHomeDir('~/Desktop') // -> '/Users/Danny/Desktop'
+dantil.expandHomeDir('~/Desktop') // -> '/Users/Danny/Desktop'
 ```
-<a name="module_danny-util.tryCatchWrapper"></a>
-### dannyUtil.tryCatchWrapper(callback, rethrow) ⇒ <code>Mixed</code>
+<a name="module_dantil.tryCatchWrapper"></a>
+### dantil.tryCatchWrapper(callback, rethrow) ⇒ <code>Mixed</code>
 Executes the passed function within a `try` block. If an error is thrown, removes parentheses surrounding file paths in its stack trace for the iTerm open-file-path shortcut, and colors the error type name (e.g., `TypeError`) red.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Returns**: <code>Mixed</code> - The value returned by `callback`, if any.  
 
 | Param | Type | Description |
@@ -135,16 +135,16 @@ Executes the passed function within a `try` block. If an error is thrown, remove
 **Example**  
 ```js
 // Catches thrown error and prints a formatted stack trace
-dannyUtil.tryCatchWrapper(function () {
+dantil.tryCatchWrapper(function () {
   // ...stuff...
   throw new Error('test failed')
 })
 ```
-<a name="module_danny-util.deleteModuleCache"></a>
-### dannyUtil.deleteModuleCache(...pathN)
+<a name="module_dantil.deleteModuleCache"></a>
+### dantil.deleteModuleCache(...pathN)
 Deletes modules from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s). This is useful for enabling changes on a server without restarting the server.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -156,87 +156,87 @@ Deletes modules from cache, forcing them to be reloaded at next `require()` call
 var myModule = require('./myModule.js')
 
 // Remove module from cache
-dannyUtil.deleteModuleCache('./myModule.js')
+dantil.deleteModuleCache('./myModule.js')
 
 // Load module again, enabling changes to './myModule.js'
 myModule = require('./myModule.js')
 ```
-<a name="module_danny-util.getLine"></a>
-### dannyUtil.getLine(getCallingLine) ⇒ <code>String</code>
+<a name="module_dantil.getLine"></a>
+### dantil.getLine(getCallingLine) ⇒ <code>String</code>
 Gets the file path and line number of the first frame in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Returns**: <code>String</code> - The file path and line number of calling line.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | getCallingLine | <code>Boolean</code> | Specify getting the line where `getLine()` is called instead of the line of the parent module. |
 
-<a name="module_danny-util.log"></a>
-### dannyUtil.log([...valN])
+<a name="module_dantil.log"></a>
+### dantil.log([...valN])
 Prints objects in color (on separate lines), recursing 2 times while formatting the object (which is identical to `console.log()`).
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [...valN] | <code>Mixed</code> | The values to print. |
 
-<a name="module_danny-util.dir"></a>
-### dannyUtil.dir([...valN])
+<a name="module_dantil.dir"></a>
+### dantil.dir([...valN])
 Prints objects in color (on separate lines), recursing indefinitely while formatting the object. This is useful for inspecting large, complicated objects.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [...valN] | <code>Mixed</code> | The values to print. |
 
-<a name="module_danny-util.logError"></a>
-### dannyUtil.logError(...valN)
+<a name="module_dantil.logError"></a>
+### dantil.logError(...valN)
 Prints like `console.log()` prepended with red-colored "Error: ".
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | ...valN | <code>Mixed</code> | The values to concatenate and print following "Error: ". |
 
-<a name="module_danny-util.logWarning"></a>
-### dannyUtil.logWarning(...valN)
+<a name="module_dantil.logWarning"></a>
+### dantil.logWarning(...valN)
 Prints like `console.log()` prepended with yellow-colored "Warning: ".
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | ...valN | <code>Mixed</code> | The values to concatenate and print following "Warning: ". |
 
-<a name="module_danny-util.logErrorAndLine"></a>
-### dannyUtil.logErrorAndLine([...valN])
-Prints error message like `dannyUtil.logError()` followed by the file path and line number from which the parent function was called .
+<a name="module_dantil.logErrorAndLine"></a>
+### dantil.logErrorAndLine([...valN])
+Prints error message like `dantil.logError()` followed by the file path and line number from which the parent function was called .
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [...valN] | <code>Mixed</code> | The optional values to print following "Error: ". |
 
-<a name="module_danny-util.logTrace"></a>
-### dannyUtil.logTrace([msg])
+<a name="module_dantil.logTrace"></a>
+### dantil.logTrace([msg])
 Prints the stack trace to the current position. Removes parentheses surrounding file paths for the iTerm open-file-path shortcut.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [msg] | <code>String</code> | The optional message to print above the stack trace. |
 
-<a name="module_danny-util.assert"></a>
-### dannyUtil.assert([msg])
+<a name="module_dantil.assert"></a>
+### dantil.assert([msg])
 Prints calling file path and line number to mark reaching a section of code, prepended by `msg`.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -246,14 +246,14 @@ Prints calling file path and line number to mark reaching a section of code, pre
 ```js
 if (rareConditionIsTrue) {
   // Prints: "Condition met: /Users/Danny/test.js:9:12"
-  dannyUtil.assert('Condition met')
+  dantil.assert('Condition met')
 }
 ```
-<a name="module_danny-util.assertTrue"></a>
-### dannyUtil.assertTrue(value, [msg])
+<a name="module_dantil.assertTrue"></a>
+### dantil.assertTrue(value, [msg])
 Prints calling file path and line number if `value` is truthy, prepended by `msg`.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -263,13 +263,13 @@ Prints calling file path and line number if `value` is truthy, prepended by `msg
 **Example**  
 ```js
 // If `myNumber > 100` is `true`, prints: "Condition met: /Users/Danny/test.js:9:12"
-dannyUtil.assertTrue(myNumber > 100, 'Condition met')
+dantil.assertTrue(myNumber > 100, 'Condition met')
 ```
-<a name="module_danny-util.time"></a>
-### dannyUtil.time(label)
-Starts a high-resolution timer (with precision in microseconds) identified by `label`. Use `dannyUtil.timeEnd(label)` to print the timer's current value.
+<a name="module_dantil.time"></a>
+### dantil.time(label)
+Starts a high-resolution timer (with precision in microseconds) identified by `label`. Use `dantil.timeEnd(label)` to print the timer's current value.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -278,33 +278,33 @@ Starts a high-resolution timer (with precision in microseconds) identified by `l
 **Example**  
 ```js
 // Start timer
-dannyUtil.time('my test')
+dantil.time('my test')
 
 // ...stuff...
 
 // Prints "my test: 13.264ms"
-dannyUtil.timeEnd('my test')
+dantil.timeEnd('my test')
 
 // ...more stuff...
 
 // Prints "my test: 31.183ms"
-dannyUtil.timeEnd('my test')
+dantil.timeEnd('my test')
 ```
-<a name="module_danny-util.timeEnd"></a>
-### dannyUtil.timeEnd(label)
-Prints the current high-resolution value of a timer initiated with `dannyUtil.time(label)`.
+<a name="module_dantil.timeEnd"></a>
+### dantil.timeEnd(label)
+Prints the current high-resolution value of a timer initiated with `dantil.time(label)`.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | label | <code>String</code> | The identifier of the timer. |
 
-<a name="module_danny-util.count"></a>
-### dannyUtil.count(label)
-Counts the number of times a section of code is reached, identified by `label`. Use `dannyUtil.countEnd(label)` to print value. This is useful for profiling complex programs.
+<a name="module_dantil.count"></a>
+### dantil.count(label)
+Counts the number of times a section of code is reached, identified by `label`. Use `dantil.countEnd(label)` to print value. This is useful for profiling complex programs.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -313,45 +313,45 @@ Counts the number of times a section of code is reached, identified by `label`. 
 **Example**  
 ```js
 for (var i = 0; i < 100; ++i) {
-  if (i % 2 === 0) dannyUtil.count('even')
+  if (i % 2 === 0) dantil.count('even')
 }
 
 // Prints "even: 50"; resets count for 'even' to 0
-dannyUtil.countEnd('even')
+dantil.countEnd('even')
 ```
-<a name="module_danny-util.countEnd"></a>
-### dannyUtil.countEnd(label)
-Prints (and clears the value of) the number of calls of `dannyUtil.count(label)`.
+<a name="module_dantil.countEnd"></a>
+### dantil.countEnd(label)
+Prints (and resets the value of) the number of calls of `dantil.count(label)`.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| label | <code>String</code> | The id to refer to calls to `dannyUtil.count()`. |
+| label | <code>String</code> | The id to refer to calls to `dantil.count()`. |
 
-<a name="module_danny-util.countEndAll"></a>
-### dannyUtil.countEndAll()
-Prints (and clears) the values of all counters used on `dannyUtil.count()`. Will not print counters that are never reached (and never have their keys initialized).
+<a name="module_dantil.countEndAll"></a>
+### dantil.countEndAll()
+Prints (and resets) the values of all counters used on `dantil.count()`. Will not print counters that are never reached (and never have their keys initialized).
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Example**  
 ```js
 for (var i = 0; i < 100; ++i) {
-  if (i % 2 === 0) dannyUtil.count('even')
-  if (i % 2 === 1) dannyUtil.count('odd')
-  if (i > 100) dannyUtil.count('never reached')
+  if (i % 2 === 0) dantil.count('even')
+  if (i % 2 === 1) dantil.count('odd')
+  if (i > 100) dantil.count('never reached')
 }
 
 // Prints: "even: 50
 //          odd: 50"
 // Resets all counts to 0
-dannyUtil.countEndAll()
+dantil.countEndAll()
 ```
-<a name="module_danny-util.arraysEqual"></a>
-### dannyUtil.arraysEqual(a, b) ⇒ <code>Boolean</code>
+<a name="module_dantil.arraysEqual"></a>
+### dantil.arraysEqual(a, b) ⇒ <code>Boolean</code>
 Performs a shallow comparison between two arrays to determine if they are equivalent.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Returns**: <code>Boolean</code> - `true` if the arrays are equivalent, else `false`.  
 
 | Param | Type | Description |
@@ -361,25 +361,25 @@ Performs a shallow comparison between two arrays to determine if they are equiva
 
 **Example**  
 ```js
-dannyUtil.arraysEqual([], []) // -> true
+dantil.arraysEqual([], []) // -> true
 
-dannyUtil.arraysEqual([1, 2, 3, 'danny'], [1, 2, 3, 'danny']) // -> true
+dantil.arraysEqual([1, 2, 3, 'danny'], [1, 2, 3, 'danny']) // -> true
 
-dannyUtil.arraysEqual([ false, true ], [ true ]) // -> false
+dantil.arraysEqual([ false, true ], [ true ]) // -> false
 
 // A shallow comparison will not compare object properties
 var objA = { prop: 'val' }
 var objB = { prop: 'val' }
-dannyUtil.arraysEqual([ 1, 2, objA ], [ 1, 2, objB ]) // -> false
+dantil.arraysEqual([ 1, 2, objA ], [ 1, 2, objB ]) // -> false
 
 // Rather, objects are only equal if they are the same instance
-dannyUtil.arraysEqual([ objA, objB ], [ objA, objB ]) // -> true
+dantil.arraysEqual([ objA, objB ], [ objA, objB ]) // -> true
 ```
-<a name="module_danny-util.cleanNumber"></a>
-### dannyUtil.cleanNumber(number) ⇒ <code>Number</code>
+<a name="module_dantil.cleanNumber"></a>
+### dantil.cleanNumber(number) ⇒ <code>Number</code>
 Removes extraneous digits from numbers resulting from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Returns**: <code>Number</code> - The number trimmed.  
 
 | Param | Type | Description |
@@ -389,13 +389,13 @@ Removes extraneous digits from numbers resulting from operations limited by Java
 **Example**  
 ```js
 var number = 0.1 * 0.2 // -> 0.020000000000000004
-number = dannyUtil.cleanFloat(number) // -> 0.02
+number = dantil.cleanFloat(number) // -> 0.02
 ```
-<a name="module_danny-util.dashedToCamelCase"></a>
-### dannyUtil.dashedToCamelCase(dashedString) ⇒ <code>String</code>
+<a name="module_dantil.dashedToCamelCase"></a>
+### dantil.dashedToCamelCase(dashedString) ⇒ <code>String</code>
 Converts a dash-separated string to camelCase.
 
-**Kind**: static method of <code>[danny-util](#module_danny-util)</code>  
+**Kind**: static method of <code>[dantil](#module_dantil)</code>  
 **Returns**: <code>String</code> - The input string in camelCase.  
 
 | Param | Type | Description |
@@ -404,5 +404,5 @@ Converts a dash-separated string to camelCase.
 
 **Example**  
 ```js
-dannyUtil.camelCase('my-long-variable-name') // -> 'myLongVariableName'
+dantil.camelCase('my-long-variable-name') // -> 'myLongVariableName'
 ```

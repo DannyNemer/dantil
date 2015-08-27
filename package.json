@@ -1,8 +1,8 @@
 {
-  "name": "danny-util",
+  "name": "dantil",
   "version": "0.0.1",
   "description": "Project-agnostic utility functions for Node.js",
-  "main": "danny-util.js",
+  "main": "dantil.js",
   "dependencies": {
     "colors": "^1.1.2"
   },
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DannyNemer/danny-util.git"
+    "url": "git+https://github.com/DannyNemer/dantil.git"
   },
   "keywords": [
     "util"
@@ -20,7 +20,7 @@
   "author": "Danny Nemer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DannyNemer/danny-util/issues"
+    "url": "https://github.com/DannyNemer/dantil/issues"
   },
-  "homepage": "https://github.com/DannyNemer/danny-util#readme"
+  "homepage": "https://github.com/DannyNemer/dantil#readme"
 }
