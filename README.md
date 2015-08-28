@@ -174,7 +174,7 @@ Gets the file path and line number of the first frame in the stack of the parent
 
 <a name="module_dantil.log"></a>
 ### dantil.log([...valN])
-Prints objects in color (on separate lines), recursing 2 times while formatting the object (which is identical to `console.log()`).
+Prints objects in color, recursing 2 times while formatting the object (which is identical to `console.log()`). Prints instances of Object (including Array) on separate lines, and concatenates other values (e.g., String, Number) with spaces.
 
 **Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
@@ -184,7 +184,7 @@ Prints objects in color (on separate lines), recursing 2 times while formatting 
 
 <a name="module_dantil.dir"></a>
 ### dantil.dir([...valN])
-Prints objects in color (on separate lines), recursing indefinitely while formatting the object. This is useful for inspecting large, complicated objects.
+Prints objects in color, recursing indefinitely while formatting the object. This is useful for inspecting large, complicated objects. Prints instances of Object (including Array) on separate lines, and concatenates other values (e.g., String, Number) with spaces.
 
 **Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
