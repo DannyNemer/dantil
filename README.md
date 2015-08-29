@@ -174,7 +174,11 @@ Gets the file path and line number of the first frame in the stack of the parent
 
 <a name="module_dantil.log"></a>
 ### dantil.log([...valN])
-Prints objects in color, recursing 2 times while formatting the object (which is identical to `console.log()`). Prints objects on separate lines if multi-lined when formatted, else concatenates objects and values to print on the same line if shorter than 80 characters when concatenated.
+Prints objects in color, recursing 2 times while formatting the object (which is identical to `console.log()`).
+
+Prints objects on separate lines if multi-lined when formatted, else concatenates objects and values to print on the same line if shorter than 80 characters when concatenated.
+
+Equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace.
 
 **Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
@@ -184,7 +188,7 @@ Prints objects in color, recursing 2 times while formatting the object (which is
 
 <a name="module_dantil.dir"></a>
 ### dantil.dir([...valN])
-Prints objects in color, recursing indefinitely while formatting the object. This is useful for inspecting large, complicated objects. Prints objects on separate lines if multi-lined when formatted, else concatenates objects and values to print on the same line if shorter than 80 characters when concatenated.
+A version of `dantil.log()` that recurses indefinitely while formatting the object. This is useful for inspecting large, complicated objects.
 
 **Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
