@@ -1,6 +1,6 @@
 <a name="module_dantil"></a>
 ## dantil
-Project-agnostic utility functions for Node.js.
+A Node.js utility library.
 
 **Example**  
 ```js
@@ -14,7 +14,7 @@ var dantil = require('./dantil/dantil.js')
   * [.expandHomeDir(path)](#module_dantil.expandHomeDir) ⇒ <code>String</code>
   * [.tryCatchWrapper(callback, rethrow)](#module_dantil.tryCatchWrapper) ⇒ <code>Mixed</code>
   * [.deleteModuleCache(...pathN)](#module_dantil.deleteModuleCache)
-  * [.getLine(getCallingLine)](#module_dantil.getLine) ⇒ <code>String</code>
+  * [.getLine([getCallingLine])](#module_dantil.getLine) ⇒ <code>String</code>
   * [.log([...valN])](#module_dantil.log)
   * [.dir([...valN])](#module_dantil.dir)
   * [.logError(...valN)](#module_dantil.logError)
@@ -89,7 +89,7 @@ dantil.redirectOutputToFile('~/Desktop/out.txt', function () {
     console.log(i)
   }
 })
-// Restores output to console and prints: "Output saved to: ~/Desktop/out.txt"
+// Restores output to console and prints: "Output saved: ~/Desktop/out.txt"
 
 // Prints to console (after restoring output)
 console.log('Output to file complete')
@@ -162,7 +162,7 @@ dantil.deleteModuleCache('./myModule.js')
 myModule = require('./myModule.js')
 ```
 <a name="module_dantil.getLine"></a>
-### dantil.getLine(getCallingLine) ⇒ <code>String</code>
+### dantil.getLine([getCallingLine]) ⇒ <code>String</code>
 Gets the file path and line number of the first frame in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
 
 **Kind**: static method of <code>[dantil](#module_dantil)</code>  
@@ -170,7 +170,7 @@ Gets the file path and line number of the first frame in the stack of the parent
 
 | Param | Type | Description |
 | --- | --- | --- |
-| getCallingLine | <code>Boolean</code> | Specify getting the line where `getLine()` is called instead of the line of the parent module. |
+| [getCallingLine] | <code>Boolean</code> | Specify getting the line where `getLine()` is called instead of the line of the parent module. |
 
 <a name="module_dantil.log"></a>
 ### dantil.log([...valN])
@@ -200,7 +200,7 @@ Prints like `console.log()` prepended with red-colored "Error: ".
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...valN | <code>Mixed</code> | The values to concatenate and print following "Error: ". |
+| ...valN | <code>Mixed</code> | The values print following "Error: ". |
 
 <a name="module_dantil.logWarning"></a>
 ### dantil.logWarning(...valN)
@@ -210,7 +210,7 @@ Prints like `console.log()` prepended with yellow-colored "Warning: ".
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ...valN | <code>Mixed</code> | The values to concatenate and print following "Warning: ". |
+| ...valN | <code>Mixed</code> | The values print following "Warning: ". |
 
 <a name="module_dantil.logErrorAndLine"></a>
 ### dantil.logErrorAndLine([getCallingLine], [...valN])
@@ -328,7 +328,7 @@ Prints (and resets the value of) the number of calls of `dantil.count(label)`.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| label | <code>String</code> | The id to refer to calls to `dantil.count()`. |
+| label | <code>String</code> | The identifier of the counter. |
 
 <a name="module_dantil.countEndAll"></a>
 ### dantil.countEndAll()
