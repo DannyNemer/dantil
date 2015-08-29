@@ -19,7 +19,7 @@ var dantil = require('./dantil/dantil.js')
   * [.dir([...valN])](#module_dantil.dir)
   * [.logError(...valN)](#module_dantil.logError)
   * [.logWarning(...valN)](#module_dantil.logWarning)
-  * [.logErrorAndLine([...valN])](#module_dantil.logErrorAndLine)
+  * [.logErrorAndLine([getCallingLine], [...valN])](#module_dantil.logErrorAndLine)
   * [.logTrace([msg])](#module_dantil.logTrace)
   * [.assert([msg])](#module_dantil.assert)
   * [.assertTrue(value, [msg])](#module_dantil.assertTrue)
@@ -213,13 +213,14 @@ Prints like `console.log()` prepended with yellow-colored "Warning: ".
 | ...valN | <code>Mixed</code> | The values to concatenate and print following "Warning: ". |
 
 <a name="module_dantil.logErrorAndLine"></a>
-### dantil.logErrorAndLine([...valN])
+### dantil.logErrorAndLine([getCallingLine], [...valN])
 Prints error message like `dantil.logError()` followed by the file path and line number from which the parent function was called .
 
 **Kind**: static method of <code>[dantil](#module_dantil)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
+| [getCallingLine] | <code>Boolean</code> | Specify getting the line where `getLine()` is called instead of the line of the parent module. |
 | [...valN] | <code>Mixed</code> | The optional values to print following "Error: ". |
 
 <a name="module_dantil.logTrace"></a>
