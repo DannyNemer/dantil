@@ -23,6 +23,7 @@ var colors = require('colors/safe')
  * @param {Object} opts The options object to check if conforms to `schema`.
  * @return {Boolean} `true` if `opts` is ill-formed, else `false`.
  * @example
+ *
  * var schema = {
  *   num: Number,                                  // Must be of type `Number`
  *   list: { type: Array },                        // Must be of type `Array` (identical to previous parameter)
@@ -105,6 +106,7 @@ exports.illFormedOpts = function (schema, opts) {
  * @param {Function} callback The function producing output.
  * @return {Mixed} The value returned by `callback`, if any.
  * @example
+ *
  * // Prints to console
  * console.log('Begin output to file')
  *
@@ -177,6 +179,7 @@ exports.writeJSONFile = function (path, obj) {
  * @param {String} path The file path.
  * @return {String} `path` with `'~'` (if present) replaced with the home directory path.
  * @example
+ *
  * dantil.expandHomeDir('~/Desktop') // -> '/Users/Danny/Desktop'
  */
 exports.expandHomeDir = function (path) {
@@ -190,6 +193,7 @@ exports.expandHomeDir = function (path) {
  * @param {Boolean} rethrow Specify rethrowing an error (after printing the stack trace) if caught from `callback`.
  * @return {Mixed} The value returned by `callback`, if any.
  * @example
+ *
  * // Catches thrown error and prints a formatted stack trace
  * dantil.tryCatchWrapper(function () {
  *   // ...stuff...
@@ -232,6 +236,7 @@ exports.tryCatchWrapper = function (callback, rethrow) {
  *
  * @param {...String} pathN The paths of modules to remove from cache.
  * @example
+ *
  * // Load module
  * var myModule = require('./myModule.js')
  *
@@ -448,6 +453,7 @@ exports.logTrace = function (msg) {
  *
  * @param {String} [msg] The optional message to prepend line.
  * @example
+ *
  * if (rareConditionIsTrue) {
  *   // Prints: "Condition met: /Users/Danny/test.js:9:12"
  *   dantil.assert('Condition met')
@@ -463,6 +469,7 @@ exports.assert = function (msg) {
  * @param {Boolean} value The value to check if truthy.
  * @param {String} [msg] The optional message to prepend line.
  * @example
+ *
  * // If `myNumber > 100` is `true`, prints: "Condition met: /Users/Danny/test.js:9:12"
  * dantil.assertTrue(myNumber > 100, 'Condition met')
  */
@@ -483,6 +490,7 @@ var _times = new Map()
  *
  * @param {String} label The identifier of the timer.
  * @example
+ *
  * // Start timer
  * dantil.time('my test')
  *
@@ -531,6 +539,7 @@ var _counts = new Map()
  *
  * @param {String} label The id to refer to a section of code.
  * @example
+ *
  * for (var i = 0; i < 100; ++i) {
  *   if (i % 2 === 0) dantil.count('even')
  * }
@@ -561,6 +570,7 @@ exports.countEnd = function (label) {
 /**
  * Prints (and resets) the values of all counters used on `dantil.count()`. Will not print counters that are never reached (and never have their keys initialized).
  * @example
+ *
  * for (var i = 0; i < 100; ++i) {
  *   if (i % 2 === 0) dantil.count('even')
  *   if (i % 2 === 1) dantil.count('odd')
@@ -588,6 +598,7 @@ exports.countEndAll = function () {
  * @param {Array} b The other array to compare.
  * @return {Boolean} `true` if the arrays are equivalent, else `false`.
  * @example
+ *
  * dantil.arraysEqual([], []) // -> true
  *
  * dantil.arraysEqual([1, 2, 3, 'danny'], [1, 2, 3, 'danny']) // -> true
@@ -627,6 +638,7 @@ exports.arraysEqual = function (a, b) {
  * @param {Number} number The number to trim.
  * @return {Number} The number trimmed.
  * @example
+ *
  * var number = 0.1 * 0.2 // -> 0.020000000000000004
  * number = dantil.cleanFloat(number) // -> 0.02
  */
@@ -641,6 +653,7 @@ exports.cleanNumber = function (number) {
  * @param {String} dashedString The dash-separated string to convert.
  * @return {String} The input string in camelCase.
  * @example
+ *
  * dantil.camelCase('my-long-variable-name') // -> 'myLongVariableName'
  */
 exports.dashedToCamelCase = function (dashedString) {
