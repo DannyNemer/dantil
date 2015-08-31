@@ -169,10 +169,13 @@ dantil.countEnd('even')
 
 <!-- div -->
 
-### <a id="dantil-countEnd"></a>`dantil.countEnd`
+### <a id="dantil-countEnd"></a>`dantil.countEnd(label)`
 <a href="#dantil-countEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L592 "View in source") [&#x24C9;][1]
 
 Prints (and resets the value of) the number of calls of `dantil.count(label)`.
+
+#### Arguments
+1. `label` *(string)*: The counter identifier.
 
 * * *
 
@@ -375,13 +378,14 @@ Prints the provided values like `console.log()` prepended with red-colored "Erro
 
 <!-- div -->
 
-### <a id="dantil-logErrorAndLine"></a>`dantil.logErrorAndLine([getCallingLine])`
+### <a id="dantil-logErrorAndLine"></a>`dantil.logErrorAndLine([getCallingLine], [values])`
 <a href="#dantil-logErrorAndLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L442 "View in source") [&#x24C9;][1]
 
 Prints an error message like `dantil.logError()` followed by the file path and line number from which the parent function was called.
 
 #### Arguments
 1. `[getCallingLine]` *(boolean)*: Specify getting the line where called instead of the line of the parent module.
+2. `[values]` *(...&#42;)*: The optional values to print following "Error: ".
 
 * * *
 
@@ -389,10 +393,13 @@ Prints an error message like `dantil.logError()` followed by the file path and l
 
 <!-- div -->
 
-### <a id="dantil-logTrace"></a>`dantil.logTrace`
+### <a id="dantil-logTrace"></a>`dantil.logTrace([msg])`
 <a href="#dantil-logTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L461 "View in source") [&#x24C9;][1]
 
 Prints the stack trace to the current position. Removes parentheses surrounding file paths for the iTerm open-file-path shortcut.
+
+#### Arguments
+1. `[msg]` *(string)*: The optional message to print above the stack trace.
 
 * * *
 
@@ -478,10 +485,13 @@ dantil.timeEnd('my test')
 
 <!-- div -->
 
-### <a id="dantil-timeEnd"></a>`dantil.timeEnd`
+### <a id="dantil-timeEnd"></a>`dantil.timeEnd(label)`
 <a href="#dantil-timeEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L544 "View in source") [&#x24C9;][1]
 
 Prints the current high-resolution value of a timer initiated with `dantil.time(label)`.
+
+#### Arguments
+1. `label` *(string)*: The identifier of the timer.
 
 * * *
 
@@ -515,13 +525,14 @@ dantil.tryCatchWrapper(function () {
 
 <!-- div -->
 
-### <a id="dantil-writeJSONFile"></a>`dantil.writeJSONFile(path)`
+### <a id="dantil-writeJSONFile"></a>`dantil.writeJSONFile(path, obj)`
 <a href="#dantil-writeJSONFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L163 "View in source") [&#x24C9;][1]
 
 Writes `obj` to a JSON file at `path`.
 
 #### Arguments
 1. `path` *(string)*: The file path to write to.
+2. `obj` *(Object)*: The object to save to `path`.
 
 * * *
 
