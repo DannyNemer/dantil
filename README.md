@@ -1,5 +1,7 @@
 # dantil
 
+A Node.js utility library.
+
 <!-- div class="toc-container" -->
 
 <!-- div -->
