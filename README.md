@@ -80,7 +80,7 @@ A Node.js utility library.
 <!-- div -->
 
 ### <a id="dantil-arraysEqual"></a>`dantil.arraysEqual(a, b)`
-<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L677 "View in source") [&#x24C9;][1]
+<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L680 "View in source") [&#x24C9;][1]
 
 Performs a shallow comparison between two arrays to determine if they are equivalent.
 
@@ -125,7 +125,7 @@ dantil.arraysEqual([ objA, objB ], [ objA, objB ])
 <!-- div -->
 
 ### <a id="dantil-dir"></a>`dantil.dir(values)`
-<a href="#dantil-dir">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L333 "View in source") [&#x24C9;][1]
+<a href="#dantil-dir">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L336 "View in source") [&#x24C9;][1]
 
 A version of `dantil.log()` that recurses indefinitely while formatting the object. This is useful for inspecting large, complicated objects.
 
@@ -139,7 +139,7 @@ A version of `dantil.log()` that recurses indefinitely while formatting the obje
 <!-- div -->
 
 ### <a id="dantil-log"></a>`dantil.log(values)`
-<a href="#dantil-log">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L316 "View in source") [&#x24C9;][1]
+<a href="#dantil-log">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L319 "View in source") [&#x24C9;][1]
 
 Prints the provided objects and values in color, recursing 2 times while formatting objects (which is identical to `console.log()`).
 <br>
@@ -159,7 +159,7 @@ Equally indents each line after the first line, if any. If the first argument ha
 <!-- div -->
 
 ### <a id="dantil-logError"></a>`dantil.logError(values)`
-<a href="#dantil-logError">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L411 "View in source") [&#x24C9;][1]
+<a href="#dantil-logError">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L414 "View in source") [&#x24C9;][1]
 
 Prints the provided values like `console.log()` prepended with red-colored "Error: ".
 
@@ -172,13 +172,13 @@ Prints the provided values like `console.log()` prepended with red-colored "Erro
 
 <!-- div -->
 
-### <a id="dantil-logErrorAndPath"></a>`dantil.logErrorAndPath([getCallingLine], [values])`
-<a href="#dantil-logErrorAndPath">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L454 "View in source") [&#x24C9;][1]
+### <a id="dantil-logErrorAndPath"></a>`dantil.logErrorAndPath([getThisLine], [values])`
+<a href="#dantil-logErrorAndPath">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L457 "View in source") [&#x24C9;][1]
 
 Prints an error message like `dantil.logError()` followed by the file path and line number from which the parent function was called.
 
 #### Arguments
-1. `[getCallingLine]` *(boolean)*: Specify getting the line where this is called instead of the line of the parent module.
+1. `[getThisLine]` *(boolean)*: Specify getting the line where this function is called instead of the line of the parent module.
 2. `[values]` *(...&#42;)*: The optional values to print following "Error: ".
 
 * * *
@@ -188,7 +188,7 @@ Prints an error message like `dantil.logError()` followed by the file path and l
 <!-- div -->
 
 ### <a id="dantil-logTrace"></a>`dantil.logTrace([msg])`
-<a href="#dantil-logTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L474 "View in source") [&#x24C9;][1]
+<a href="#dantil-logTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L477 "View in source") [&#x24C9;][1]
 
 Prints the stack trace to the current position. Removes parentheses surrounding file paths for the iTerm open-file-path shortcut.
 
@@ -202,7 +202,7 @@ Prints the stack trace to the current position. Removes parentheses surrounding 
 <!-- div -->
 
 ### <a id="dantil-logWarning"></a>`dantil.logWarning(values)`
-<a href="#dantil-logWarning">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L423 "View in source") [&#x24C9;][1]
+<a href="#dantil-logWarning">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L426 "View in source") [&#x24C9;][1]
 
 Prints the provided values like `console.log()` prepended with yellow-colored "Warning: ".
 
@@ -222,7 +222,7 @@ Prints the provided values like `console.log()` prepended with yellow-colored "W
 <!-- div -->
 
 ### <a id="dantil-expandHomeDir"></a>`dantil.expandHomeDir(path)`
-<a href="#dantil-expandHomeDir">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L300 "View in source") [&#x24C9;][1]
+<a href="#dantil-expandHomeDir">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L303 "View in source") [&#x24C9;][1]
 
 Replaces `'~'` in `path` (if present and at the path's start) with the home directory path.
 
@@ -230,7 +230,7 @@ Replaces `'~'` in `path` (if present and at the path's start) with the home dire
 1. `path` *(string)*: The file path.
 
 #### Returns
-*(string)*:  Returns `path` with `'~'` *(if present)* replaced with the home directory path.
+*(string)*:  Returns `path` with `'~'`, if present, replaced with the home directory path.
 
 #### Example
 ```js
@@ -244,7 +244,7 @@ dantil.expandHomeDir('~/Desktop')
 <!-- div -->
 
 ### <a id="dantil-redirectOutputToFile"></a>`dantil.redirectOutputToFile(path, func)`
-<a href="#dantil-redirectOutputToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L234 "View in source") [&#x24C9;][1]
+<a href="#dantil-redirectOutputToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L237 "View in source") [&#x24C9;][1]
 
 Synchronously writes the output of `func` to a file at `path` instead of the console. Overwrites the file if it already exists. Restores output to the console if an error is thrown.
 
@@ -279,7 +279,7 @@ console.log('Output to file complete')
 <!-- div -->
 
 ### <a id="dantil-writeJSONFile"></a>`dantil.writeJSONFile(path, obj)`
-<a href="#dantil-writeJSONFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L275 "View in source") [&#x24C9;][1]
+<a href="#dantil-writeJSONFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L278 "View in source") [&#x24C9;][1]
 
 Writes `obj` to a JSON file at `path`.
 
@@ -300,7 +300,7 @@ Writes `obj` to a JSON file at `path`.
 <!-- div -->
 
 ### <a id="dantil-cleanNumber"></a>`dantil.cleanNumber(number)`
-<a href="#dantil-cleanNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L712 "View in source") [&#x24C9;][1]
+<a href="#dantil-cleanNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L715 "View in source") [&#x24C9;][1]
 
 Removes any extraneous digits from `number`, which result from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
@@ -331,7 +331,7 @@ number = dantil.cleanFloat(number)
 <!-- div -->
 
 ### <a id="dantil-assert"></a>`dantil.assert([msg])`
-<a href="#dantil-assert">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L498 "View in source") [&#x24C9;][1]
+<a href="#dantil-assert">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L501 "View in source") [&#x24C9;][1]
 
 Prints the calling file path and line number, prepended by `msg`, to mark reaching a section of code.
 
@@ -352,7 +352,7 @@ if (rareConditionIsTrue) {
 <!-- div -->
 
 ### <a id="dantil-assertTrue"></a>`dantil.assertTrue(value, [msg])`
-<a href="#dantil-assertTrue">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L515 "View in source") [&#x24C9;][1]
+<a href="#dantil-assertTrue">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L518 "View in source") [&#x24C9;][1]
 
 Prints the calling file path and line number, prepended by `msg`, if `value` is truthy.
 
@@ -372,7 +372,7 @@ dantil.assertTrue(myNumber > 100, 'Condition met')
 <!-- div -->
 
 ### <a id="dantil-count"></a>`dantil.count(label)`
-<a href="#dantil-count">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L598 "View in source") [&#x24C9;][1]
+<a href="#dantil-count">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L601 "View in source") [&#x24C9;][1]
 
 Counts the number of times a section of code is reached, identified by `label`. Use `dantil.countEnd(label)` to print the counter's value. This is useful for profiling complex programs.
 
@@ -395,7 +395,7 @@ dantil.countEnd('even')
 <!-- div -->
 
 ### <a id="dantil-countEnd"></a>`dantil.countEnd(label)`
-<a href="#dantil-countEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L611 "View in source") [&#x24C9;][1]
+<a href="#dantil-countEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L614 "View in source") [&#x24C9;][1]
 
 Prints (and resets the value of) the number of calls of `dantil.count(label)`.
 
@@ -409,7 +409,7 @@ Prints (and resets the value of) the number of calls of `dantil.count(label)`.
 <!-- div -->
 
 ### <a id="dantil-countEndAll"></a>`dantil.countEndAll`
-<a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L638 "View in source") [&#x24C9;][1]
+<a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L641 "View in source") [&#x24C9;][1]
 
 Prints (and resets) the values of all counters used on `dantil.count()`. Does not print counters that are never reached (and never have their keys initialized).
 
@@ -431,7 +431,7 @@ dantil.countEndAll()
 <!-- div -->
 
 ### <a id="dantil-time"></a>`dantil.time(label)`
-<a href="#dantil-time">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L549 "View in source") [&#x24C9;][1]
+<a href="#dantil-time">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L552 "View in source") [&#x24C9;][1]
 
 Starts a high-resolution timer (with precision in microseconds) identified by `label`. Use `dantil.timeEnd(label)` to print the timer's current value.
 
@@ -460,7 +460,7 @@ dantil.timeEnd('my test')
 <!-- div -->
 
 ### <a id="dantil-timeEnd"></a>`dantil.timeEnd(label)`
-<a href="#dantil-timeEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L561 "View in source") [&#x24C9;][1]
+<a href="#dantil-timeEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L564 "View in source") [&#x24C9;][1]
 
 Prints the current high-resolution value of a timer initiated with `dantil.time(label)`.
 
@@ -480,7 +480,7 @@ Prints the current high-resolution value of a timer initiated with `dantil.time(
 <!-- div -->
 
 ### <a id="dantil-dashedToCamelCase"></a>`dantil.dashedToCamelCase(dashedString)`
-<a href="#dantil-dashedToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L730 "View in source") [&#x24C9;][1]
+<a href="#dantil-dashedToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L733 "View in source") [&#x24C9;][1]
 
 Converts dash-separated `string` to camel case.
 
@@ -532,13 +532,13 @@ myModule = require('./myModule.js')
 
 <!-- div -->
 
-### <a id="dantil-getPathAndLineNumber"></a>`dantil.getPathAndLineNumber([getCallingLine])`
+### <a id="dantil-getPathAndLineNumber"></a>`dantil.getPathAndLineNumber([getThisLine])`
 <a href="#dantil-getPathAndLineNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L180 "View in source") [&#x24C9;][1]
 
 Gets the file path and line number of the first frame in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
 
 #### Arguments
-1. `[getCallingLine]` *(boolean)*: Specify getting the line where this is called instead of the line of the parent module.
+1. `[getThisLine]` *(boolean)*: Specify getting the line where this function is called instead of the line of the parent module.
 
 #### Returns
 *(string)*:  Returns the file path and line number of calling line.
@@ -595,7 +595,7 @@ Executes `func` within a `try` block. If an error is thrown, removes parentheses
 
 #### Arguments
 1. `func` *(Function)*: The function to execute within a `try` block.
-2. `rethrow` *(boolean)*: Specify rethrowing an error *(after printing the stack trace)* if caught from `func`.
+2. `rethrow` *(boolean)*: Specify rethrowing a caught error from `func` after printing the stack trace.
 
 #### Returns
 *(&#42;)*:  Returns the value returned by `func`, if any.
