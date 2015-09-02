@@ -63,7 +63,7 @@ A Node.js utility library.
 
 ## `Utility`
 * <a href="#dantil-deleteModuleCache">`dantil.deleteModuleCache`</a>
-* <a href="#dantil-getPathAndLineNumber">`dantil.getPathAndLineNumber`</a>
+* <a href="#dantil-getModuleCallerPathAndLineNumber">`dantil.getModuleCallerPathAndLineNumber`</a>
 * <a href="#dantil-illFormedOpts">`dantil.illFormedOpts`</a>
 * <a href="#dantil-tryCatchWrapper">`dantil.tryCatchWrapper`</a>
 
@@ -532,8 +532,8 @@ myModule = require('./myModule.js')
 
 <!-- div -->
 
-### <a id="dantil-getPathAndLineNumber"></a>`dantil.getPathAndLineNumber([getThisLine])`
-<a href="#dantil-getPathAndLineNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L180 "View in source") [&#x24C9;][1]
+### <a id="dantil-getModuleCallerPathAndLineNumber"></a>`dantil.getModuleCallerPathAndLineNumber([getThisLine])`
+<a href="#dantil-getModuleCallerPathAndLineNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L180 "View in source") [&#x24C9;][1]
 
 Gets the file path and line number of the first frame in the stack of the parent module from where this function was called. This is useful for logging where an object is instantiated.
 
