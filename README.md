@@ -544,7 +544,7 @@ dantil.camelCase('my-long-variable-name')
 ### <a id="dantil-colors"></a>`dantil.colors`
 <a href="#dantil-colors">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L332 "View in source") [&#x24C9;][1]
 
-(Object): Stylizes strings for printing to the console using the [colors](https://github.com/Marak/colors.js) module.
+(Object): Stylizes strings for printing to the console using the [chalk](https://github.com/chalk/chalk) module.
 
 #### Example
 ```js
