@@ -698,17 +698,17 @@ dantil.getPathAndLineNumber()
 
 <!-- div -->
 
-### <a id="dantil-illFormedOpts"></a>`dantil.illFormedOpts(schema, opts)`
+### <a id="dantil-illFormedOpts"></a>`dantil.illFormedOpts(schema, options)`
 <a href="#dantil-illFormedOpts">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L41 "View in source") [&#x24C9;][1]
 
-Checks if options object `opts` adheres to `schema`. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors when `opts` is ill-formed.
+Checks if options object `options` adheres to `schema`. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors when `options` is ill-formed.
 
 #### Arguments
-1. `schema` *(Object)*: The definition of required and optional properties for `opts`.
-2. `opts` *(Object)*: The options object to check for conformity to `schema`.
+1. `schema` *(Object)*: The definition of required and optional properties for `options`.
+2. `options` *(Object)*: The options object to check for conformity to `schema`.
 
 #### Returns
-*(boolean)*:  Returns `true` if `opts` is ill-formed, else `false`.
+*(boolean)*:  Returns `true` if `options` is ill-formed, else `false`.
 
 #### Example
 ```js
@@ -720,12 +720,12 @@ var schema = {
   val: [ 'red', 'yellow', 'blue' ]              // Must be one of predefined values
 }
 
-function myFunc(opts) {
-  if (dantil.illFormedOpts(schema, opts)) {
+function myFunc(options) {
+  if (dantil.illFormedOpts(schema, options)) {
     // => Prints descriptive, helpful error messages
 
-    // Handle ill-formed `opts` how you choose
-    throw new Error('ill-formed opts')
+    // Handle ill-formed `options` how you choose
+    throw new Error('ill-formed options')
   }
 
   // ...stuff...
