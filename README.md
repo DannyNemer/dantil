@@ -233,13 +233,13 @@ dantil.logSuccess(tests.length, 'tests passed')
 
 <!-- div -->
 
-### <a id="dantil-logTrace"></a>`dantil.logTrace([msg])`
+### <a id="dantil-logTrace"></a>`dantil.logTrace([message])`
 <a href="#dantil-logTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L660 "View in source") [&#x24C9;][1]
 
 Prints the stack trace to the current position. Removes parentheses surrounding file paths for the iTerm open-file-path shortcut.
 
 #### Arguments
-1. `[msg]` *(string)*: The optional message to print above the stack trace.
+1. `[message]` *(string)*: The optional message to print above the stack trace.
 
 * * *
 
@@ -381,13 +381,13 @@ number = dantil.cleanFloat(number)
 
 <!-- div -->
 
-### <a id="dantil-assert"></a>`dantil.assert([msg])`
+### <a id="dantil-assert"></a>`dantil.assert([message])`
 <a href="#dantil-assert">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L686 "View in source") [&#x24C9;][1]
 
-Prints the calling file path and line number, prepended by `msg`, to mark reaching a section of code.
+Prints the calling file path and line number, prepended by `message`, to mark reaching a section of code.
 
 #### Arguments
-1. `[msg]` *(string)*: The optional message to prepend to the path and line number.
+1. `[message]` *(string)*: The optional message to prepend to the path and line number.
 
 #### Example
 ```js
@@ -404,14 +404,14 @@ if (rareConditionIsTrue) {
 
 <!-- div -->
 
-### <a id="dantil-assertTrue"></a>`dantil.assertTrue(value, [msg])`
+### <a id="dantil-assertTrue"></a>`dantil.assertTrue(value, [message])`
 <a href="#dantil-assertTrue">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L705 "View in source") [&#x24C9;][1]
 
-Prints the calling file path and line number, prepended by `msg`, if `value` is truthy.
+Prints the calling file path and line number, prepended by `message`, if `value` is truthy.
 
 #### Arguments
 1. `value` *(boolean)*: The value to check if truthy.
-2. `[msg]` *(string)*: The optional message to prepend to the path and line number.
+2. `[message]` *(string)*: The optional message to prepend to the path and line number.
 
 #### Example
 ```js
