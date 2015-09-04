@@ -430,9 +430,9 @@ exports.expandHomeDir = function (path) {
 /**
  * Pretty-prints the provided values and objects in color, recursing 2 times while formatting objects (which is identical to `console.log()`).
  *
- * Prints objects on separate lines if multi-lined when formatted, else concatenates values and objects to print on the same line if less than 80 characters when concatenated.
+ * Prints objects on separate lines if multi-lined when formatted, else concatenates values and objects to print on the same line.
  *
- * Equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks.
+ * If the first argument is an object with a multi-line string representation when formatted, aligns all remaining values and objects. Otherwise, and most often, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks.
  *
  * @static
  * @memberOf dantil
@@ -466,17 +466,19 @@ exports.dir = function () {
 /**
  * Pretty-prints the provided values and objects in color, recursing 2 times while formatting objects (which is identical to `console.log()`).
  *
- * Prints objects on separate lines if multi-lined when formatted, else concatenates values and objects to print on the same line if less than 80 characters when concatenated.
+ * Prints objects on separate lines if multi-lined when formatted, else concatenates values and objects to print on the same line.
  *
- * Equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks.
+ * If the first argument is an object with a multi-line string representation when formatted, aligns all remaining values and objects. Otherwise, and most often, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks.
  *
  * @private
  * @param {Object} args The `arguments` object (passed to the callee) with the values and objects to print.
  * @param {Object} options The options object defined for `util.inspect()`.
  */
 function prettyPrint(args, options) {
-  var formattedArgs = []
+  // Use `RegExp()` to get correct `reMultiLined.source`.
+  var reMultiLined = RegExp(',\n', 'g')
   var indent = '  '
+  var formattedArgs = []
 
   Array.prototype.slice.call(args).forEach(function (arg, i, args) {
     var prevArg = args[i - 1]
@@ -485,7 +487,6 @@ function prettyPrint(args, options) {
     // - This also preserves any already-stylized arguments.
     var formattedArg = typeof arg === 'string' ? arg : stylize(arg, options)
 
-    // Print objects on separate lines if multi-lined when formatted
     if (i === 0) {
       // Extend indent for successive lines with the first argument's leading whitespace, if any.
       if (typeof arg === 'string') {
@@ -497,21 +498,25 @@ function prettyPrint(args, options) {
 
         // JavaScript will not properly indent if '\t' is appended to spaces (i.e., reverse order as here).
         indent = arg + indent
+      } else if (reMultiLined.test(formattedArg)) {
+        // Do not indent if the first argument is multi-lined when formatted.
+        indent = ''
       }
 
       formattedArgs.push(formattedArg)
-    } else if (/,\n/.test(formattedArg)) {
+    } else if (reMultiLined.test(formattedArg)) {
+      // Print objects on separate lines if multi-lined when formatted.
       // Indent lines after the first line.
-      formattedArgs.push(indent + formattedArg.replace(/,\n/g, ',\n' + indent))
+      formattedArgs.push(indent + formattedArg.replace(reMultiLined, reMultiLined.source + indent))
     } else {
       var prevFormattedArgIdx = formattedArgs.length - 1
       var prevFormattedArg = formattedArgs[prevFormattedArgIdx]
 
-      // Concatenate other values and objects to print on the same line if less than 80 characters when  concatenated.
-      if (getStylizedStringLength(prevFormattedArg) + getStylizedStringLength(formattedArg) + 1 > 80) {
+      if (reMultiLined.test(prevFormattedArg)) {
         // Indent lines after the first line.
         formattedArgs.push(indent + formattedArg)
       } else {
+        // Concatenate all values and objects with one-line string representations.
         formattedArgs[prevFormattedArgIdx] += ' ' + formattedArg
       }
     }
@@ -536,17 +541,6 @@ function stylize(object, options) {
   }
 
   return util.inspect(object, options)
-}
-
-/**
- * Gets the length of stylized `string` without the ANSI escape codes (for color and formatting).
- *
- * @private
- * @param {string} string The stylized string to measure.
- * @returns {number} Returns the length of `string` without ANSI escape codes.
- */
-function getStylizedStringLength(string) {
-  return exports.colors.stripColor(string).length
 }
 
 /**
