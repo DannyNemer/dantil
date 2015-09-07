@@ -42,6 +42,13 @@ var dantil = require('./dantil/dantil.js')
 
 <!-- div -->
 
+## `Lang`
+* <a href="#dantil-isObject">`dantil.isObject`</a>
+
+<!-- /div -->
+
+<!-- div -->
+
 ## `Number`
 * <a href="#dantil-cleanNumber">`dantil.cleanNumber`</a>
 
@@ -354,6 +361,40 @@ Writes `obj` to a JSON file at `path`.
 1. `path` *(string)*: The file path to write to.
 2. `obj` *(Object)*: The object to save to `path`.
 
+* * *
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- div -->
+
+## `“Lang” Methods`
+
+<!-- div -->
+
+### <a id="dantil-isObject"></a>`dantil.isObject(value)`
+<a href="#dantil-isObject">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1080 "View in source") [&#x24C9;][1]
+
+Checks if `value` is a plain object, that is, an object created by the `Object` constructor or literal.
+
+#### Arguments
+1. `value` *(&#42;)*: The value to check.
+
+#### Returns
+*(boolean)*:  Returns `true` if `value` is a plain object, else `false`.
+
+#### Example
+```js
+dantil.isObject([1, 2, 3])
+// => false
+
+dantil.isObject({ x: 0, y: 0 })
+// => true
+
+dantil.isObject(Object.create(null))
+// => true
+```
 * * *
 
 <!-- /div -->
