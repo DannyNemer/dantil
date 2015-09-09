@@ -163,10 +163,10 @@ A version of `dantil.log()` that recurses indefinitely while formatting the obje
 Pretty-prints the provided values and objects in color, recursing 2 times while formatting objects (which is identical to `console.log()`).
 <br>
 <br>
-Prints `Object`s on separate lines. Concatenates and prints all other successive values on the same line.
+Formats arguments of complex types (e.g., `Object`, `Array`) on separate lines. Concatenates and formats all other successive values on the same line.
 <br>
 <br>
-If the first argument is an `Object`, left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks.
+If the first argument is of a complex type, left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks.
 
 #### Arguments
 1. `values` *(...&#42;)*: The values and objects to print.
