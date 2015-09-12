@@ -856,14 +856,14 @@ function myFunc(options) {
 
 <!-- div -->
 
-### <a id="dantil-tryCatchWrapper"></a>`dantil.tryCatchWrapper(func, rethrow)`
+### <a id="dantil-tryCatchWrapper"></a>`dantil.tryCatchWrapper(func, [exitProcessIfFailure])`
 <a href="#dantil-tryCatchWrapper">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L145 "View in source") [&#x24C9;][1]
 
 Executes `func` within a `try` block. If an error is thrown, removes parentheses surrounding file paths in its stack trace for the iTerm open-file-path shortcut, and colors the error type name (e.g., `TypeError`) red.
 
 #### Arguments
 1. `func` *(Function)*: The function to execute within a `try` block.
-2. `rethrow` *(boolean)*: Specify rethrowing a caught error from `func` after printing the stack trace.
+2. `[exitProcessIfFailure]` *(boolean)*: Specify ending the process with 'failure' code `1` after catching an error from `func` and printing its stack trace. The shell that executed Node will see the exit code as `1`.
 
 #### Returns
 *(&#42;)*:  Returns the return value of `func`, if any.
