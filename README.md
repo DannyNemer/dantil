@@ -36,7 +36,7 @@ var dantil = require('./dantil/dantil.js')
 
 ## `File System`
 * <a href="#dantil-expandHomeDir">`dantil.expandHomeDir`</a>
-* <a href="#dantil-redirectOutputToFile">`dantil.redirectOutputToFile`</a>
+* <a href="#dantil-outputToFile">`dantil.outputToFile`</a>
 * <a href="#dantil-writeJSONFile">`dantil.writeJSONFile`</a>
 
 <!-- /div -->
@@ -340,8 +340,8 @@ dantil.expandHomeDir('~/Desktop')
 
 <!-- div -->
 
-### <a id="dantil-redirectOutputToFile"></a>`dantil.redirectOutputToFile(path, func)`
-<a href="#dantil-redirectOutputToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L390 "View in source") [&#x24C9;][1]
+### <a id="dantil-outputToFile"></a>`dantil.outputToFile(path, func)`
+<a href="#dantil-outputToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L390 "View in source") [&#x24C9;][1]
 
 Synchronously writes the output of `func` to a file at `path` instead of the console. Overwrites the file if it already exists. Restores output to the console if an error is thrown.
 
@@ -358,7 +358,7 @@ Synchronously writes the output of `func` to a file at `path` instead of the con
 console.log('Begin output to file')
 
 // Redirect process output from console to '~/Desktop/out.txt'
-dantil.redirectOutputToFile('~/Desktop/out.txt', function () {
+dantil.outputToFile('~/Desktop/out.txt', function () {
   console.log('Numbers:')
   for (var i = 0; i < 100; ++i) {
     console.log(i)
