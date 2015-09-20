@@ -343,11 +343,11 @@ dantil.expandHomeDir('~/Desktop')
 ### <a id="dantil-outputToFile"></a>`dantil.outputToFile(path, func)`
 <a href="#dantil-outputToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L390 "View in source") [&#x24C9;][1]
 
-Synchronously writes the output of `func` to a file at `path` instead of the console. Overwrites the file if it already exists. Restores output to the console if an error is thrown.
+Synchronously writes the process's `stdout` to a file at `path` instead of the console while processing `func`. Overwrites the file if it already exists. Restores `stdout` to the console when `func` completes or if an error is thrown.
 
 #### Arguments
-1. `path` *(string)*: The path where to write output.
-2. `func` *(Function)*: The function producing output.
+1. `path` *(string)*: The path where to write `stdout`.
+2. `func` *(Function)*: The function process while writing output to `path`.
 
 #### Returns
 *(&#42;)*:  Returns the value returned by `func`, if any.
@@ -357,16 +357,16 @@ Synchronously writes the output of `func` to a file at `path` instead of the con
 // Print to console
 console.log('Begin output to file')
 
-// Redirect process output from console to '~/Desktop/out.txt'
+// Redirect `stdout` from console to '~/Desktop/out.txt'
 dantil.outputToFile('~/Desktop/out.txt', function () {
   console.log('Numbers:')
   for (var i = 0; i < 100; ++i) {
     console.log(i)
   }
 })
-// => Restores output to console and prints "Output saved: ~/Desktop/out.txt"
+// => Restores `stdout` to console and prints "Output saved: ~/Desktop/out.txt"
 
-// Print to console (after restoring output)
+// Print to console (after restoring `stdout`)
 console.log('Output to file complete')
 ```
 * * *
