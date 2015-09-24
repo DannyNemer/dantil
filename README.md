@@ -66,6 +66,7 @@ var dantil = require('dantil')
 
 ## `String`
 * <a href="#dantil-dashedToCamelCase">`dantil.dashedToCamelCase`</a>
+* <a href="#dantil-format">`dantil.format`</a>
 
 <!-- /div -->
 
@@ -640,7 +641,7 @@ Prints the current high-resolution value of a timer initiated with `dantil.time(
 <!-- div -->
 
 ### <a id="dantil-dashedToCamelCase"></a>`dantil.dashedToCamelCase(dashedString)`
-<a href="#dantil-dashedToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1065 "View in source") [&#x24C9;][1]
+<a href="#dantil-dashedToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1081 "View in source") [&#x24C9;][1]
 
 Converts dash-separated `string` to camel case.
 
@@ -654,6 +655,29 @@ Converts dash-separated `string` to camel case.
 ```js
 dantil.camelCase('my-long-variable-name')
 // => 'myLongVariableName'
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
+### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
+<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1066 "View in source") [&#x24C9;][1]
+
+Formats a string in a `printf`-like format using Node's `util.format()`.
+
+#### Arguments
+1. `string` *(string)*: The string to format containing zero or more placeholders. Each placeholder is replaced with the converted value from its corresponding argument.
+2. `[placeholderVals]` *(...string)*: The values to replace the corresponding placeholders in `string`.
+
+#### Returns
+*(string)*:  Returns the formatted string.
+
+#### Example
+```js
+dantil.format('%s:%s %d', 'foo', 'bar', 22)
+// => 'foo:bar 22'
 ```
 * * *
 
