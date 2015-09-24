@@ -376,7 +376,7 @@ exports.colors = require('chalk')
  * console.log('Begin output to file')
  *
  * // Redirect `stdout` from console to '~/Desktop/out.txt'
- * dantil.outputToFile('~/Desktop/out.txt', function () {
+ * dantil.stdoutToFile('~/Desktop/out.txt', function () {
  *   console.log('Numbers:')
  *   for (var i = 0; i < 100; ++i) {
  *     console.log(i)
@@ -387,7 +387,7 @@ exports.colors = require('chalk')
  * // Print to console (after restoring `stdout`)
  * console.log('Output to file complete')
  */
-exports.outputToFile = function (path, func) {
+exports.stdoutToFile = function (path, func) {
   // Expand '~' if present.
   path = exports.expandHomeDir(path)
 
@@ -746,7 +746,7 @@ exports.logTrace = function (message) {
  *
  * @static
  * @memberOf dantil
- * @category Profile
+ * @category Profiling
  * @param {string} [message] The optional message to prepend to the path and line number.
  * @example
  *
@@ -766,7 +766,7 @@ exports.assert = function (message) {
  *
  * @static
  * @memberOf dantil
- * @category Profile
+ * @category Profiling
  * @param {boolean} value The value to check if truthy.
  * @param {string} [message] The optional message to prepend to the path and line number.
  * @returns {boolean} Returns `true` if `value` is truthy, else `false`.
@@ -797,7 +797,7 @@ exports.assertTrue = function (value, message) {
  *
  * @static
  * @memberOf dantil
- * @category Profile
+ * @category Profiling
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @param {string} [message] The optional message to print if the test fails.
@@ -861,7 +861,7 @@ var _times = new Map()
  *
  * @static
  * @memberOf dantil
- * @category Profile
+ * @category Profiling
  * @param {string} label The identifier of the timer.
  * @example
  *
@@ -887,7 +887,7 @@ exports.time = function (label) {
  *
  * @static
  * @memberOf dantil
- * @category Profile
+ * @category Profiling
  * @param {string} label The identifier of the timer.
  */
 exports.timeEnd = function (label) {
@@ -916,7 +916,7 @@ var _counts = new Map()
  *
  * @static
  * @memberOf dantil
- * @category Profile
+ * @category Profiling
  * @param {string} label The counter identifier.
  * @example
  *
@@ -938,7 +938,7 @@ exports.count = function (label) {
  *
  * @static
  * @memberOf dantil
- * @category Profile
+ * @category Profiling
  * @param {string} label The counter identifier.
  */
 exports.countEnd = function (label) {
@@ -956,7 +956,7 @@ exports.countEnd = function (label) {
  *
  * @static
  * @memberOf dantil
- * @category Profile
+ * @category Profiling
  * @example
  *
  * for (var i = 0; i < 100; ++i) {
