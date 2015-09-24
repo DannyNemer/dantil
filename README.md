@@ -347,7 +347,7 @@ Synchronously writes the process's `stdout` to a file at `path` instead of the c
 
 #### Arguments
 1. `path` *(string)*: The path where to write `stdout`.
-2. `func` *(Function)*: The function process while writing output to `path`.
+2. `func` *(Function)*: The function to process while writing output to `path`.
 
 #### Returns
 *(&#42;)*:  Returns the value returned by `func`, if any.
