@@ -317,7 +317,7 @@ console.log(dantil.colors.red('Error'))
 ### <a id="dantil-stdoutToFile"></a>`dantil.stdoutToFile(path, func)`
 <a href="#dantil-stdoutToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L390 "View in source") [&#x24C9;][1]
 
-Synchronously writes the process's `stdout` to a file at `path` instead of the console while processing `func`. Overwrites the file if it already exists. Restores `stdout` to the console when `func` completes or if an error is thrown.
+Synchronously writes the process's `stdout` to a file at `path` instead of the console while processing `func`. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` completes or if an error is thrown.
 
 #### Arguments
 1. `path` *(string)*: The path where to write `stdout`.
@@ -451,7 +451,7 @@ A version of `dantil.log()` that recurses indefinitely while formatting the obje
 ### <a id="dantil-stylize"></a>`dantil.stylize(object, [options])`
 <a href="#dantil-stylize">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L597 "View in source") [&#x24C9;][1]
 
-Formats `object` in color for pretty-printing, recursing `options.depth` times while formatting. This is identical to Node's `util.inspect()`, but disables colors if the terminal does not support color.
+Formats `object` in color for pretty-printing, recursing `options.depth` times while formatting. This is similar to Node's `util.inspect()`, but disables colors if the terminal does not support color.
 
 #### Arguments
 1. `object` *(&#42;)*: The object or value to stylize.
@@ -887,7 +887,7 @@ number = dantil.cleanNumber(number)
 ### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
 <a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1083 "View in source") [&#x24C9;][1]
 
-Formats a string in a `printf`-like format using Node's `util.format()`.
+Formats a string in a `printf()`-like format using Node's `util.format()`.
 
 #### Arguments
 1. `string` *(string)*: The string to format containing zero or more placeholders. Each placeholder is replaced with the converted value from its corresponding argument.
