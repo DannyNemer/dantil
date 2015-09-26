@@ -203,10 +203,10 @@ myModule = require('./myModule.js')
 ### <a id="dantil-getPathAndLineNumber"></a>`dantil.getPathAndLineNumber()`
 <a href="#dantil-getPathAndLineNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L215 "View in source") [&#x24C9;][1]
 
-Gets the file path and line number of where this function is invoked in the format "path:line-number".
+Gets the file path and line number in the format `filePath:lineNumber` of where this function is invoked.
 
 #### Returns
-*(string)*:  Returns the file path and line number in the format "path:line-number".
+*(string)*:  Returns the file path and line number in the format `filePath:lineNumber`.
 
 #### Example
 ```js
@@ -224,7 +224,7 @@ dantil.getPathAndLineNumber()
 ### <a id="dantil-getModuleCallerPathAndLineNumber"></a>`dantil.getModuleCallerPathAndLineNumber()`
 <a href="#dantil-getModuleCallerPathAndLineNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L286 "View in source") [&#x24C9;][1]
 
-Gets the file path and line number of the function call that invoked the currently executing module. Returns the path and line number in the format "path:line-number".
+Gets the file path and line number of the function call that invoked the currently executing module. Returns the path and line number in the format `filePath:lineNumber`.
 <br>
 <br>
 This is not necessarily the caller of the currently executing function, which can be another function within the same module. Nor is it necessarily this module's parent which instantiated the module. Rather, it is the most recent function call in the stack outside the currently executing module.
@@ -233,7 +233,7 @@ This is not necessarily the caller of the currently executing function, which ca
 Returns `undefined` if there is no other module in the stack below where this function was called.
 
 #### Returns
-*(string)*:  Returns the file path and line number in the format "path:line-number".
+*(string)*:  Returns the file path and line number in the format `filePath:lineNumber`.
 
 #### Example
 ```js
@@ -297,7 +297,7 @@ exports.bar = function () {
 ### <a id="dantil-pathAndLineNumbersOf"></a>`dantil.pathAndLineNumbersOf(filePath, string)`
 <a href="#dantil-pathAndLineNumbersOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L375 "View in source") [&#x24C9;][1]
 
-Gets the file path and line number in the format "path:line-number" of every occurrence of `string` in the source file at `filePath`. This is useful for error reporting.
+Gets the file path and line number in the format `filePath:lineNumber` of every occurrence of `string` in the source file at `filePath`. This is useful for error reporting.
 
 #### Arguments
 1. `filePath` *(string)*: The path of the source file to search.
@@ -328,7 +328,7 @@ dantil.pathAndLineNumbersOf(__filename, 'ipsum')
 ### <a id="dantil-firstPathAndLineNumberOf"></a>`dantil.firstPathAndLineNumberOf(filePath, string)`
 <a href="#dantil-firstPathAndLineNumberOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L410 "View in source") [&#x24C9;][1]
 
-Gets the file path and line number in the format "path:line-number" at which the first occurrence of `string` is found in the source file at `filePath`. This is useful for error reporting.
+Gets the file path and line number in the format `filePath:lineNumber` at which the first occurrence of `string` is found in the source file at `filePath`. This is useful for error reporting.
 
 #### Arguments
 1. `filePath` *(string)*: The path of the source file to search.
