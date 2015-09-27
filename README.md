@@ -98,7 +98,7 @@ var dantil = require('dantil')
 ### <a id="dantil-illFormedOpts"></a>`dantil.illFormedOpts(schema, options)`
 <a href="#dantil-illFormedOpts">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L56 "View in source") [&#x24C9;][1]
 
-Checks if options object `options` adheres to `schema`. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors when `options` is ill-formed.
+Checks if options object `options` adheres to `schema`. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed.
 
 #### Arguments
 1. `schema` *(Object)*: The definition of required and optional properties for `options`.
@@ -152,11 +152,11 @@ function myFunc(options) {
 ### <a id="dantil-tryCatchWrapper"></a>`dantil.tryCatchWrapper(func, [exitProcessIfFailure])`
 <a href="#dantil-tryCatchWrapper">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L146 "View in source") [&#x24C9;][1]
 
-Executes `func` within a `try` block. If an error is thrown, removes parentheses surrounding file paths in its stack trace for the iTerm open-file-path shortcut, and colors the error type name (e.g., `TypeError`) red.
+Executes `func` within a `try` block. If an exception is thrown, removes parentheses surrounding file paths in its stack trace for the iTerm open-file-path shortcut, and colors the error type name (e.g., `TypeError`) red.
 
 #### Arguments
 1. `func` *(Function)*: The function to execute within a `try` block.
-2. `[exitProcessIfFailure]` *(boolean)*: Specify ending the process with 'failure' code `1` after catching an error from `func` and printing its stack trace. The shell that executed Node will see the exit code as `1`.
+2. `[exitProcessIfFailure]` *(boolean)*: Specify ending the process with 'failure' code `1` *(after printing its stack trace)* should `func` throw an exception. The shell that executed Node will see an exit code of `1`.
 
 #### Returns
 *(&#42;)*:  Returns the return value of `func`, if any.
@@ -167,7 +167,7 @@ dantil.tryCatchWrapper(function () {
   // ...stuff...
   throw new Error('test failed')
 })
-// => Catches thrown error and prints a formatted stack trace
+// => Catches thrown exception and prints a formatted stack trace
 ```
 * * *
 
@@ -384,7 +384,7 @@ console.log(dantil.colors.red('Error'))
 ### <a id="dantil-stdoutToFile"></a>`dantil.stdoutToFile(path, func)`
 <a href="#dantil-stdoutToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L486 "View in source") [&#x24C9;][1]
 
-Synchronously writes the process's `stdout` to a file at `path` instead of the console while processing `func`. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` completes or if an error is thrown.
+Synchronously writes the process's `stdout` to a file at `path` instead of the console while processing `func`. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` completes or if an exception is thrown.
 
 #### Arguments
 1. `path` *(string)*: The path where to write `stdout`.
@@ -720,7 +720,7 @@ if (dantil.assertTrue(rareConditionIsTrue)) {
 ### <a id="dantil-assertEqual"></a>`dantil.assertEqual(value, other, [message])`
 <a href="#dantil-assertEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L946 "View in source") [&#x24C9;][1]
 
-Tests shallow, coercive equality with the equal comparison operator (`==`). Prints an error and the file path and line number if the test fails, unlike Node's `assert.equal()` which throws an error.
+Tests shallow, coercive equality with the equal comparison operator (`==`). Prints an error message and the file path and line number if the test fails, unlike Node's `assert.equal()` which throws an exception.
 
 #### Arguments
 1. `value` *(&#42;)*: The value to compare.
