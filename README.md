@@ -18,8 +18,6 @@ var dantil = require('dantil')
 * <a href="#dantil-deleteModuleCache">`dantil.deleteModuleCache`</a>
 * <a href="#dantil-getPathAndLineNumber">`dantil.getPathAndLineNumber`</a>
 * <a href="#dantil-getModuleCallerPathAndLineNumber">`dantil.getModuleCallerPathAndLineNumber`</a>
-* <a href="#dantil-pathAndLineNumbersOf">`dantil.pathAndLineNumbersOf`</a>
-* <a href="#dantil-firstPathAndLineNumberOf">`dantil.firstPathAndLineNumberOf`</a>
 * <a href="#dantil-colors">`dantil.colors`</a>
 
 <!-- /div -->
@@ -29,6 +27,8 @@ var dantil = require('dantil')
 ## `File System`
 * <a href="#dantil-stdoutToFile">`dantil.stdoutToFile`</a>
 * <a href="#dantil-writeJSONFile">`dantil.writeJSONFile`</a>
+* <a href="#dantil-pathAndLineNumbersOf">`dantil.pathAndLineNumbersOf`</a>
+* <a href="#dantil-firstPathAndLineNumberOf">`dantil.firstPathAndLineNumberOf`</a>
 * <a href="#dantil-expandHomeDir">`dantil.expandHomeDir`</a>
 * <a href="#dantil-realpathSync">`dantil.realpathSync`</a>
 
@@ -296,8 +296,91 @@ exports.bar = function () {
 
 <!-- div -->
 
+### <a id="dantil-colors"></a>`dantil.colors`
+<a href="#dantil-colors">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L362 "View in source") [&#x24C9;][1]
+
+(Object): Stylizes strings for printing to the console using the [chalk](https://github.com/chalk/chalk) module.
+
+#### Example
+```js
+console.log(dantil.colors.red('Error'))
+// => Prints red-colored "Error"
+```
+* * *
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- div -->
+
+## `“File System” Methods`
+
+<!-- div -->
+
+### <a id="dantil-stdoutToFile"></a>`dantil.stdoutToFile(path, func)`
+<a href="#dantil-stdoutToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L390 "View in source") [&#x24C9;][1]
+
+Synchronously writes the process's `stdout` to a file at `path` instead of the console while processing `func`. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` completes or if an exception is thrown.
+
+#### Arguments
+1. `path` *(string)*: The path where to write `stdout`.
+2. `func` *(Function)*: The function to process while writing output to `path`.
+
+#### Returns
+*(&#42;)*:  Returns the value returned by `func`, if any.
+
+#### Example
+```js
+// Print to console
+console.log('Begin output to file')
+
+// Redirect `stdout` from console to '~/Desktop/out.txt'
+dantil.stdoutToFile('~/Desktop/out.txt', function () {
+  console.log('Numbers:')
+  for (var i = 0; i < 100; ++i) {
+    console.log(i)
+  }
+})
+// => Restores `stdout` to console and prints "Output saved: ~/Desktop/out.txt"
+
+// Print to console (after restoring `stdout`)
+console.log('Output to file complete')
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
+### <a id="dantil-writeJSONFile"></a>`dantil.writeJSONFile(path, obj)`
+<a href="#dantil-writeJSONFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L451 "View in source") [&#x24C9;][1]
+
+Writes `obj` to a JSON file at `path`.
+
+#### Arguments
+1. `path` *(string)*: The file path to write to.
+2. `obj` *(Object)*: The object to save to `path`.
+
+#### Example
+```js
+var obj = {
+  name: 'foo',
+  value: 7,
+  list: [ 'apple', 'orange' ]
+}
+
+dantil.writeJSONFile('./myObj.json', obj)
+// => Writes file and prints "File saved: /Users/Danny/myObj.json"
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
 ### <a id="dantil-pathAndLineNumbersOf"></a>`dantil.pathAndLineNumbersOf(filePath, value, stringify)`
-<a href="#dantil-pathAndLineNumbersOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L380 "View in source") [&#x24C9;][1]
+<a href="#dantil-pathAndLineNumbersOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L493 "View in source") [&#x24C9;][1]
 
 Gets the file path and line number in the format `filePath:lineNumber` of each occurrence of `value` in the source file at `filePath`. This is useful for error reporting.
 
@@ -336,7 +419,7 @@ dantil.pathAndLineNumbersOf('./foo.js', 'ipsum', true)
 <!-- div -->
 
 ### <a id="dantil-firstPathAndLineNumberOf"></a>`dantil.firstPathAndLineNumberOf(filePath, value, stringify)`
-<a href="#dantil-firstPathAndLineNumberOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L420 "View in source") [&#x24C9;][1]
+<a href="#dantil-firstPathAndLineNumberOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L533 "View in source") [&#x24C9;][1]
 
 Gets the file path and line number in the format `filePath:lineNumber` at which the first occurrence of `value` is found in the source file at `filePath`. This is useful for error reporting.
 
@@ -367,89 +450,6 @@ dantil.firstPathAndLineNumberOf('./foo.js', 'ipsum')
 
 dantil.firstPathAndLineNumberOf('./foo.js', 'ipsum', true)
 // => '/Users/Danny/foo.js:4'
-```
-* * *
-
-<!-- /div -->
-
-<!-- div -->
-
-### <a id="dantil-colors"></a>`dantil.colors`
-<a href="#dantil-colors">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L477 "View in source") [&#x24C9;][1]
-
-(Object): Stylizes strings for printing to the console using the [chalk](https://github.com/chalk/chalk) module.
-
-#### Example
-```js
-console.log(dantil.colors.red('Error'))
-// => Prints red-colored "Error"
-```
-* * *
-
-<!-- /div -->
-
-<!-- /div -->
-
-<!-- div -->
-
-## `“File System” Methods`
-
-<!-- div -->
-
-### <a id="dantil-stdoutToFile"></a>`dantil.stdoutToFile(path, func)`
-<a href="#dantil-stdoutToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L505 "View in source") [&#x24C9;][1]
-
-Synchronously writes the process's `stdout` to a file at `path` instead of the console while processing `func`. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` completes or if an exception is thrown.
-
-#### Arguments
-1. `path` *(string)*: The path where to write `stdout`.
-2. `func` *(Function)*: The function to process while writing output to `path`.
-
-#### Returns
-*(&#42;)*:  Returns the value returned by `func`, if any.
-
-#### Example
-```js
-// Print to console
-console.log('Begin output to file')
-
-// Redirect `stdout` from console to '~/Desktop/out.txt'
-dantil.stdoutToFile('~/Desktop/out.txt', function () {
-  console.log('Numbers:')
-  for (var i = 0; i < 100; ++i) {
-    console.log(i)
-  }
-})
-// => Restores `stdout` to console and prints "Output saved: ~/Desktop/out.txt"
-
-// Print to console (after restoring `stdout`)
-console.log('Output to file complete')
-```
-* * *
-
-<!-- /div -->
-
-<!-- div -->
-
-### <a id="dantil-writeJSONFile"></a>`dantil.writeJSONFile(path, obj)`
-<a href="#dantil-writeJSONFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L566 "View in source") [&#x24C9;][1]
-
-Writes `obj` to a JSON file at `path`.
-
-#### Arguments
-1. `path` *(string)*: The file path to write to.
-2. `obj` *(Object)*: The object to save to `path`.
-
-#### Example
-```js
-var obj = {
-  name: 'foo',
-  value: 7,
-  list: [ 'apple', 'orange' ]
-}
-
-dantil.writeJSONFile('./myObj.json', obj)
-// => Writes file and prints "File saved: /Users/Danny/myObj.json"
 ```
 * * *
 
