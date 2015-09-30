@@ -8,12 +8,13 @@ fs.writeFileSync('../README.md', docdown({
 	toc: 'categories',
 	sort: false,
 	title: packageFile.name,
-	description: (
-		packageFile.description + '\n\n' +
-		'In addition to [much](#dantil-illFormedOpts) [original](#dantil-redirectOutputToFile) [functionality](#dantil-getModuleCallerPathAndLineNumber), includes [many](#dantil-log) [improved](#dantil-time) [alternatives](#dantil-tryCatchWrapper) [to](#dantil-assertEqual) native functions.\n' +
-		'#### Usage\n' +
-		'```javascript\n' +
-		'var dantil = require(\'dantil\')\n' +
-		'```'
-	)
+	description: [
+		packageFile.description,
+		'',
+		'In addition to [much](#dantil-illFormedOpts) [original](#dantil-redirectOutputToFile) [functionality](#dantil-getModuleCallerPathAndLineNumber), includes [many](#dantil-log) [improved](#dantil-time) [alternatives](#dantil-tryCatchWrapper) [to](#dantil-assertEqual) native functions.',
+		'#### Usage',
+		'```javascript',
+		'var dantil = require(\'dantil\')',
+		'```',
+	].join('\n')
 }))
