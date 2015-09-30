@@ -82,7 +82,7 @@ var dantil = require('dantil')
 
 ## `String`
 * <a href="#dantil-format">`dantil.format`</a>
-* <a href="#dantil-dashedToCamelCase">`dantil.dashedToCamelCase`</a>
+* <a href="#dantil-kebabToCamelCase">`dantil.kebabToCamelCase`</a>
 
 <!-- /div -->
 
@@ -1026,20 +1026,20 @@ dantil.format('%s:%s %d', 'foo', 'bar', 22)
 
 <!-- div -->
 
-### <a id="dantil-dashedToCamelCase"></a>`dantil.dashedToCamelCase(dashedString)`
-<a href="#dantil-dashedToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1262 "View in source") [&#x24C9;][1]
+### <a id="dantil-kebabToCamelCase"></a>`dantil.kebabToCamelCase(kebabCasedString)`
+<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1262 "View in source") [&#x24C9;][1]
 
-Converts dash-separated `string` to camel case.
+Converts kebab cased `string` to camel case.
 
 #### Arguments
-1. `dashedString` *(string)*: The dash-separated string to convert.
+1. `kebabCasedString` *(string)*: The kebab cased string to convert.
 
 #### Returns
 *(string)*:  Returns the camel cased string.
 
 #### Example
 ```js
-dantil.camelCase('my-long-variable-name')
+dantil.kebabToCamelCase('my-long-variable-name')
 // => 'myLongVariableName'
 ```
 * * *
