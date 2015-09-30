@@ -83,6 +83,7 @@ var dantil = require('dantil')
 ## `String`
 * <a href="#dantil-format">`dantil.format`</a>
 * <a href="#dantil-kebabToCamelCase">`dantil.kebabToCamelCase`</a>
+* <a href="#dantil-camelToKebabCase">`dantil.camelToKebabCase`</a>
 
 <!-- /div -->
 
@@ -1041,6 +1042,28 @@ Converts kebab cased `string` to camel case.
 ```js
 dantil.kebabToCamelCase('my-long-variable-name')
 // => 'myLongVariableName'
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
+### <a id="dantil-camelToKebabCase"></a>`dantil.camelToKebabCase(camelCasedString)`
+<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1281 "View in source") [&#x24C9;][1]
+
+Converts camel cased `string` to kebab case.
+
+#### Arguments
+1. `camelCasedString` *(string)*: The camel cased string to convert.
+
+#### Returns
+*(string)*:  Returns the kebab cased string.
+
+#### Example
+```js
+dantil.camelToKebabCase('myLongVariableName')
+// => 'my-long-variable-name'
 ```
 * * *
 
