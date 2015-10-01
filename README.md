@@ -50,6 +50,7 @@ var dantil = require('dantil')
 * <a href="#dantil-logErrorAndPath">`dantil.logErrorAndPath`</a>
 * <a href="#dantil-logPathAndObject">`dantil.logPathAndObject`</a>
 * <a href="#dantil-logTrace">`dantil.logTrace`</a>
+* <a href="#dantil-logLine">`dantil.logLine`</a>
 * <a href="#dantil-excludeParenthesesInStackTrace">`dantil.excludeParenthesesInStackTrace`</a>
 
 <!-- /div -->
@@ -57,7 +58,6 @@ var dantil = require('dantil')
 <!-- div -->
 
 ## `Profiling`
-* <a href="#dantil-assert">`dantil.assert`</a>
 * <a href="#dantil-assertTrue">`dantil.assertTrue`</a>
 * <a href="#dantil-assertEqual">`dantil.assertEqual`</a>
 * <a href="#dantil-time">`dantil.time`</a>
@@ -697,8 +697,31 @@ if (obscureCondition) {
 
 <!-- div -->
 
+### <a id="dantil-logLine"></a>`dantil.logLine([message])`
+<a href="#dantil-logLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L915 "View in source") [&#x24C9;][1]
+
+Prints the calling file path and line number, prepended by optional `message`. This is useful for marking reaching a section of code.
+
+#### Arguments
+1. `[message]` *(string)*: The optional message to prepend to the path and line number.
+
+#### Example
+```js
+// The contents of 'foo.js':
+
+if (rareConditionIsTrue) {
+  dantil.logLine('Condition met')
+  // => Prints "Condition met: /Users/Danny/foo.js:2"
+}
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
 ### <a id="dantil-excludeParenthesesInStackTrace"></a>`dantil.excludeParenthesesInStackTrace`
-<a href="#dantil-excludeParenthesesInStackTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L923 "View in source") [&#x24C9;][1]
+<a href="#dantil-excludeParenthesesInStackTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L943 "View in source") [&#x24C9;][1]
 
 Modifies V8's default stack trace format (when printing) to not surround script file paths with parentheses. This is useful to enable iTerm's open-file-path shortcut (which the parentheses would otherwise break).
 <br>
@@ -730,29 +753,6 @@ dantil.excludeParenthesesInStackTrace()
 <!-- div -->
 
 ## `“Profiling” Methods`
-
-<!-- div -->
-
-### <a id="dantil-assert"></a>`dantil.assert([message])`
-<a href="#dantil-assert">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L960 "View in source") [&#x24C9;][1]
-
-Prints the calling file path and line number, prepended by `message`, to mark reaching a section of code.
-
-#### Arguments
-1. `[message]` *(string)*: The optional message to prepend to the path and line number.
-
-#### Example
-```js
-// The contents of 'foo.js':
-
-if (rareConditionIsTrue) {
-  dantil.assert('Condition met')
-  // => Prints "Condition met: /Users/Danny/foo.js:2"
-}
-```
-* * *
-
-<!-- /div -->
 
 <!-- div -->
 
