@@ -7,7 +7,7 @@
     "chalk": "^1.1.1"
   },
   "devDependencies": {
-    "docdown": "^0.2.1"
+    "docdown": "github:dannynemer/docdown"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
