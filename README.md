@@ -60,7 +60,7 @@ var dantil = require('dantil')
 <!-- div -->
 
 ## `Profiling`
-* <a href="#dantil-assertTrue">`dantil.assertTrue`</a>
+* <a href="#dantil-assert">`dantil.assert`</a>
 * <a href="#dantil-assertEqual">`dantil.assertEqual`</a>
 * <a href="#dantil-time">`dantil.time`</a>
 * <a href="#dantil-timeEnd">`dantil.timeEnd`</a>
@@ -758,8 +758,8 @@ dantil.excludeParenthesesInStackTrace()
 
 <!-- div -->
 
-### <a id="dantil-assertTrue"></a>`dantil.assertTrue(value, [message])`
-<a href="#dantil-assertTrue">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L987 "View in source") [&#x24C9;][1]
+### <a id="dantil-assert"></a>`dantil.assert(value, [message])`
+<a href="#dantil-assert">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L987 "View in source") [&#x24C9;][1]
 
 Tests if `value` is truthy. If the test fails, prints the calling file path and line number, prepended by `message`.
 
@@ -774,11 +774,11 @@ Tests if `value` is truthy. If the test fails, prints the calling file path and 
 ```js
 // The contents of 'foo.js':
 
-dantil.assertTrue(100 > Infinity, 'Condition failed')
+dantil.assert(100 > Infinity, 'Condition failed')
 // => false
 // => Prints "Condition failed: /Users/Danny/foo.js:1"
 
-if (dantil.assertTrue(rareConditionIsTrue)) {
+if (dantil.assert(rareConditionIsTrue)) {
   // => true
 
   // ...stuff...
