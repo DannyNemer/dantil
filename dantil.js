@@ -70,8 +70,8 @@ exports.illFormedOpts = function (schema, options) {
     // Check for unrecognized properties.
     if (!schema.hasOwnProperty(paramName)) {
       exports.logError('Unrecognized property:', exports.stylize(paramName))
+      exports.log('       Accepted properties:', Object.keys(schema))
       exports.logPathAndObject(options, true)
-      exports.log('\nAccepted properties:', schema)
       return true
     }
 
@@ -82,7 +82,7 @@ exports.illFormedOpts = function (schema, options) {
 
     // Check for an accidentally passed `undefined` object; e.g., `undefined`, `[]`, `[ 1, undefined ]`.
     if (optsVal === undefined || (Array.isArray(optsVal) && (optsVal.length === 0 || optsVal.indexOf(undefined) !== -1))) {
-      exports.logError('undefined \'' + paramName + '\':', optsVal)
+      exports.logError('undefined found in \'' + paramName + '\':')
       exports.logPathAndObject(options, true)
       return true
     }
@@ -614,7 +614,7 @@ exports.realpathSync = function (path) {
  *
  * Formats plain `Object`s and `Array`s with multi-line string representations on separate lines. Concatenates and formats all other consecutive values on the same line.
  *
- * If the first argument is of a complex type (e.g., `Object`, `Array`), left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks. If the first argument is entirely whitespace, excludes that argument from output and indents all remaining arugments with that whitespace.
+ * If the first argument is of a complex type (e.g., `Object`, `Array`), left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks. If the first argument is entirely whitespace, excludes that argument from output and indents all remaining arguments with that whitespace.
  *
  * @static
  * @memberOf dantil
@@ -645,7 +645,7 @@ exports.dir = function () {
  *
  * Formats plain `Object`s and `Array`s with multi-line string representations on separate lines. Concatenates and formats all other consecutive values on the same line.
  *
- * If the first argument is of a complex type (e.g., `Object`, `Array`), left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks. If the first argument is entirely whitespace, excludes that argument from output and indents all remaining arugments with that whitespace.
+ * If the first argument is of a complex type (e.g., `Object`, `Array`), left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks. If the first argument is entirely whitespace, excludes that argument from output and indents all remaining arguments with that whitespace.
  *
  * @private
  * @param {Array} args The values and objects to format.
@@ -688,7 +688,7 @@ function prettify(args, options) {
         arg = arg.substring(arg.lastIndexOf('\n') + 1)
 
         // JavaScript will not properly indent if '\t' is appended to spaces (i.e., reverse order as here).
-        // If the first argument is entirely whitespace, indent all remaining arugments with that whitespace.
+        // If the first argument is entirely whitespace, indent all remaining arguments with that whitespace.
         indent = reWhitespaceOnly.test(formattedArg) ? arg : arg + indent
       } else if (arg instanceof Object) {
         // Do not indent remaining arguments if the first argument is of a complex type.
