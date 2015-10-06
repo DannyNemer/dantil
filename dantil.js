@@ -9,7 +9,7 @@ var fs = require('fs')
 var util = require('util')
 
 /**
- * Checks if options object `options` adheres to `schema` using the [`ill-formed-opts`] (https://github.com/DannyNemer/ill-formed-opts) module. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed.
+ * Checks if options object `options` adheres to `schema` using the [`ill-formed-opts`] (https://github.com/DannyNemer/ill-formed-opts) module. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed, including the line number of the offending function call.
  *
  * @static
  * @memberOf dantil
@@ -39,6 +39,14 @@ var util = require('util')
  *
  *   // ...stuff...
  * }
+ * ```
+ * ```js
+ * fork({ modulePath: './myModule.js', stdio: 'out' })
+ * // => Prints: Error: Unrecognized value for 'stdio': 'out'
+ * //                   Acceptable values for 'stdio': [ 'pipe', 'ignore', 0, 1, 2 ]
+ * //
+ * //            /Users/Danny/foo.js:22
+ * //              { modulePath: './myModule.js', stdio: 'out' }
  */
 exports.illFormedOpts = require('ill-formed-opts')
 
