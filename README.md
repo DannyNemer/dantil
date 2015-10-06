@@ -53,6 +53,7 @@ var dantil = require('dantil')
 * <a href="#dantil-logPathAndObject">`dantil.logPathAndObject`</a>
 * <a href="#dantil-logTrace">`dantil.logTrace`</a>
 * <a href="#dantil-logLine">`dantil.logLine`</a>
+* <a href="#dantil-logLineIfTrue">`dantil.logLineIfTrue`</a>
 * <a href="#dantil-excludeParenthesesInStackTrace">`dantil.excludeParenthesesInStackTrace`</a>
 
 <!-- /div -->
@@ -60,7 +61,6 @@ var dantil = require('dantil')
 <!-- div -->
 
 ## `Profiling`
-* <a href="#dantil-assert">`dantil.assert`</a>
 * <a href="#dantil-assertEqual">`dantil.assertEqual`</a>
 * <a href="#dantil-time">`dantil.time`</a>
 * <a href="#dantil-timeEnd">`dantil.timeEnd`</a>
@@ -776,8 +776,31 @@ if (rareConditionIsTrue) {
 
 <!-- div -->
 
+### <a id="dantil-logLineIfTrue"></a>`dantil.logLineIfTrue(value, [message])`
+<a href="#dantil-logLineIfTrue">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1056 "View in source") [&#x24C9;][1]
+
+If `value` is truthy, prints the calling file path and line number, prepended by optional `message`. This is useful for marking reaching a section of code.
+
+#### Arguments
+1. `value` *(boolean)*: The value to check if truthy.
+2. `[message]` *(string)*: The optional message to prepend to the path and line number.
+
+#### Example
+```js
+// The contents of 'foo.js':
+
+var myCondition = true
+dantil.logLine(myCondition, 'Condition met')
+// => Prints "Condition met: /Users/Danny/foo.js:1"
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
 ### <a id="dantil-excludeParenthesesInStackTrace"></a>`dantil.excludeParenthesesInStackTrace`
-<a href="#dantil-excludeParenthesesInStackTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1064 "View in source") [&#x24C9;][1]
+<a href="#dantil-excludeParenthesesInStackTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1086 "View in source") [&#x24C9;][1]
 
 Modifies V8's default stack trace format (when printing) to not surround script file paths with parentheses. This is useful to enable iTerm's open-file-path shortcut (which the parentheses would otherwise break).
 <br>
@@ -812,40 +835,8 @@ dantil.excludeParenthesesInStackTrace()
 
 <!-- div -->
 
-### <a id="dantil-assert"></a>`dantil.assert(value, [message])`
-<a href="#dantil-assert">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1108 "View in source") [&#x24C9;][1]
-
-Tests if `value` is truthy. If the test fails, prints the calling file path and line number, prepended by `message`.
-
-#### Arguments
-1. `value` *(boolean)*: The value to check if truthy.
-2. `[message]` *(string)*: The optional message to prepend to the path and line number.
-
-#### Returns
-*(boolean)*:  Returns `true` if `value` is truthy, else `false`.
-
-#### Example
-```js
-// The contents of 'foo.js':
-
-dantil.assert(100 > Infinity, 'Condition failed')
-// => false
-// => Prints "Condition failed: /Users/Danny/foo.js:1"
-
-if (dantil.assert(rareConditionIsTrue)) {
-  // => true
-
-  // ...stuff...
-}
-```
-* * *
-
-<!-- /div -->
-
-<!-- div -->
-
 ### <a id="dantil-assertEqual"></a>`dantil.assertEqual(value, other, [message])`
-<a href="#dantil-assertEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1155 "View in source") [&#x24C9;][1]
+<a href="#dantil-assertEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1145 "View in source") [&#x24C9;][1]
 
 Tests shallow, coercive equality with the equal comparison operator (`==`). If the test fails, prints an error message and the file path and line number to `stderr`. In contrast, Node's `assert.equal()` throws an exception.
 
@@ -892,7 +883,7 @@ if (dantil.assertEqual(myArray.length, 100)) {
 <!-- div -->
 
 ### <a id="dantil-time"></a>`dantil.time(label)`
-<a href="#dantil-time">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1199 "View in source") [&#x24C9;][1]
+<a href="#dantil-time">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1189 "View in source") [&#x24C9;][1]
 
 Starts a high-resolution timer (with precision in microseconds) identified by `label`. Use `dantil.timeEnd(label)` to print the timer's current value.
 
@@ -921,7 +912,7 @@ dantil.timeEnd('my test')
 <!-- div -->
 
 ### <a id="dantil-timeEnd"></a>`dantil.timeEnd(label)`
-<a href="#dantil-timeEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1211 "View in source") [&#x24C9;][1]
+<a href="#dantil-timeEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1201 "View in source") [&#x24C9;][1]
 
 Prints the current high-resolution value of a timer initiated with `dantil.time(label)`.
 
@@ -935,7 +926,7 @@ Prints the current high-resolution value of a timer initiated with `dantil.time(
 <!-- div -->
 
 ### <a id="dantil-count"></a>`dantil.count(label)`
-<a href="#dantil-count">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1249 "View in source") [&#x24C9;][1]
+<a href="#dantil-count">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1239 "View in source") [&#x24C9;][1]
 
 Counts the number of times a section of code is reached, identified by `label`. Use `dantil.countEnd(label)` to print the counter's value. This is useful for profiling complex programs.
 
@@ -959,7 +950,7 @@ dantil.countEnd('even')
 <!-- div -->
 
 ### <a id="dantil-countEnd"></a>`dantil.countEnd(label)`
-<a href="#dantil-countEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1262 "View in source") [&#x24C9;][1]
+<a href="#dantil-countEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1252 "View in source") [&#x24C9;][1]
 
 Prints (and resets the value of) the number of calls of `dantil.count(label)`.
 
@@ -973,7 +964,7 @@ Prints (and resets the value of) the number of calls of `dantil.count(label)`.
 <!-- div -->
 
 ### <a id="dantil-countEndAll"></a>`dantil.countEndAll`
-<a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1291 "View in source") [&#x24C9;][1]
+<a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1281 "View in source") [&#x24C9;][1]
 
 Prints (and resets) the values of all counters used on `dantil.count()`. Does not print counters that are never reached (and never have their keys initialized).
 
@@ -1003,7 +994,7 @@ dantil.countEndAll()
 <!-- div -->
 
 ### <a id="dantil-arraysEqual"></a>`dantil.arraysEqual(a, b)`
-<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1330 "View in source") [&#x24C9;][1]
+<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1320 "View in source") [&#x24C9;][1]
 
 Performs a shallow comparison between two arrays to determine if they are equivalent.
 
@@ -1048,7 +1039,7 @@ dantil.arraysEqual([ objA, objB ], [ objA, objB ])
 <!-- div -->
 
 ### <a id="dantil-cleanNumber"></a>`dantil.cleanNumber(number)`
-<a href="#dantil-cleanNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1365 "View in source") [&#x24C9;][1]
+<a href="#dantil-cleanNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1355 "View in source") [&#x24C9;][1]
 
 Removes any extraneous digits from `number`, which result from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
@@ -1079,7 +1070,7 @@ number = dantil.cleanNumber(number)
 <!-- div -->
 
 ### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
-<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1384 "View in source") [&#x24C9;][1]
+<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1374 "View in source") [&#x24C9;][1]
 
 Formats a string in a `printf()`-like format using Node's `util.format()`.
 
@@ -1102,7 +1093,7 @@ dantil.format('%s:%s %d', 'foo', 'bar', 22)
 <!-- div -->
 
 ### <a id="dantil-kebabToCamelCase"></a>`dantil.kebabToCamelCase(kebabCasedString)`
-<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1399 "View in source") [&#x24C9;][1]
+<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1389 "View in source") [&#x24C9;][1]
 
 Converts kebab cased `string` to camel case.
 
@@ -1124,7 +1115,7 @@ dantil.kebabToCamelCase('my-long-variable-name')
 <!-- div -->
 
 ### <a id="dantil-camelToKebabCase"></a>`dantil.camelToKebabCase(camelCasedString)`
-<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1418 "View in source") [&#x24C9;][1]
+<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1408 "View in source") [&#x24C9;][1]
 
 Converts camel cased `string` to kebab case.
 
