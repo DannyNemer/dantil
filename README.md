@@ -10,7 +10,7 @@ npm install dannynemer/dantil
 ```
 
 #### Usage
-```javascript
+```js
 var dantil = require('dantil')
 ```
 
@@ -106,7 +106,7 @@ var dantil = require('dantil')
 ### <a id="dantil-illFormedOpts"></a>`dantil.illFormedOpts(schema, options)`
 <a href="#dantil-illFormedOpts">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L51 "View in source") [&#x24C9;][1]
 
-Checks if options object `options` adheres to `schema` using the [`ill-formed-opts`] (https://github.com/DannyNemer/ill-formed-opts) module. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed, including the line number of the offending function call.
+Checks if options object `options` adheres to `schema` using the [`ill-formed-opts`] (https://github.com/DannyNemer/ill-formed-opts) module, thereby simulating static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed, including the line number of the offending function call.
 
 #### Arguments
 1. `schema` *(Object)*: The definition of required and optional properties for `options`.
@@ -300,7 +300,7 @@ exports.bar = function () {
 ### <a id="dantil-colors"></a>`dantil.colors`
 <a href="#dantil-colors">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L311 "View in source") [&#x24C9;][1]
 
-(Object): Stylizes strings for printing to the console using the [chalk](https://github.com/chalk/chalk) module.
+(Object): Stylizes strings for printing to the console using the [`chalk`](https://github.com/chalk/chalk) module.
 
 #### Example
 ```js
@@ -422,7 +422,7 @@ dantil.pathAndLineNumbersOf('./foo.js', 'ipsum', true)
 ### <a id="dantil-firstPathAndLineNumberOf"></a>`dantil.firstPathAndLineNumberOf(filePath, value, stringify)`
 <a href="#dantil-firstPathAndLineNumberOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L482 "View in source") [&#x24C9;][1]
 
-Gets the file path and line number in the format `filePath:lineNumber` at which the first occurrence of `value` is found in the source file at `filePath`. This is useful for error reporting.
+Gets the file path and line number in the format `filePath:lineNumber` of the first occurrence of `value` in the source file at `filePath`. This is useful for error reporting.
 
 #### Arguments
 1. `filePath` *(string)*: The path of the source file to search.
@@ -632,8 +632,8 @@ Prints an error message like `dantil.logError()` followed by the file path and l
 // The contents of 'foo.js':
 
 dantil.logErrorAndPath('Property undefined:', obj)
-// => Prints "Error: Value undefined: { property: undefined }
-//              /Users/Danny/foo.js:1"
+// => Prints: Error: Value undefined: { property: undefined }
+//              /Users/Danny/foo.js:1
 ```
 * * *
 
@@ -661,8 +661,8 @@ var obj = {
 }
 
 dantil.logPathAndObject(obj)
-// => Prints "/Users/Danny/foo.js:6
-//              { values: [ 1, 2, 3 ], name: 'danny' }"
+// => Prints: /Users/Danny/foo.js:6
+//              { values: [ 1, 2, 3 ], name: 'danny' }
 ```
 * * *
 
@@ -682,10 +682,10 @@ Prints the stack trace to the current position. Removes parentheses surrounding 
 ```js
 if (obscureCondition) {
   dantil.logTrace('Reached obscure condition')
-  // => Prints: "Trace: Reached obscure condition
-  //                at Object.<anonymous> /Users/Danny/test.js:4:9
-  //                at Module._compile (module.js:460:26)
-  //                ..."
+  // => Prints: Trace: Reached obscure condition
+  //               at Object.<anonymous> /Users/Danny/test.js:4:9
+  //               at Module._compile (module.js:460:26)
+  //               ...
 }
 ```
 * * *
@@ -798,18 +798,18 @@ dantil.assertEqual(false, 0)
 
 dantil.assertEqual(20, 21)
 // => false
-// => Prints "AssertionError: 20 == 21
-//              /Users/Danny/foo.js:5"
+// => Prints: AssertionError: 20 == 21
+//              /Users/Danny/foo.js:5
 
 dantil.assertEqual({ prop: 'value' }, { prop: 'value' })
 // => false
-// => Prints "AssertionError: { prop: 'value' } == { prop: 'value' }
-//              /Users/Danny/foo.js:9"
+// => Prints: AssertionError: { prop: 'value' } == { prop: 'value' }
+//              /Users/Danny/foo.js:9
 
 dantil.assertEqual([ 3, 1, 4 ], [ 1, 5, 9 ], 'Array test failed')
 // => false
-// => Prints "AssertionError: Array test failed: [ 3, 1, 4 ] == [ 1, 5, 9 ]
-//              /Users/Danny/foo.js:14"
+// => Prints: AssertionError: Array test failed: [ 3, 1, 4 ] == [ 1, 5, 9 ]
+//              /Users/Danny/foo.js:14
 
 if (dantil.assertEqual(myArray.length, 100)) {
   // => true
@@ -919,8 +919,8 @@ for (var i = 0; i < 100; ++i) {
 
 dantil.countEndAll()
 // => Resets all counts to 0
-// => Prints "even: 50
-//            odd: 50"
+// => Prints: even: 50
+//            odd: 50
 ```
 * * *
 

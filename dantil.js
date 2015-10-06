@@ -9,7 +9,7 @@ var fs = require('fs')
 var util = require('util')
 
 /**
- * Checks if options object `options` adheres to `schema` using the [`ill-formed-opts`] (https://github.com/DannyNemer/ill-formed-opts) module. Simulates static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed, including the line number of the offending function call.
+ * Checks if options object `options` adheres to `schema` using the [`ill-formed-opts`] (https://github.com/DannyNemer/ill-formed-opts) module, thereby simulating static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed, including the line number of the offending function call.
  *
  * @static
  * @memberOf dantil
@@ -297,7 +297,7 @@ function getFormattedStackFrame(getFrameFunc) {
 }
 
 /**
- * Stylizes strings for printing to the console using the [chalk](https://github.com/chalk/chalk) module.
+ * Stylizes strings for printing to the console using the [`chalk`](https://github.com/chalk/chalk) module.
  *
  * @static
  * @memberOf dantil
@@ -450,7 +450,7 @@ exports.pathAndLineNumbersOf = function (filePath, string, stringify) {
 }
 
 /**
- * Gets the file path and line number in the format `filePath:lineNumber` at which the first occurrence of `value` is found in the source file at `filePath`. This is useful for error reporting.
+ * Gets the file path and line number in the format `filePath:lineNumber` of the first occurrence of `value` in the source file at `filePath`. This is useful for error reporting.
  *
  * @static
  * @memberOf dantil
@@ -787,8 +787,8 @@ function prependColoredLabel(label, color, args) {
  * // The contents of 'foo.js':
  *
  * dantil.logErrorAndPath('Property undefined:', obj)
- * // => Prints "Error: Value undefined: { property: undefined }
- * //              /Users/Danny/foo.js:1"
+ * // => Prints: Error: Value undefined: { property: undefined }
+ * //              /Users/Danny/foo.js:1
  */
 exports.logErrorAndPath = function (logThisLine) {
   var args = Array.prototype.slice.call(arguments, typeof logThisLine === 'boolean' ? 1 : 0)
@@ -827,8 +827,8 @@ exports.logErrorAndPath = function (logThisLine) {
  * }
  *
  * dantil.logPathAndObject(obj)
- * // => Prints "/Users/Danny/foo.js:6
- * //              { values: [ 1, 2, 3 ], name: 'danny' }"
+ * // => Prints: /Users/Danny/foo.js:6
+ * //              { values: [ 1, 2, 3 ], name: 'danny' }
  */
 exports.logPathAndObject = function (object, printLeadingNewline, logThisLine) {
   var pathAndLineNumber = printLeadingNewline ? '\n' : ''
@@ -847,10 +847,10 @@ exports.logPathAndObject = function (object, printLeadingNewline, logThisLine) {
  *
  * if (obscureCondition) {
  *   dantil.logTrace('Reached obscure condition')
- *   // => Prints: "Trace: Reached obscure condition
- *   //                at Object.<anonymous> /Users/Danny/test.js:4:9
- *   //                at Module._compile (module.js:460:26)
- *   //                ..."
+ *   // => Prints: Trace: Reached obscure condition
+ *   //               at Object.<anonymous> /Users/Danny/test.js:4:9
+ *   //               at Module._compile (module.js:460:26)
+ *   //               ...
  * }
  */
 exports.logTrace = function (message) {
@@ -973,18 +973,18 @@ exports.excludeParenthesesInStackTrace = function () {
  *
  * dantil.assertEqual(20, 21)
  * // => false
- * // => Prints "AssertionError: 20 == 21
- * //              /Users/Danny/foo.js:5"
+ * // => Prints: AssertionError: 20 == 21
+ * //              /Users/Danny/foo.js:5
  *
  * dantil.assertEqual({ prop: 'value' }, { prop: 'value' })
  * // => false
- * // => Prints "AssertionError: { prop: 'value' } == { prop: 'value' }
- * //              /Users/Danny/foo.js:9"
+ * // => Prints: AssertionError: { prop: 'value' } == { prop: 'value' }
+ * //              /Users/Danny/foo.js:9
  *
  * dantil.assertEqual([ 3, 1, 4 ], [ 1, 5, 9 ], 'Array test failed')
  * // => false
- * // => Prints "AssertionError: Array test failed: [ 3, 1, 4 ] == [ 1, 5, 9 ]
- * //              /Users/Danny/foo.js:14"
+ * // => Prints: AssertionError: Array test failed: [ 3, 1, 4 ] == [ 1, 5, 9 ]
+ * //              /Users/Danny/foo.js:14
  *
  * if (dantil.assertEqual(myArray.length, 100)) {
  *   // => true
@@ -1125,8 +1125,8 @@ exports.countEnd = function (label) {
  *
  * dantil.countEndAll()
  * // => Resets all counts to 0
- * // => Prints "even: 50
- * //            odd: 50"
+ * // => Prints: even: 50
+ * //            odd: 50
  */
 exports.countEndAll = function () {
   _counts.forEach(function(count, label) {

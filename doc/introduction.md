@@ -8,6 +8,6 @@ npm install dannynemer/dantil
 ```
 
 #### Usage
-```javascript
+```js
 var dantil = require('dantil')
 ```
