@@ -7,7 +7,8 @@
     "doc": "doc"
   },
   "dependencies": {
-    "chalk": "^1.1.1"
+    "chalk": "^1.1.1",
+    "ill-formed-opts": "github:dannynemer/ill-formed-opts"
   },
   "devDependencies": {
     "docdown": "github:dannynemer/docdown"
