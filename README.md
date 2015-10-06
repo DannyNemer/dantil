@@ -261,7 +261,7 @@ dantil.getModuleCallerPathAndLineNumber()
 // => undefined
 ```
 
-```javascript
+```js
 // The contents of 'child.js':
 
 var grandchild = require('./grandchild.js')
@@ -286,7 +286,7 @@ function subFunc() {
 }
 ```
 
-```javascript
+```js
 // The contents of 'grandchild.js':
 
 exports.foo = function () {
@@ -365,7 +365,7 @@ console.log('Output to file complete')
 ### <a id="dantil-writeJSONFile"></a>`dantil.writeJSONFile(path, obj)`
 <a href="#dantil-writeJSONFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L500 "View in source") [&#x24C9;][1]
 
-Writes `obj` to a JSON file at `path`.
+Stringifies and writes `obj` to a JSON file at `path`.
 
 #### Arguments
 1. `path` *(string)*: The file path to write to.
@@ -412,7 +412,7 @@ var list = [
 ]
 ```
 
-```javascript
+```js
 // The contents of 'bar.js':
 
 dantil.pathAndLineNumbersOf('./foo.js', 'ipsum')
@@ -451,7 +451,7 @@ var list = [
 ]
 ```
 
-```javascript
+```js
 // The contents of 'bar.js':
 
 dantil.firstPathAndLineNumberOf('./foo.js', 'ipsum')
@@ -734,14 +734,14 @@ Modifies V8's default stack trace format (when printing) to not surround script 
 Before:<br>
 ```
 ReferenceError: dantil is not defined
-at Object.<anonymous> (/Users/Danny/foo.js:7:1)
-...
+   at Object.<anonymous> (/Users/Danny/foo.js:7:1)
+   ...
 ```
 After:<br>
 ```
 ReferenceError: dantil is not defined
-at Object.<anonymous> /Users/Danny/foo.js:7:1
-...
+   at Object.<anonymous> /Users/Danny/foo.js:7:1
+   ...
 ```
 
 #### Example
