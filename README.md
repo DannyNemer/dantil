@@ -128,7 +128,7 @@ var schema = {
   stdio: { values: [ 'pipe', 'ignore', 0, 1, 2 ] }
 }
 
-function fork(options) {
+function myFork(options) {
   if (dantil.illFormedOpts(schema, options)) {
     // => Prints descriptive, helpful error messages
 
@@ -139,7 +139,7 @@ function fork(options) {
 }
 ```
 ```js
-fork({ modulePath: './myModule.js', stdio: 'out' })
+myFork({ modulePath: './myModule.js', stdio: 'out' })
 // => Prints: Error: Unrecognized value for 'stdio': 'out'
 //                   Acceptable values for 'stdio': [ 'pipe', 'ignore', 0, 1, 2 ]
 //
