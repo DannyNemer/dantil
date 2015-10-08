@@ -839,12 +839,12 @@ dantil.time('my test')
 // ...stuff...
 
 dantil.timeEnd('my test')
-// => Prints "my test: 13.264ms"
+// => Prints "my test: 13.264 ms"
 
 // ...more stuff...
 
 dantil.timeEnd('my test')
-// => Prints "my test: 31.183ms"
+// => Prints "my test: 31.183 ms"
 ```
 * * *
 
