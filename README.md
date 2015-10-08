@@ -80,7 +80,7 @@ var dantil = require('dantil')
 <!-- div -->
 
 ## `Number`
-* <a href="#dantil-cleanNumber">`dantil.cleanNumber`</a>
+* <a href="#dantil-cleanFloat">`dantil.cleanFloat`</a>
 
 <!-- /div -->
 
@@ -979,8 +979,8 @@ dantil.arraysEqual([ objA, objB ], [ objA, objB ])
 
 <!-- div -->
 
-### <a id="dantil-cleanNumber"></a>`dantil.cleanNumber(number)`
-<a href="#dantil-cleanNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1205 "View in source") [&#x24C9;][1]
+### <a id="dantil-cleanFloat"></a>`dantil.cleanFloat(number)`
+<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1205 "View in source") [&#x24C9;][1]
 
 Removes any extraneous digits from `number`, which result from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
@@ -995,7 +995,7 @@ Removes any extraneous digits from `number`, which result from operations limite
 var number = 0.1 * 0.2
 // => 0.020000000000000004
 
-number = dantil.cleanNumber(number)
+number = dantil.cleanFloat(number)
 // => 0.02
 ```
 * * *
