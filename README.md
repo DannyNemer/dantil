@@ -965,13 +965,13 @@ dantil.arraysEqual([1, 2, 3, 'danny'], [1, 2, 3, 'danny'])
 dantil.arraysEqual([ false, true ], [ true ])
 // => false
 
-// A shallow comparison will not compare object properties
+// A shallow comparison will compare complex type references, not their contents.
 var objA = { prop: 'val' }
 var objB = { prop: 'val' }
 dantil.arraysEqual([ 1, 2, objA ], [ 1, 2, objB ])
 // => false
 
-// Rather, objects are only equal if they are the same instance
+// Rather, objects are only equal if they are the same instance.
 dantil.arraysEqual([ objA, objB ], [ objA, objB ])
 // => true
 ```
@@ -988,7 +988,7 @@ dantil.arraysEqual([ objA, objB ], [ objA, objB ])
 <!-- div -->
 
 ### <a id="dantil-objectsEqual"></a>`dantil.objectsEqual(a, b)`
-<a href="#dantil-objectsEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1218 "View in source") [&#x24C9;][1]
+<a href="#dantil-objectsEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1219 "View in source") [&#x24C9;][1]
 
 Performs a shallow comparison between two objects to determine if they are equivalent.
 
@@ -1035,7 +1035,7 @@ dantil.objectsEqual({ a: objA, b: objB }, { a: objA, b: objB })
 <!-- div -->
 
 ### <a id="dantil-cleanFloat"></a>`dantil.cleanFloat(number)`
-<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1249 "View in source") [&#x24C9;][1]
+<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1250 "View in source") [&#x24C9;][1]
 
 Removes any extraneous digits from `number`, which result from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
@@ -1066,7 +1066,7 @@ number = dantil.cleanFloat(number)
 <!-- div -->
 
 ### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
-<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1268 "View in source") [&#x24C9;][1]
+<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1269 "View in source") [&#x24C9;][1]
 
 Formats a string in a `printf()`-like format using Node's `util.format()`.
 
@@ -1089,7 +1089,7 @@ dantil.format('%s:%s %d', 'foo', 'bar', 22)
 <!-- div -->
 
 ### <a id="dantil-kebabToCamelCase"></a>`dantil.kebabToCamelCase(kebabCasedString)`
-<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1283 "View in source") [&#x24C9;][1]
+<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1284 "View in source") [&#x24C9;][1]
 
 Converts kebab cased `string` to camel case.
 
@@ -1111,7 +1111,7 @@ dantil.kebabToCamelCase('my-long-variable-name')
 <!-- div -->
 
 ### <a id="dantil-camelToKebabCase"></a>`dantil.camelToKebabCase(camelCasedString)`
-<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1302 "View in source") [&#x24C9;][1]
+<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1303 "View in source") [&#x24C9;][1]
 
 Converts camel cased `string` to kebab case.
 
