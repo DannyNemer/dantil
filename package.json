@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "chalk": "^1.1.1",
+    "hrtimer": "github:dannynemer/hrtimer",
     "ill-formed-opts": "github:dannynemer/ill-formed-opts"
   },
   "devDependencies": {
