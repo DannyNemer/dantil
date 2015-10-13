@@ -837,7 +837,7 @@ if (dantil.assertEqual(myArray.length, 100)) {
 Starts a high-resolution timer (with precision in microseconds) identified by `label`. Use `dantil.timeEnd(label)` to print the timer's current value.
 
 #### Arguments
-1. `label` *(string)*: The identifier of the timer.
+1. `label` *(string)*: The timer identifier.
 
 #### Example
 ```js
@@ -866,7 +866,7 @@ dantil.timeEnd('my test')
 Prints the current high-resolution value of a timer initiated with `dantil.time(label)`.
 
 #### Arguments
-1. `label` *(string)*: The identifier of the timer.
+1. `label` *(string)*: The timer identifier.
 
 * * *
 
@@ -889,8 +889,8 @@ for (var i = 0; i < 100; ++i) {
 }
 
 dantil.countEnd('even')
-// => Prints "even: 50"
 // => Resets the count for 'even' to 0
+// => Prints "even: 50"
 ```
 * * *
 
@@ -927,8 +927,8 @@ for (var i = 0; i < 100; ++i) {
 
 dantil.countEndAll()
 // => Resets all counts to 0
-// => Prints: even: 50
-//            odd: 50
+// => Prints "even: 50
+//            odd: 50"
 ```
 * * *
 
