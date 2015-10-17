@@ -587,7 +587,7 @@ Formats `object` in color for pretty-printing, recursing `options.depth` times w
 ### <a id="dantil-logError"></a>`dantil.logError(values)`
 <a href="#dantil-logError">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L726 "View in source") [&#x24C9;][1]
 
-Prints the provided values like `dantil.log()`, but prints to `stderr`, prepended with red-colored "Error: ".
+Prints the provided values to `stdout` like `dantil.log()`, prepended with red-colored "Error: ".
 
 #### Arguments
 1. `values` *(...&#42;)*: The values to print following "Error: ".
