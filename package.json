@@ -10,7 +10,8 @@
     "chalk": "^1.1.1",
     "counter": "github:dannynemer/counter",
     "hrtimer": "github:dannynemer/hrtimer",
-    "ill-formed-opts": "github:dannynemer/ill-formed-opts"
+    "ill-formed-opts": "github:dannynemer/ill-formed-opts",
+    "lodash.isequal": "^3.0.4"
   },
   "devDependencies": {
     "docdown": "github:dannynemer/docdown"
