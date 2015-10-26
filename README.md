@@ -1122,7 +1122,7 @@ Deletes all properties of `object` defined as `undefined`. This is useful for ob
 <!-- div -->
 
 ### <a id="dantil-diffObjects"></a>`dantil.diffObjects(object, other)`
-<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1291 "View in source") [&#x24C9;][1]
+<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1322 "View in source") [&#x24C9;][1]
 
 Stringifies and compares two objects line by line, and returns a string of the differences stylized for printing.
 
@@ -1133,6 +1133,38 @@ Stringifies and compares two objects line by line, and returns a string of the d
 #### Returns
 *(string)*:  Returns a string of the differences stylized for printing.
 
+#### Example
+```js
+var objA = {
+  name: 'dantil',
+  version: 0.1,
+  sagan: [
+    'There is perhaps no better demonstration of the folly of human',
+    'underscores our responsibility to deal more kindly with one another,',
+    'and to preserve and cherish the pale blue dot, the only home we\'ve',
+    'ever known.'
+  ]
+}
+
+var objB = {
+  name: 'dantil',
+  version: 0.2,
+  sagan: [
+    'There is perhaps no better demonstration of the folly of human',
+    'conceits than this distant image of our tiny world. To me, it',
+    'underscores our responsibility to deal more kindly with one another,',
+    'ever known.'
+  ]
+}
+
+// Compare objects and generate string with differences stylized.
+var diff = dantil.diffObjects(objA, objB)
+console.log(diff)
+```
+Output:
+<br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-diffObjects-example.jpg" alt="dantil.diffObjects() example output"/>
+```
+```
 * * *
 
 <!-- /div -->
@@ -1146,7 +1178,7 @@ Stringifies and compares two objects line by line, and returns a string of the d
 <!-- div -->
 
 ### <a id="dantil-cleanFloat"></a>`dantil.cleanFloat(number)`
-<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1325 "View in source") [&#x24C9;][1]
+<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1356 "View in source") [&#x24C9;][1]
 
 Removes any extraneous digits from `number`, which result from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
@@ -1177,7 +1209,7 @@ number = dantil.cleanFloat(number)
 <!-- div -->
 
 ### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
-<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1344 "View in source") [&#x24C9;][1]
+<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1375 "View in source") [&#x24C9;][1]
 
 Formats a string in a `printf()`-like format using Node's `util.format()`.
 
@@ -1200,7 +1232,7 @@ dantil.format('%s:%s %d', 'foo', 'bar', 22)
 <!-- div -->
 
 ### <a id="dantil-kebabToCamelCase"></a>`dantil.kebabToCamelCase(kebabCasedString)`
-<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1359 "View in source") [&#x24C9;][1]
+<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1390 "View in source") [&#x24C9;][1]
 
 Converts kebab cased `string` to camel case.
 
@@ -1222,7 +1254,7 @@ dantil.kebabToCamelCase('my-long-variable-name')
 <!-- div -->
 
 ### <a id="dantil-camelToKebabCase"></a>`dantil.camelToKebabCase(camelCasedString)`
-<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1378 "View in source") [&#x24C9;][1]
+<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1409 "View in source") [&#x24C9;][1]
 
 Converts camel cased `string` to kebab case.
 
