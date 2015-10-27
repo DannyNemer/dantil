@@ -195,13 +195,13 @@ dantil.tryCatchWrapper(function () {
 
 <!-- div -->
 
-### <a id="dantil-deleteModuleCache"></a>`dantil.deleteModuleCache(paths)`
+### <a id="dantil-deleteModuleCache"></a>`dantil.deleteModuleCache([paths])`
 <a href="#dantil-deleteModuleCache">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L132 "View in source") [&#x24C9;][1]
 
 Deletes the modules identified by the provided paths from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s). This is useful for enabling changes on a server without restarting the server.
 
 #### Arguments
-1. `paths` *(...string)*: The paths of modules to remove from cache.
+1. `[paths]` *(...string)*: The paths of modules to remove from cache.
 
 #### Example
 ```js
@@ -525,7 +525,7 @@ dantil.realpathSync('~/Desktop/../../Danny')
 
 <!-- div -->
 
-### <a id="dantil-log"></a>`dantil.log(values)`
+### <a id="dantil-log"></a>`dantil.log([values])`
 <a href="#dantil-log">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L563 "View in source") [&#x24C9;][1]
 
 Pretty-prints the provided values and objects to `stdout`, in color, recursing 2 times while formatting objects (which is the behavior of `console.log()`).
@@ -537,7 +537,7 @@ Formats plain `Object`s and `Array`s with multi-line string representations on s
 If the first argument is of a complex type (e.g., `Object`, `Array`), left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks. If the first argument is entirely whitespace, excludes that argument from output and indents all remaining arguments with that whitespace.
 
 #### Arguments
-1. `values` *(...&#42;)*: The values and objects to print.
+1. `[values]` *(...&#42;)*: The values and objects to print.
 
 * * *
 
@@ -545,13 +545,13 @@ If the first argument is of a complex type (e.g., `Object`, `Array`), left-align
 
 <!-- div -->
 
-### <a id="dantil-dir"></a>`dantil.dir(values)`
+### <a id="dantil-dir"></a>`dantil.dir([values])`
 <a href="#dantil-dir">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L575 "View in source") [&#x24C9;][1]
 
 A version of `dantil.log()` that recurses indefinitely while formatting objects. This is useful for inspecting large, complicated objects.
 
 #### Arguments
-1. `values` *(...&#42;)*: The values and objects to print.
+1. `[values]` *(...&#42;)*: The values and objects to print.
 
 * * *
 
@@ -559,13 +559,13 @@ A version of `dantil.log()` that recurses indefinitely while formatting objects.
 
 <!-- div -->
 
-### <a id="dantil-logStderr"></a>`dantil.logStderr(values)`
+### <a id="dantil-logStderr"></a>`dantil.logStderr([values])`
 <a href="#dantil-logStderr">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L588 "View in source") [&#x24C9;][1]
 
 A version of `dantil.log()` that prints to `stderr`.
 
 #### Arguments
-1. `values` *(...&#42;)*: The values and objects to print.
+1. `[values]` *(...&#42;)*: The values and objects to print.
 
 * * *
 
@@ -593,13 +593,13 @@ Formats `object` in color for pretty-printing, recursing `options.depth` times w
 
 <!-- div -->
 
-### <a id="dantil-logError"></a>`dantil.logError(values)`
+### <a id="dantil-logError"></a>`dantil.logError([values])`
 <a href="#dantil-logError">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L727 "View in source") [&#x24C9;][1]
 
 Prints the provided values to `stdout` like `dantil.log()`, prepended with red-colored "Error: ".
 
 #### Arguments
-1. `values` *(...&#42;)*: The values to print following "Error: ".
+1. `[values]` *(...&#42;)*: The values to print following "Error: ".
 
 #### Example
 ```js
@@ -612,13 +612,13 @@ dantil.logError('Property undefined:', obj)
 
 <!-- div -->
 
-### <a id="dantil-logWarning"></a>`dantil.logWarning(values)`
+### <a id="dantil-logWarning"></a>`dantil.logWarning([values])`
 <a href="#dantil-logWarning">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L744 "View in source") [&#x24C9;][1]
 
 Prints the provided values to `stdout` like `dantil.log()` prepended with yellow-colored "Warning: ".
 
 #### Arguments
-1. `values` *(...&#42;)*: The values to print following "Warning: ".
+1. `[values]` *(...&#42;)*: The values to print following "Warning: ".
 
 #### Example
 ```js
@@ -631,13 +631,13 @@ dantil.logWarning('Values unused:', obj)
 
 <!-- div -->
 
-### <a id="dantil-logSuccess"></a>`dantil.logSuccess(values)`
+### <a id="dantil-logSuccess"></a>`dantil.logSuccess([values])`
 <a href="#dantil-logSuccess">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L761 "View in source") [&#x24C9;][1]
 
 Prints the provided values to `stdout` like `dantil.log()` prepended with green-colored "Success: ".
 
 #### Arguments
-1. `values` *(...&#42;)*: The values to print following "Success: ".
+1. `[values]` *(...&#42;)*: The values to print following "Success: ".
 
 #### Example
 ```js
