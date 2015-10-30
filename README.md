@@ -54,7 +54,7 @@ var dantil = require('dantil')
 * <a href="#dantil-logPathAndObject">`dantil.logPathAndObject`</a>
 * <a href="#dantil-logTrace">`dantil.logTrace`</a>
 * <a href="#dantil-logLine">`dantil.logLine`</a>
-* <a href="#dantil-logLineIfTrue">`dantil.logLineIfTrue`</a>
+* <a href="#dantil-logLineIf">`dantil.logLineIf`</a>
 * <a href="#dantil-excludeParenthesesInStackTrace">`dantil.excludeParenthesesInStackTrace`</a>
 
 <!-- /div -->
@@ -749,8 +749,8 @@ if (rareConditionIsTrue) {
 
 <!-- div -->
 
-### <a id="dantil-logLineIfTrue"></a>`dantil.logLineIfTrue(value, [message])`
-<a href="#dantil-logLineIfTrue">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L917 "View in source") [&#x24C9;][1]
+### <a id="dantil-logLineIf"></a>`dantil.logLineIf(value, [message])`
+<a href="#dantil-logLineIf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L917 "View in source") [&#x24C9;][1]
 
 If `value` is truthy, prints the calling file path and line number, prepended by optional `message`. This is useful for marking reaching a section of code.
 
@@ -763,7 +763,7 @@ If `value` is truthy, prints the calling file path and line number, prepended by
 // The contents of 'foo.js':
 
 var myCondition = true
-dantil.logLine(myCondition, 'Condition met')
+dantil.logLineIf(myCondition, 'Condition met')
 // => Prints "Condition met: /Users/Danny/foo.js:1"
 ```
 * * *
