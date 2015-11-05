@@ -9,9 +9,9 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "counter": "github:dannynemer/counter",
+    "diff": "^2.2.0",
     "hrtimer": "github:dannynemer/hrtimer",
     "ill-formed-opts": "github:dannynemer/ill-formed-opts",
-    "jsdiff": "^1.1.1",
     "lodash.isequal": "^3.0.4"
   },
   "devDependencies": {
