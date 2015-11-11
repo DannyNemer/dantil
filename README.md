@@ -172,10 +172,10 @@ myFork({ modulePath: './myModule.js', stdio: 'out' })
 ### <a id="dantil-tryCatchWrapper"></a>`dantil.tryCatchWrapper(func, [exitProcessIfFailure])`
 <a href="#dantil-tryCatchWrapper">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L71 "View in source") [&#x24C9;][1]
 
-Executes `func` within a `try` block. If an exception is thrown, removes parentheses surrounding file paths in its stack trace for iTerm's open-file-path shortcut, collects 15 stack frames instead of 10 (the default), and colors the error type name (e.g., `TypeError`) red.
+Invokes `func` within a `try` block. If an exception is thrown, removes parentheses surrounding file paths in its stack trace for iTerm's open-file-path shortcut, collects 15 stack frames instead of 10 (the default), and colors the error type name (e.g., `TypeError`) red.
 
 #### Arguments
-1. `func` *(Function)*: The function to execute within a `try` block.
+1. `func` *(Function)*: The function invoked within a `try` block.
 2. `[exitProcessIfFailure]` *(boolean)*: Specify ending the process with 'failure' code `1` *(after printing its stack trace)* should `func` throw an exception. The shell that executed Node will see an exit code of `1`.
 
 #### Returns
@@ -339,11 +339,11 @@ console.log(dantil.colors.red('Error'))
 ### <a id="dantil-stdoutToFile"></a>`dantil.stdoutToFile(path, func)`
 <a href="#dantil-stdoutToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L328 "View in source") [&#x24C9;][1]
 
-Synchronously writes the process's `stdout` to a file at `path` instead of the console while processing `func`. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` completes or if an exception is thrown.
+Invokes `func` while synchronously writing the process's `stdout` to a file at `path` instead of the console. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` completes or if an exception is thrown.
 
 #### Arguments
 1. `path` *(string)*: The path where to write `stdout`.
-2. `func` *(Function)*: The function to process while writing output to `path`.
+2. `func` *(Function)*: The function to invoke while writing output to `path`.
 
 #### Returns
 *(&#42;)*:  Returns the value returned by `func`, if any.
@@ -1019,7 +1019,7 @@ dantil.isEqualDeep(array, other, function (value, other) {
 Performs a shallow comparison between two arrays to determine if they are equivalent.
 <br>
 <br>
-If `predicate` is provided, it is invoked per index with the values of both arrays at that index, and is checked if it returns truthy.
+If `predicate` is provided, checks if returns truthy when invoked per index with the values of both arrays at that index as arguments: (elementA, elementB).
 
 #### Arguments
 1. `a` *(Array)*: The array to compare.
