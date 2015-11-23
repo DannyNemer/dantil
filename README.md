@@ -123,7 +123,7 @@ var dantil = require('dantil')
 ### <a id="dantil-illFormedOpts"></a>`dantil.illFormedOpts(schema, options)`
 <a href="#dantil-illFormedOpts">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L52 "View in source") [&#x24C9;][1]
 
-Checks if options object `options` adheres to `schema` using the [`ill-formed-opts`] (https://github.com/DannyNemer/ill-formed-opts) module, thereby simulating static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed, including the line number of the offending function call.
+Checks if `options` adheres to `schema` using the [`ill-formed-opts`] (https://github.com/DannyNemer/ill-formed-opts) module, thereby simulating static function arguments (i.e., type checking and parameter count). Prints descriptive, helpful errors messages when `options` is ill-formed, including the line number of the offending function call.
 
 #### Arguments
 1. `schema` *(Object)*: The definition of required and optional properties for `options`.
