@@ -1182,7 +1182,7 @@ Recursively deletes all properties of `object` defined as `undefined`. This is u
 ### <a id="dantil-diffObjects"></a>`dantil.diffObjects(object, other)`
 <a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1387 "View in source") [&#x24C9;][1]
 
-Stringifies and compares two objects line by line, and returns a string of the differences stylized for printing.
+Compares two objects line by line and stylizes the differences for printing.
 
 #### Arguments
 1. `object` *(Object)*: The object to compare.
