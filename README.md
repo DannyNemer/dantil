@@ -106,6 +106,7 @@ var dantil = require('dantil')
 <!-- div -->
 
 ## `String`
+* <a href="#dantil-diffStrings">`dantil.diffStrings`</a>
 * <a href="#dantil-format">`dantil.format`</a>
 * <a href="#dantil-kebabToCamelCase">`dantil.kebabToCamelCase`</a>
 * <a href="#dantil-camelToKebabCase">`dantil.camelToKebabCase`</a>
@@ -1266,8 +1267,26 @@ number = dantil.cleanFloat(number)
 
 <!-- div -->
 
+### <a id="dantil-diffStrings"></a>`dantil.diffStrings(expected, actual)`
+<a href="#dantil-diffStrings">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1436 "View in source") [&#x24C9;][1]
+
+Compares two strings word by word and stylizes the differences for printing.
+
+#### Arguments
+1. `expected` *(string)*: The string to compare.
+2. `actual` *(string)*: The other string to compare.
+
+#### Returns
+*(Object)*:  Returns an object with `expected` and `actual` as properties for the strings with their differences stylized for printing.
+
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
 ### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
-<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1440 "View in source") [&#x24C9;][1]
+<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1474 "View in source") [&#x24C9;][1]
 
 Formats a string in a `printf()`-like format using Node's `util.format()`.
 
@@ -1290,7 +1309,7 @@ dantil.format('%s:%s %d', 'foo', 'bar', 22)
 <!-- div -->
 
 ### <a id="dantil-kebabToCamelCase"></a>`dantil.kebabToCamelCase(kebabCasedString)`
-<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1455 "View in source") [&#x24C9;][1]
+<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1489 "View in source") [&#x24C9;][1]
 
 Converts kebab cased `string` to camel case.
 
@@ -1312,7 +1331,7 @@ dantil.kebabToCamelCase('my-long-variable-name')
 <!-- div -->
 
 ### <a id="dantil-camelToKebabCase"></a>`dantil.camelToKebabCase(camelCasedString)`
-<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1474 "View in source") [&#x24C9;][1]
+<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1508 "View in source") [&#x24C9;][1]
 
 Converts camel cased `string` to kebab case.
 
