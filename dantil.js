@@ -406,7 +406,7 @@ exports.writeJSONFile = function (path, obj) {
  * @category File System
  * @param {string} filePath The path of the source file to search.
  * @param {*} value The value to search for.
- * @param {boolean} stringify Specify converting `value` to a string representation before searching.
+ * @param {boolean} [stringify] Specify converting `value` to a string representation before searching.
  * @returns {Array} Returns the file path and line number of each matched line.
  * @example
  *
@@ -446,7 +446,7 @@ exports.pathAndLineNumbersOf = function (filePath, string, stringify) {
  * @category File System
  * @param {string} filePath The path of the source file to search.
  * @param {*} value The value to search for.
- * @param {boolean} stringify Specify converting `value` to a string representation before searching.
+ * @param {boolean} [stringify] Specify converting `value` to a string representation before searching.
  * @returns {string|undefined} Returns the file path and line number of the matched line, else `undefined`.
  * @example
  *
@@ -487,7 +487,7 @@ exports.firstPathAndLineNumberOf = function (filePath, string, stringify) {
  * @static
  * @param {string} filePath The path of the source file to search.
  * @param {*} value The value to search for.
- * @param {boolean} stringify Specify converting `value` to a string representation before searching.
+ * @param {boolean} [stringify] Specify converting `value` to a string representation before searching.
  * @param {Function} iteratee The function invoked per matched line until it returns `true`.
  */
 function basePathAndLineNumbersOf(filePath, value, stringify, iteratee) {
@@ -723,7 +723,7 @@ function prettyPrint(processStreamName, string) {
  * @param {Object} [options] The options object.
  * @param {number} [options.depth=2] The number of times to recurse while formating `args`. Pass `null` to recurse indefinitely.
  * @param {number} [options.stylizeStings=false] Specify stylizing strings in `args`. This does not apply to `Object` properties.
- * @returns {string} The formatted string.
+ * @returns {string} Returns the formatted string.
  */
 function prettify(args, options) {
   if (!options) options = {}
@@ -938,7 +938,7 @@ exports.logErrorAndPath = function (logThisLine) {
  * @memberOf dantil
  * @category Console
  * @param {Object} object The object to print.
- * @param {boolean} logThisLine Specify logging the line where this function is called instead of the line which invoked the currently executing module.
+ * @param {boolean} [logThisLine] Specify logging the line where this function is called instead of the line which invoked the currently executing module.
  * @example
  *
  * // The contents of 'foo.js':
@@ -1015,7 +1015,7 @@ exports.logLine = function (message) {
  * @static
  * @memberOf dantil
  * @category Console
- * @param {boolean} value The value to check if truthy.
+ * @param {*} value The value to check if truthy.
  * @param {string} [message] The optional message to prepend to the path and line number.
  * @example
  *

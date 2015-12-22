@@ -402,7 +402,7 @@ dantil.writeJSONFile('./myObj.json', obj)
 
 <!-- div -->
 
-### <a id="dantil-pathAndLineNumbersOf"></a>`dantil.pathAndLineNumbersOf(filePath, value, stringify)`
+### <a id="dantil-pathAndLineNumbersOf"></a>`dantil.pathAndLineNumbersOf(filePath, value, [stringify])`
 <a href="#dantil-pathAndLineNumbersOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L431 "View in source") [&#x24C9;][1]
 
 Gets the file path and line number in the format `filePath:lineNumber` of each occurrence of `value` in the source file at `filePath`. This is useful for error reporting.
@@ -410,7 +410,7 @@ Gets the file path and line number in the format `filePath:lineNumber` of each o
 #### Arguments
 1. `filePath` *(string)*: The path of the source file to search.
 2. `value` *(&#42;)*: The value to search for.
-3. `stringify` *(boolean)*: Specify converting `value` to a string representation before searching.
+3. `[stringify]` *(boolean)*: Specify converting `value` to a string representation before searching.
 
 #### Returns
 *(Array)*:  Returns the file path and line number of each matched line.
@@ -441,7 +441,7 @@ dantil.pathAndLineNumbersOf('./foo.js', 'ipsum', true)
 
 <!-- div -->
 
-### <a id="dantil-firstPathAndLineNumberOf"></a>`dantil.firstPathAndLineNumberOf(filePath, value, stringify)`
+### <a id="dantil-firstPathAndLineNumberOf"></a>`dantil.firstPathAndLineNumberOf(filePath, value, [stringify])`
 <a href="#dantil-firstPathAndLineNumberOf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L471 "View in source") [&#x24C9;][1]
 
 Gets the file path and line number in the format `filePath:lineNumber` of the first occurrence of `value` in the source file at `filePath`. This is useful for error reporting.
@@ -449,7 +449,7 @@ Gets the file path and line number in the format `filePath:lineNumber` of the fi
 #### Arguments
 1. `filePath` *(string)*: The path of the source file to search.
 2. `value` *(&#42;)*: The value to search for.
-3. `stringify` *(boolean)*: Specify converting `value` to a string representation before searching.
+3. `[stringify]` *(boolean)*: Specify converting `value` to a string representation before searching.
 
 #### Returns
 *(string|undefined)*:  Returns the file path and line number of the matched line, else `undefined`.
@@ -798,14 +798,14 @@ dantil.logErrorAndPath('Property undefined:', obj)
 
 <!-- div -->
 
-### <a id="dantil-logPathAndObject"></a>`dantil.logPathAndObject(object, logThisLine)`
+### <a id="dantil-logPathAndObject"></a>`dantil.logPathAndObject(object, [logThisLine])`
 <a href="#dantil-logPathAndObject">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L955 "View in source") [&#x24C9;][1]
 
 Prints `object` preceded by the file path and line number of the function call that invoked the currently executing module. Surrounds output with a leading newline and a trailing newline.
 
 #### Arguments
 1. `object` *(Object)*: The object to print.
-2. `logThisLine` *(boolean)*: Specify logging the line where this function is called instead of the line which invoked the currently executing module.
+2. `[logThisLine]` *(boolean)*: Specify logging the line where this function is called instead of the line which invoked the currently executing module.
 
 #### Example
 ```js
@@ -877,7 +877,7 @@ if (rareConditionIsTrue) {
 If `value` is truthy, prints the calling file path and line number, prepended by optional `message`. This is useful for marking reaching a section of code.
 
 #### Arguments
-1. `value` *(boolean)*: The value to check if truthy.
+1. `value` *(&#42;)*: The value to check if truthy.
 2. `[message]` *(string)*: The optional message to prepend to the path and line number.
 
 #### Example
