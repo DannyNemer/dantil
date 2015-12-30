@@ -1285,7 +1285,7 @@ Recursively deletes all properties of `object` defined as `undefined`. This is u
 <!-- div -->
 
 ### <a id="dantil-diffObjects"></a>`dantil.diffObjects(object, other, [collapsed])`
-<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1499 "View in source") [&#x24C9;][1]
+<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1509 "View in source") [&#x24C9;][1]
 
 Compares two objects line by line and stylizes the differences for printing.
 
@@ -1301,32 +1301,42 @@ Compares two objects line by line and stylizes the differences for printing.
 ```js
 var objA = {
   name: 'dantil',
+  author: 'Danny',
   version: 0.1,
   sagan: [
-    'There is perhaps no better demonstration of the folly of human',
+    'It has been said that astronomy is a humbling and character-building',
+    'experience. There is perhaps no better demonstration of the folly of',
+    'human conceits than this distant image of our tiny world. To me, it',
     'underscores our responsibility to deal more kindly with one another,',
-    'and to preserve and cherish the pale blue dot, the only home we\'ve',
-    'ever known.'
+    'and to preserve and cherish the pale blue dot, the only home we\'ve'
   ]
 }
 
 var objB = {
   name: 'dantil',
+  author: 'Danny',
   version: 0.2,
   sagan: [
-    'There is perhaps no better demonstration of the folly of human',
-    'conceits than this distant image of our tiny world. To me, it',
+    'It has been said that astronomy is a humbling and character-building',
+    'experience. There is perhaps no better demonstration of the folly of',
+    'human conceits than this distant image of our tiny world. To me, it',
     'underscores our responsibility to deal more kindly with one another,',
     'ever known.'
   ]
 }
-
+```
+```js
 // Compare objects and generate string with differences stylized.
-var diff = dantil.diffObjects(objA, objB)
-console.log(diff)
+console.log(dantil.diffObjects(objA, objB))
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-diffObjects-example.jpg" alt="dantil.diffObjects() example output"/>
+```js
+// Collapse ranges of unchanged lines.
+console.log(dantil.diffObjects(objA, objB, true))
+```
+Collapsed output:
+<br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-diffObjects-collapsed-example.jpg" alt="dantil.diffObjects() collapsed example output"/>
 ```
 ```
 * * *
@@ -1342,7 +1352,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-cleanFloat"></a>`dantil.cleanFloat(number)`
-<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1591 "View in source") [&#x24C9;][1]
+<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1601 "View in source") [&#x24C9;][1]
 
 Removes any extraneous digits from `number`, which result from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
@@ -1373,7 +1383,7 @@ number = dantil.cleanFloat(number)
 <!-- div -->
 
 ### <a id="dantil-diffStrings"></a>`dantil.diffStrings(expected, actual)`
-<a href="#dantil-diffStrings">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1619 "View in source") [&#x24C9;][1]
+<a href="#dantil-diffStrings">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1629 "View in source") [&#x24C9;][1]
 
 Compares two strings word by word and stylizes the differences for printing.
 
@@ -1405,7 +1415,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
-<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1657 "View in source") [&#x24C9;][1]
+<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1667 "View in source") [&#x24C9;][1]
 
 Formats a string in a `printf()`-like format using Node's `util.format()`.
 
@@ -1428,7 +1438,7 @@ dantil.format('%s:%s %d', 'foo', 'bar', 22)
 <!-- div -->
 
 ### <a id="dantil-kebabToCamelCase"></a>`dantil.kebabToCamelCase(kebabCasedString)`
-<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1672 "View in source") [&#x24C9;][1]
+<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1682 "View in source") [&#x24C9;][1]
 
 Converts kebab cased `string` to camel case.
 
@@ -1450,7 +1460,7 @@ dantil.kebabToCamelCase('my-long-variable-name')
 <!-- div -->
 
 ### <a id="dantil-camelToKebabCase"></a>`dantil.camelToKebabCase(camelCasedString)`
-<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1691 "View in source") [&#x24C9;][1]
+<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1701 "View in source") [&#x24C9;][1]
 
 Converts camel cased `string` to kebab case.
 
