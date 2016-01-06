@@ -1107,7 +1107,7 @@ dantil.countEndAll()
 ### <a id="dantil-isDeepEqual"></a>`dantil.isDeepEqual(value, other, [customizer], [thisArg])`
 <a href="#dantil-isDeepEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1299 "View in source") [&#x24C9;][1]
 
-Performs a deep comparison between two values to determine if they are equivalent using lodash's [`_.isEqual`](https://www.npmjs.com/package/lodash.isequal) method.
+Performs a deep comparison between two values to determine if they are equivalent using the [`lodash.isEqual`](https://www.npmjs.com/package/lodash.isequal) module.
 
 #### Arguments
 1. `value` *(&#42;)*: The value to compare.
