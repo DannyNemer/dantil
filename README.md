@@ -539,7 +539,7 @@ Pretty-prints the provided values and objects to `stdout`, in color, recursing 2
 Formats plain `Object`s and `Array`s with multi-line string representations on separate lines. Concatenates and formats all other consecutive values on the same line.
 <br>
 <br>
-If the first argument is of a complex type (e.g., `Object`, `Array`), left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding line breaks. If the first argument is entirely whitespace, excludes that argument from output and indents all remaining arguments with that whitespace.
+If the first argument is of a complex type (e.g., `Object`, `Array`), left-aligns all remaining lines. Otherwise, equally indents each line after the first line, if any. If the first argument has leading whitespace, prepends all remaining arguments with the same whitespace excluding newlines. If the first argument is entirely whitespace, excludes that argument from output and indents all remaining arguments with that whitespace.
 
 #### Arguments
 1. `[values]` *(...&#42;)*: The values and objects to print.
