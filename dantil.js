@@ -1283,30 +1283,6 @@ exports.countEnd = _counter.end
 exports.countEndAll = _counter.endAll
 
 /**
- * Performs a deep comparison between two values to determine if they are equivalent using the [`lodash.isEqual`](https://www.npmjs.com/package/lodash.isequal) module.
- *
- * @static
- * @memberOf dantil
- * @category Lang
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @param {Function} [customizer] The function to customize value comparisons.
- * @param {*} [thisArg] The `this` binding of `customizer`.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @example
- *
- * var object = { user: 'fred' }
- * var other = { user: 'fred' }
- *
- * object == other
- * // => false
- *
- * dantil.isEqualDeep(object, other)
- * // => true
- */
-exports.isDeepEqual = require('lodash.isequal')
-
-/**
  * Performs a shallow comparison between two arrays to determine if they are equivalent.
  *
  * If `predicate` is provided, checks if returns truthy when invoked per index with the values of both arrays at that index as arguments: (elementA, elementB).
