@@ -228,7 +228,7 @@ myModule = require('./myModule.js')
 ### <a id="dantil-getPathAndLineNumber"></a>`dantil.getPathAndLineNumber()`
 <a href="#dantil-getPathAndLineNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L152 "View in source") [&#x24C9;][1]
 
-Gets the file path and line number in the format `filePath:lineNumber` of where this function is invoked.
+Gets the file path and line number in the format `filePath:lineNumber` of where this method is invoked.
 
 #### Returns
 *(string)*:  Returns the file path and line number in the format `filePath:lineNumber`.
@@ -255,7 +255,7 @@ Gets the file path and line number of the function call that invoked the current
 This is not necessarily the caller of the currently executing function, which can be another function within the same module. Nor is it necessarily this module's parent which instantiated the module. Rather, it is the most recent function call in the stack outside the currently executing module.
 <br>
 <br>
-Returns `undefined` if there is no other module in the stack below where this function was called.
+Returns `undefined` if there is no other module in the stack below where this method was called.
 
 #### Returns
 *(string)*:  Returns the file path and line number in the format `filePath:lineNumber`.
@@ -805,7 +805,7 @@ Output:
 Prints an error message like `dantil.logError()` followed by the file path and line number of the function call that invoked the currently executing module.
 
 #### Arguments
-1. `[logThisLine]` *(boolean)*: Specify logging the line where this function is called instead of the line which invoked the currently executing module.
+1. `[logThisLine]` *(boolean)*: Specify logging the line where this method is called instead of the line which invoked the currently executing module.
 2. `[values]` *(...&#42;)*: The optional values and objects to print following "Error: ".
 
 #### Example
@@ -829,7 +829,7 @@ Prints `object` preceded by the file path and line number of the function call t
 
 #### Arguments
 1. `object` *(Object)*: The object to print.
-2. `[logThisLine]` *(boolean)*: Specify logging the line where this function is called instead of the line which invoked the currently executing module.
+2. `[logThisLine]` *(boolean)*: Specify logging the line where this method is called instead of the line which invoked the currently executing module.
 
 #### Example
 ```js
