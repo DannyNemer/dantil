@@ -90,19 +90,19 @@ var dantil = require('dantil')
 
 <!-- div -->
 
-## `Array`
-* <a href="#dantil-arraysEqual">`dantil.arraysEqual`</a>
-* <a href="#dantil-new2DArray">`dantil.new2DArray`</a>
-* <a href="#dantil-without">`dantil.without`</a>
+## `Object`
+* <a href="#dantil-objectsEqual">`dantil.objectsEqual`</a>
+* <a href="#dantil-deleteUndefinedObjectProps">`dantil.deleteUndefinedObjectProps`</a>
+* <a href="#dantil-diffObjects">`dantil.diffObjects`</a>
 
 <!-- /div -->
 
 <!-- div -->
 
-## `Object`
-* <a href="#dantil-objectsEqual">`dantil.objectsEqual`</a>
-* <a href="#dantil-deleteUndefinedObjectProps">`dantil.deleteUndefinedObjectProps`</a>
-* <a href="#dantil-diffObjects">`dantil.diffObjects`</a>
+## `Array`
+* <a href="#dantil-arraysEqual">`dantil.arraysEqual`</a>
+* <a href="#dantil-new2DArray">`dantil.new2DArray`</a>
+* <a href="#dantil-without">`dantil.without`</a>
 
 <!-- /div -->
 
@@ -1169,115 +1169,12 @@ Creates a function that accepts up to one argument, ignoring any additional argu
 
 <!-- div -->
 
-## `“Array” Methods`
-
-<!-- div -->
-
-### <a id="dantil-arraysEqual"></a>`dantil.arraysEqual(a, b, [predicate])`
-<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1383 "View in source") [&#x24C9;][1]
-
-Performs a shallow comparison between two arrays to determine if they are equivalent.
-<br>
-<br>
-If `predicate` is provided, checks if returns truthy when invoked per index with the values of both arrays at that index as arguments: (elementA, elementB).
-
-#### Arguments
-1. `a` *(Array)*: The array to compare.
-2. `b` *(Array)*: The other array to compare.
-3. `[predicate]` *(Function)*: The function invoked per index.
-
-#### Returns
-*(boolean)*:  Returns `true` if the arrays are equivalent, else `false`.
-
-#### Example
-```js
-dantil.arraysEqual([], [])
-// => true
-
-dantil.arraysEqual([1, 2, 3, 'danny'], [1, 2, 3, 'danny'])
-// => true
-
-dantil.arraysEqual([ false, true ], [ true ])
-// => false
-
-// A shallow comparison will compare complex type references, not their contents.
-var objA = { prop: 'val' }
-var objB = { prop: 'val' }
-var objC = { prop: undefined }
-dantil.arraysEqual([ objA, objC ], [ objB, objC ])
-// => false
-
-// Compare elements at each index using `dantil.objectsEqual`.
-dantil.arraysEqual([ objA, objC ], [ objB, objC ], dantil.objectsEqual)
-// => true
-
-// Rather, objects are only equal if they are the same instance.
-dantil.arraysEqual([ objA, objB ], [ objA, objB ])
-// => true
-```
-* * *
-
-<!-- /div -->
-
-<!-- div -->
-
-### <a id="dantil-new2DArray"></a>`dantil.new2DArray(length, [subLength=0])`
-<a href="#dantil-new2DArray">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1427 "View in source") [&#x24C9;][1]
-
-Creates a new two-dimensional array with length `length`.
-
-#### Arguments
-1. `length` *(number)*: The length of the new array *(i.e., the first dimension)*.
-2. `[subLength=0]` *(number)*: The length each sub-array *(i.e., the second dimension)*.
-
-#### Returns
-*(Array)*:  Returns the new two-dimensional array.
-
-#### Example
-```js
-dantil.new2DArray(5)
-// => [ [], [], [], [], [] ]
-
-dantil.new2DArray(4, 2)
-// => [ [ ,  ], [ ,  ], [ ,  ], [ ,  ] ]
-```
-* * *
-
-<!-- /div -->
-
-<!-- div -->
-
-### <a id="dantil-without"></a>`dantil.without(array, [values])`
-<a href="#dantil-without">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1453 "View in source") [&#x24C9;][1]
-
-Creates an array excluding all provided values.
-
-#### Arguments
-1. `array` *(Array)*: The array to filter.
-2. `[values]` *(...&#42;)*: The values to exclude.
-
-#### Returns
-*(Array)*:  Returns the new array of filtered values.
-
-#### Example
-```js
-dantil.without([ 3, 1, 4, 1, 5 ], 1, 5)
-// => [ 3, 4 ]
-```
-* * *
-
-<!-- /div -->
-
-<!-- /div -->
-
-<!-- div -->
-
 ## `“Object” Methods`
 
 <!-- div -->
 
 ### <a id="dantil-objectsEqual"></a>`dantil.objectsEqual(a, b)`
-<a href="#dantil-objectsEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1501 "View in source") [&#x24C9;][1]
+<a href="#dantil-objectsEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1375 "View in source") [&#x24C9;][1]
 
 Performs a shallow comparison between two objects to determine if they are equivalent.
 
@@ -1316,7 +1213,7 @@ dantil.objectsEqual({ a: objA, b: objB }, { a: objA, b: objB })
 <!-- div -->
 
 ### <a id="dantil-deleteUndefinedObjectProps"></a>`dantil.deleteUndefinedObjectProps(object)`
-<a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1525 "View in source") [&#x24C9;][1]
+<a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1399 "View in source") [&#x24C9;][1]
 
 Recursively deletes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
 
@@ -1333,7 +1230,7 @@ Recursively deletes all properties of `object` defined as `undefined`. This is u
 <!-- div -->
 
 ### <a id="dantil-diffObjects"></a>`dantil.diffObjects(object, other, [collapsed])`
-<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1591 "View in source") [&#x24C9;][1]
+<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1465 "View in source") [&#x24C9;][1]
 
 Compares two objects line by line and stylizes the differences for printing.
 
@@ -1386,6 +1283,109 @@ console.log(dantil.diffObjects(objA, objB, true))
 Collapsed output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-diffObjects-collapsed-example.jpg" alt="dantil.diffObjects() collapsed example output"/>
 ```
+```
+* * *
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- div -->
+
+## `“Array” Methods`
+
+<!-- div -->
+
+### <a id="dantil-arraysEqual"></a>`dantil.arraysEqual(a, b, [predicate])`
+<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1579 "View in source") [&#x24C9;][1]
+
+Performs a shallow comparison between two arrays to determine if they are equivalent.
+<br>
+<br>
+If `predicate` is provided, checks if returns truthy when invoked per index with the values of both arrays at that index as arguments: (elementA, elementB).
+
+#### Arguments
+1. `a` *(Array)*: The array to compare.
+2. `b` *(Array)*: The other array to compare.
+3. `[predicate]` *(Function)*: The function invoked per index.
+
+#### Returns
+*(boolean)*:  Returns `true` if the arrays are equivalent, else `false`.
+
+#### Example
+```js
+dantil.arraysEqual([], [])
+// => true
+
+dantil.arraysEqual([1, 2, 3, 'danny'], [1, 2, 3, 'danny'])
+// => true
+
+dantil.arraysEqual([ false, true ], [ true ])
+// => false
+
+// A shallow comparison will compare complex type references, not their contents.
+var objA = { prop: 'val' }
+var objB = { prop: 'val' }
+var objC = { prop: undefined }
+dantil.arraysEqual([ objA, objC ], [ objB, objC ])
+// => false
+
+// Compare elements at each index using `dantil.objectsEqual`.
+dantil.arraysEqual([ objA, objC ], [ objB, objC ], dantil.objectsEqual)
+// => true
+
+// Rather, objects are only equal if they are the same instance.
+dantil.arraysEqual([ objA, objB ], [ objA, objB ])
+// => true
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
+### <a id="dantil-new2DArray"></a>`dantil.new2DArray(length, [subLength=0])`
+<a href="#dantil-new2DArray">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1623 "View in source") [&#x24C9;][1]
+
+Creates a new two-dimensional array with length `length`.
+
+#### Arguments
+1. `length` *(number)*: The length of the new array *(i.e., the first dimension)*.
+2. `[subLength=0]` *(number)*: The length each sub-array *(i.e., the second dimension)*.
+
+#### Returns
+*(Array)*:  Returns the new two-dimensional array.
+
+#### Example
+```js
+dantil.new2DArray(5)
+// => [ [], [], [], [], [] ]
+
+dantil.new2DArray(4, 2)
+// => [ [ ,  ], [ ,  ], [ ,  ], [ ,  ] ]
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
+### <a id="dantil-without"></a>`dantil.without(array, [values])`
+<a href="#dantil-without">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1649 "View in source") [&#x24C9;][1]
+
+Creates an array excluding all provided values.
+
+#### Arguments
+1. `array` *(Array)*: The array to filter.
+2. `[values]` *(...&#42;)*: The values to exclude.
+
+#### Returns
+*(Array)*:  Returns the new array of filtered values.
+
+#### Example
+```js
+dantil.without([ 3, 1, 4, 1, 5 ], 1, 5)
+// => [ 3, 4 ]
 ```
 * * *
 
