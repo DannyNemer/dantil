@@ -1085,10 +1085,10 @@ Prints (and resets the value of) the number of `dantil.count(label)` invocations
 ### <a id="dantil-countEndAll"></a>`dantil.countEndAll`
 <a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1285 "View in source") [&#x24C9;][1]
 
-Prints (and resets the values of) all invocation counts (identified by different labels) recorded by `dantil.count()`. Does not print counters that are never reached (having not initialized their keys).
+Prints (and resets the values of) the counter value of each label recorded by `counter.count()`, and each counter's value as a percentage of all counters.
 <br>
 <br>
-Prints counts in order of decreasing value.
+Does not print counters that are never reached (having not initialized their keys). Prints counts in order of decreasing value.
 
 #### Example
 ```js
