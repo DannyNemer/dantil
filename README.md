@@ -1047,7 +1047,7 @@ Prints the current high-resolution value of a timer initiated with `dantil.time(
 ### <a id="dantil-count"></a>`dantil.count(label)`
 <a href="#dantil-count">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1252 "View in source") [&#x24C9;][1]
 
-Counts the number of times a section of code is reached, identified by `label`. Use `dantil.countEnd(label)` to print the counter's value. This is useful for profiling complex programs.
+Increments the invocation count for `label`. Use `dantil.end(label)` or `dantil.endAll()` to print the counter's value. This is useful for profiling the number of times a section of code is reached.
 
 #### Arguments
 1. `label` *(string)*: The counter identifier.
@@ -1071,7 +1071,7 @@ dantil.countEnd('even')
 ### <a id="dantil-countEnd"></a>`dantil.countEnd(label)`
 <a href="#dantil-countEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1262 "View in source") [&#x24C9;][1]
 
-Prints (and resets the value of) the number of calls of `dantil.count(label)`.
+Prints (and resets the value of) the number of `dantil.count(label)` invocations.
 
 #### Arguments
 1. `label` *(string)*: The counter identifier.
@@ -1085,7 +1085,7 @@ Prints (and resets the value of) the number of calls of `dantil.count(label)`.
 ### <a id="dantil-countEndAll"></a>`dantil.countEndAll`
 <a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1283 "View in source") [&#x24C9;][1]
 
-Prints (and resets) the values of all counters used on `dantil.count()`. Does not print counters that are never reached (and never have their keys initialized).
+Prints (and resets the values of) all invocation counts (identified by different labels) recorded by `dantil.count()`. Does not print counters that are never reached (having not initialized their keys).
 
 #### Example
 ```js
