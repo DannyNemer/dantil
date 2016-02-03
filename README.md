@@ -352,7 +352,7 @@ console.log(dantil.colors.red('Error'))
 ### <a id="dantil-stdoutToFile"></a>`dantil.stdoutToFile(path, func)`
 <a href="#dantil-stdoutToFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L328 "View in source") [&#x24C9;][1]
 
-Invokes `func` while synchronously writing the process's `stdout` to a file at `path` instead of the console. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` completes or if an exception is thrown.
+Invokes `func` while synchronously writing the process's `stdout` to a file at `path` instead of the console. Creates the file if it does not exist or truncates the file to zero length if it does exist. Restores `stdout` to the console when `func` returns or if an exception is thrown.
 
 #### Arguments
 1. `path` *(string)*: The path where to write `stdout`.
