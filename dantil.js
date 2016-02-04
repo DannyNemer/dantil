@@ -1397,6 +1397,8 @@ exports.objectsEqual = function (a, b) {
 /**
  * Recursively deletes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
  *
+ * **Note:** This method mutates `object`.
+ *
  * @static
  * @memberOf dantil
  * @category Object
