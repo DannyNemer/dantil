@@ -113,7 +113,7 @@ exports.tryCatchWrapper = function (func, exitProcessIfFailure) {
 }
 
 /**
- * Deletes the modules identified by the provided paths from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s). This is useful for enabling changes on a server without restarting the server.
+ * Removes the modules identified by the provided paths from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s). This is useful for enabling changes on a server without restarting the server.
  *
  * @static
  * @memberOf dantil
@@ -327,7 +327,7 @@ exports.colors = require('chalk')
  * console.log('Output to file complete')
  */
 exports.stdoutToFile = function (path, func) {
-  // Expand '~' if present. Cannot resolve `path` here because `path` may not exist.
+  // Expand '~' if present. Can not resolve `path` here because `path` may not exist.
   path = exports.expandHomeDir(path)
 
   // Disable ANSI escape codes for color and formatting in output.
@@ -388,7 +388,7 @@ exports.stdoutToFile = function (path, func) {
  * // => Writes file and prints "File saved: /Users/Danny/myObj.json"
  */
 exports.writeJSONFile = function (path, obj) {
-  // Expand '~' if present. Cannot resolve `path` here because `path` may not exist.
+  // Expand '~' if present. Can not resolve `path` here because `path` may not exist.
   path = exports.expandHomeDir(path)
 
   fs.writeFileSync(path, JSON.stringify(obj, function (key, val) {
@@ -1397,7 +1397,7 @@ exports.objectsEqual = function (a, b) {
 }
 
 /**
- * Recursively deletes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
+ * Recursively removes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
  *
  * **Note:** This method mutates `object`.
  *

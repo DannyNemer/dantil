@@ -212,7 +212,7 @@ dantil.tryCatchWrapper(function () {
 ### <a id="dantil-deleteModuleCache"></a>`dantil.deleteModuleCache([paths])`
 <a href="#dantil-deleteModuleCache">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L133 "View in source") [&#x24C9;][1]
 
-Deletes the modules identified by the provided paths from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s). This is useful for enabling changes on a server without restarting the server.
+Removes the modules identified by the provided paths from cache, forcing them to be reloaded at next `require()` call. Without removing a module from cache, subsequent `require()` calls to the same module will not enable changes to its file(s). This is useful for enabling changes on a server without restarting the server.
 
 #### Arguments
 1. `[paths]` *(...string)*: The paths of modules to remove from cache.
@@ -1217,7 +1217,7 @@ dantil.objectsEqual({ a: objA, b: objB }, { a: objA, b: objB })
 ### <a id="dantil-deleteUndefinedObjectProps"></a>`dantil.deleteUndefinedObjectProps(object)`
 <a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1410 "View in source") [&#x24C9;][1]
 
-Recursively deletes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
+Recursively removes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
 <br>
 <br>
 **Note:** This method mutates `object`.
