@@ -429,9 +429,9 @@ Gets the file path and line number in the format `filePath:lineNumber` of each o
 // The contents of 'foo.js':
 
 var list = [
-  { name: 'lorem', value: 2 },
-  { name: 'lorem ipsum', value: 5 },
-  { name: 'ipsum', value: 3 }
+  { name: 'lorem', num: 2 },
+  { name: 'lorem ipsum', num: 5 },
+  { name: 'ipsum', num: 3 }
 ]
 ```
 
