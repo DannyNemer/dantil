@@ -419,7 +419,7 @@ Gets the file path and line number in the format `filePath:lineNumber` of each o
 
 #### Arguments
 1. `filePath` *(string)*: The path of the source file to search.
-2. `value` *(&#42;)*: The value to search for.
+2. `value` *(&#42;)*: The value for which to search.
 3. `[stringify]` *(boolean)*: Specify converting `value` to a string representation before searching.
 
 #### Returns
@@ -458,7 +458,7 @@ Gets the file path and line number in the format `filePath:lineNumber` of the fi
 
 #### Arguments
 1. `filePath` *(string)*: The path of the source file to search.
-2. `value` *(&#42;)*: The value to search for.
+2. `value` *(&#42;)*: The value for which to search.
 3. `[stringify]` *(boolean)*: Specify converting `value` to a string representation before searching.
 
 #### Returns
