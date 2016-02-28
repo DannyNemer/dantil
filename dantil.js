@@ -147,8 +147,9 @@ exports.deleteModuleCache = function () {
  * @returns {string} Returns the file path and line number in the format `filePath:lineNumber`.
  * @example
  *
- * // The contents of 'foo.js':
- *
+ * ```
+ * The contents of `foo.js`:
+ * ```js
  * dantil.getPathAndLineNumber()
  * // => '/Users/Danny/foo.js:1'
  */
@@ -172,8 +173,9 @@ exports.getPathAndLineNumber = function () {
  * @returns {string} Returns the file path and line number in the format `filePath:lineNumber`.
  * @example
  *
- * // The contents of 'main.js':
- *
+ * ```
+ * The contents of `main.js`:
+ * ```js
  * var child = require('./child.js')
  * child.func()
  *
@@ -184,10 +186,8 @@ exports.getPathAndLineNumber = function () {
  * dantil.getModuleCallerPathAndLineNumber()
  * // => undefined
  * ```
- *
+ * The contents of `child.js`:
  * ```js
- * // The contents of 'child.js':
- *
  * var grandchild = require('./grandchild.js')
  *
  * exports.func = function () {
@@ -209,10 +209,8 @@ exports.getPathAndLineNumber = function () {
  *   // => '/Users/Danny/main.js:2'
  * }
  * ```
- *
+ * The contents of `grandchild.js`:
  * ```js
- * // The contents of 'grandchild.js':
- *
  * exports.foo = function () {
  *   dantil.getModuleCallerPathAndLineNumber()
  *   // => '/Users/Danny/main.js:5'
@@ -412,20 +410,19 @@ exports.writeJSONFile = function (path, obj) {
  * @returns {Array} Returns the file path and line number of each matched line.
  * @example
  *
- * // The contents of 'foo.js':
- *
+ * ```
+ * The contents of `foo.js`:
+ * ```js
  * var list = [
  *   { name: 'lorem', num: 2 },
  *   { name: 'lorem ipsum', num: 5 },
  *   { name: 'ipsum', num: 3 }
  * ]
  * ```
- *
+ * The contents of `bar.js`:
  * ```js
- * // The contents of 'bar.js':
- *
  * dantil.pathAndLineNumbersOf('./foo.js', 'ipsum')
- * // => [ '/Users/Danny/foo.js:4', '/Users/Danny/foo.js:3' ]
+ * // => [ '/Users/Danny/foo.js:3', '/Users/Danny/foo.js:3' ]
  *
  * // Enclose sought value to distinguish `ipsum` from `'ipsum'`.
  * dantil.pathAndLineNumbersOf('./foo.js', '\'ipsum\'')
@@ -455,8 +452,9 @@ exports.pathAndLineNumbersOf = function (filePath, value) {
  * @returns {string|undefined} Returns the file path and line number of the matched line, else `undefined`.
  * @example
  *
- * // The contents of 'foo.js':
- *
+ * ```
+ * The contents of `foo.js`:
+ * ```js
  * var list = [
  *   {
  *     name: 'lorem',
@@ -470,20 +468,18 @@ exports.pathAndLineNumbersOf = function (filePath, value) {
  *   }
  * ]
  * ```
- *
+ * The contents of `bar.js`:
  * ```js
- * // The contents of 'bar.js':
- *
  * dantil.firstPathAndLineNumberOf('./foo.js', 'ipsum')
- * // => '/Users/Danny/foo.js:3',
+ * // => '/Users/Danny/foo.js:6',
  *
  * // Get line number of first occurrence of `num` after `ipsum`.
  * dantil.firstPathAndLineNumberOf('./foo.js', 'ipsum', 'num')
- * // => '/Users/Danny/foo.js:4',
+ * // => '/Users/Danny/foo.js:7',
  *
  * // Enclose sought value to distinguish `ipsum` from `'ipsum'`.
  * dantil.firstPathAndLineNumberOf('./foo.js', '\'ipsum\'')
- * // => '/Users/Danny/foo.js:6'
+ * // => '/Users/Danny/foo.js:9'
  */
 exports.firstPathAndLineNumberOf = function (filePath, value, subValue) {
   var match
@@ -1037,8 +1033,9 @@ function prependColoredLabel(label, color, args) {
  * @param {...*} [values] The optional values and objects to print following "Error: ".
  * @example
  *
- * // The contents of 'foo.js':
- *
+ * ```
+ * The contents of `foo.js`:
+ * ```js
  * dantil.logErrorAndPath('Property undefined:', obj)
  * // => Prints: Error: Value undefined: { property: undefined }
  * //              /Users/Danny/foo.js:1
@@ -1073,8 +1070,9 @@ exports.logErrorAndPath = function (logThisLine) {
  * @param {boolean} [logThisLine] Specify logging the line where this method is called instead of the line which invoked the currently executing module.
  * @example
  *
- * // The contents of 'foo.js':
- *
+ * ```
+ * The contents of `foo.js`:
+ * ```js
  * var obj = {
  *   values: [1, 2, 3],
  *   name: 'danny'
@@ -1131,8 +1129,9 @@ exports.logTrace = function (message) {
  * @param {string} [message] The optional message to prepend to the path and line number.
  * @example
  *
- * // The contents of 'foo.js':
- *
+ * ```
+ * The contents of `foo.js`:
+ * ```js
  * if (rareConditionIsTrue) {
  *   dantil.logLine('Condition met')
  *   // => Prints "Condition met: /Users/Danny/foo.js:2"
@@ -1152,11 +1151,12 @@ exports.logLine = function (message) {
  * @param {string} [message] The optional message to prepend to the path and line number.
  * @example
  *
- * // The contents of 'foo.js':
- *
+ * ```
+ * The contents of `foo.js`:
+ * ```js
  * var myCondition = true
  * dantil.logLineIf(myCondition, 'Condition met')
- * // => Prints "Condition met: /Users/Danny/foo.js:1"
+ * // => Prints "Condition met: /Users/Danny/foo.js:2"
  */
 exports.logLineIf = function (value, message) {
   if (value) {
@@ -1220,15 +1220,16 @@ exports.prettifyStackTrace = function () {
  * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
  * @example
  *
- * // The contents of 'foo.js':
- *
+ * ```
+ * The contents of `foo.js`:
+ * ```js
  * dantil.assertEqual(false, 0)
  * // => true
  *
  * dantil.assertEqual(20, 21)
  * // => false
  * // => Prints: AssertionError: 20 == 21
- * //              /Users/Danny/foo.js:5
+ * //              /Users/Danny/foo.js:4
  *
  * dantil.assertEqual({ prop: 'value' }, { prop: 'value' })
  * // => false
