@@ -612,8 +612,6 @@ dantil.log({
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-log-example.jpg" alt="dantil.log() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -643,8 +641,6 @@ dantil.dir({
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-dir-example.jpg" alt="dantil.dir() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -673,8 +669,6 @@ dantil.logObjectAtDepth(obj, 3)
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-logObjectAtDepth-example.jpg" alt="dantil.logObjectAtDepth() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -704,8 +698,6 @@ dantil.logWithLine({
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-logWithLine-example.jpg" alt="dantil.logWithLine() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -735,8 +727,6 @@ dantil.dirWithLine({
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-dirWithLine-example.jpg" alt="dantil.dirWithLine() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -794,8 +784,6 @@ dantil.logError('Failed', numTestsFailed, 'of', tests.length, 'tests')
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-logError-example.jpg" alt="dantil.logError() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -819,8 +807,6 @@ dantil.logWarning('Missing property:', obj)
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-logWarning-example.jpg" alt="dantil.logWarning() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -844,8 +830,6 @@ dantil.logSuccess(tests.length, 'tests passed')
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-logSuccess-example.jpg" alt="dantil.logSuccess() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -917,8 +901,6 @@ dantil.logTrace('Reached obscure condition')
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-logTrace-example.jpg" alt="dantil.logTrace() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -985,8 +967,6 @@ Before:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-prettifyStackTrace-before-example.jpg" alt="Before invoking dantil.prettifyStackTrace()"/>
 After:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-prettifyStackTrace-after-example.jpg" alt="After invoking dantil.prettifyStackTrace()"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -1331,8 +1311,6 @@ console.log(dantil.diffObjects(objA, objB, true))
 ```
 Collapsed output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-diffObjects-collapsed-example.jpg" alt="dantil.diffObjects() collapsed example output"/>
-```
-```
 * * *
 
 <!-- /div -->
@@ -1503,8 +1481,6 @@ console.log(diff.actual)
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-diffStrings-example.jpg" alt="dantil.diffStrings() example output"/>
-```
-```
 * * *
 
 <!-- /div -->
