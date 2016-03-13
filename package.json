@@ -11,7 +11,8 @@
     "counter": "github:dannynemer/counter",
     "diff": "^2.2.1",
     "hrtimer": "github:dannynemer/hrtimer",
-    "ill-formed-opts": "github:dannynemer/ill-formed-opts"
+    "ill-formed-opts": "github:dannynemer/ill-formed-opts",
+    "lodash.isequal": "^4.1.1"
   },
   "devDependencies": {
     "docdown": "github:dannynemer/docdown"
