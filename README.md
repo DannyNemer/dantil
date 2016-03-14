@@ -828,7 +828,7 @@ Output:
 ### <a id="dantil-logErrorAndPath"></a>`dantil.logErrorAndPath([logThisLine], [values])`
 <a href="#dantil-logErrorAndPath">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1048 "View in source") [&#x24C9;][1]
 
-Prints an error message like `dantil.logError()` followed by the file path and line number of the function call that invoked the currently executing module.
+Prints the provided values in an error message like `dantil.logError()` followed by the file path and line number of the function call that invoked the currently executing module.
 
 #### Arguments
 1. `[logThisLine]` *(boolean)*: Specify logging the line where this method is called instead of the line which invoked the currently executing module.
@@ -837,8 +837,8 @@ Prints an error message like `dantil.logError()` followed by the file path and l
 #### Example
 The contents of `foo.js`:
 ```js
-dantil.logErrorAndPath('Property undefined:', obj)
-// => Prints: Error: Value undefined: { property: undefined }
+dantil.logErrorAndPath('Failed', numTestsFailed, 'of', tests.length, 'tests')
+// => Prints: Error: Failed 90 of 952 tests
 //              /Users/Danny/foo.js:1
 ```
 * * *
