@@ -832,7 +832,7 @@ Prints an error message like `dantil.logError()` followed by the file path and l
 
 #### Arguments
 1. `[logThisLine]` *(boolean)*: Specify logging the line where this method is called instead of the line which invoked the currently executing module.
-2. `[values]` *(...&#42;)*: The optional values and objects to print following "Error: ".
+2. `[values]` *(...&#42;)*: The values to print following "Error: ".
 
 #### Example
 The contents of `foo.js`:
