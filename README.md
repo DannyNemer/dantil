@@ -901,7 +901,7 @@ dantil.logPathAndObject(obj)
 ### <a id="dantil-logTrace"></a>`dantil.logTrace([message])`
 <a href="#dantil-logTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1140 "View in source") [&#x24C9;][1]
 
-Prints the stack trace to the current position. Removes parentheses surrounding file paths for iTerm's open-file-path shortcut.
+Prints the stack trace to the current position with `danti.prettifyStackTrace()` stylization.
 
 #### Arguments
 1. `[message]` *(string)*: The optional message to print above the stack trace.
