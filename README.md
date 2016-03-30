@@ -965,10 +965,10 @@ dantil.logLineIf(myCondition, 'Condition met')
 ### <a id="dantil-prettifyStackTrace"></a>`dantil.prettifyStackTrace([removePathParens])`
 <a href="#dantil-prettifyStackTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1241 "View in source") [&#x24C9;][1]
 
-Modifies V8's default stack trace format (when printing) to color function names.
+Modifies V8's default stack trace format (when printing) to stylize output.
 
 #### Arguments
-1. `[removePathParens]` *(boolean)*: Specify removing parentheses that surround file paths. This enables iTerm's open-file-path shortcut which the parentheses break in iTerm versions prior to v3.x.
+1. `[removePathParens]` *(boolean)*: Specify removing parentheses that surround file paths. This prevents parentheses from breaking iTerm's open-file-path shortcut in iTerm versions prior to v3.x.
 
 #### Example
 ```js
