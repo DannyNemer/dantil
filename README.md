@@ -196,7 +196,7 @@ Invokes `func` within a `try` block. If an exception is thrown, removes parenthe
 2. `[exitProcessIfFailure]` *(boolean)*: Specify ending the process with 'failure' code `1` *(after printing its stack trace)* should `func` throw an exception. The shell that executed Node will see an exit code of `1`.
 
 #### Returns
-*(&#42;)*:  Returns the return value of `func`, if any.
+*(&#42;)*:  Returns the return value of `func`.
 
 #### Example
 ```js
