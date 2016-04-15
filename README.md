@@ -944,14 +944,14 @@ Output:
 
 <!-- div -->
 
-### <a id="dantil-logLineIf"></a>`dantil.logLineIf(value, [message])`
+### <a id="dantil-logLineIf"></a>`dantil.logLineIf(value, [label])`
 <a href="#dantil-logLineIf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1212 "View in source") [&#x24C9;][1]
 
-If `value` is truthy, prints the calling file path and line number, prepended by optional `message`. This is useful for marking reaching a section of code.
+If `value` is truthy, prints the calling function name, file path, and line number. This is useful for marking reaching a section of code.
 
 #### Arguments
 1. `value` *(&#42;)*: The value to check if truthy.
-2. `[message]` *(string)*: The optional message to prepend to the path and line number.
+2. `[label]` *(string)*: The label to prepend to the path and line number instead of the calling function
 
 #### Example
 The contents of `foo.js`:
