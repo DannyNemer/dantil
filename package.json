@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A Node.js utility library.",
   "main": "dantil.js",
+  "files": [
+    "dantil.js"
+  ],
   "directories": {
     "doc": "doc"
   },
