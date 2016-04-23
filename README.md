@@ -999,7 +999,7 @@ Output:
 Modifies V8's default stack trace format (when printing) to stylize output and collect 15 stack frames instead of (the default) 10.
 
 #### Arguments
-1. `[removePathParens]` *(boolean)*: Specify removing parentheses that surround file paths. This prevents parentheses from breaking iTerm's open-file-path shortcut in iTerm versions prior to v3.x.
+1. `[removePathParens]` *(boolean)*: Specify removing parentheses that surround file paths. This prevents parentheses from breaking iTerm's open-file-path shortcut in iTerm v2.x.
 
 #### Example
 ```js
