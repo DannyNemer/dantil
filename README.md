@@ -124,6 +124,7 @@ var dantil = require('dantil')
 * <a href="#dantil-format">`dantil.format`</a>
 * <a href="#dantil-kebabToCamelCase">`dantil.kebabToCamelCase`</a>
 * <a href="#dantil-camelToKebabCase">`dantil.camelToKebabCase`</a>
+* <a href="#dantil-enquote">`dantil.enquote`</a>
 
 <!-- /div -->
 
@@ -1620,6 +1621,28 @@ Converts camel cased `string` to kebab case.
 ```js
 dantil.camelToKebabCase('myLongVariableName')
 // => 'my-long-variable-name'
+```
+* * *
+
+<!-- /div -->
+
+<!-- div -->
+
+### <a id="dantil-enquote"></a>`dantil.enquote(string)`
+<a href="#dantil-enquote">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1985 "View in source") [&#x24C9;][1]
+
+Encloses `string` in single quotes.
+
+#### Arguments
+1. `string` *(string)*: The string to enclose with single quotes.
+
+#### Returns
+*(string)*:  Returns the enquoted string.
+
+#### Example
+```js
+dantil.enquote('my string')
+// => '\'my string\''
 ```
 * * *
 
