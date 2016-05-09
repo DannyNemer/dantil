@@ -23,7 +23,7 @@ var dantil = require('dantil')
 * <a href="#dantil-tryCatchWrapper">`dantil.tryCatchWrapper`</a>
 * <a href="#dantil-deleteModuleCache">`dantil.deleteModuleCache`</a>
 * <a href="#dantil-getLocation">`dantil.getLocation`</a>
-* <a href="#dantil-getModuleCallerPathAndLineNumber">`dantil.getModuleCallerPathAndLineNumber`</a>
+* <a href="#dantil-getModuleCallerLocation">`dantil.getModuleCallerLocation`</a>
 * <a href="#dantil-colors">`dantil.colors`</a>
 
 <!-- /div -->
@@ -259,8 +259,8 @@ dantil.getLocation()
 
 <!-- div -->
 
-### <a id="dantil-getModuleCallerPathAndLineNumber"></a>`dantil.getModuleCallerPathAndLineNumber()`
-<a href="#dantil-getModuleCallerPathAndLineNumber">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L198 "View in source") [&#x24C9;][1]
+### <a id="dantil-getModuleCallerLocation"></a>`dantil.getModuleCallerLocation()`
+<a href="#dantil-getModuleCallerLocation">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L198 "View in source") [&#x24C9;][1]
 
 Gets the location of the function call that invoked the currently executing module in the format `filePath:lineNumber:columnNumber`.
 <br>
@@ -283,7 +283,7 @@ var grandchild = require('./grandchild.js')
 grandchild.foo()
 
 // Try to get the frame of the nonexistent function call that invoked this module.
-dantil.getModuleCallerPathAndLineNumber()
+dantil.getModuleCallerLocation()
 // => undefined
 ```
 The contents of `child.js`:
@@ -292,7 +292,7 @@ var grandchild = require('./grandchild.js')
 
 exports.func = function () {
   // Get the frame of the invocation of the current execution of this module.
-  dantil.getModuleCallerPathAndLineNumber()
+  dantil.getModuleCallerLocation()
   // => '/Users/Danny/main.js:2'
 
   // Call another function within the same module, though retrieves the same frame.
@@ -305,19 +305,19 @@ exports.func = function () {
 function subFunc() {
   // Get the frame of the invocation of the current execution of this module (which
   // is not the frame that invoked this function).
-  dantil.getModuleCallerPathAndLineNumber()
+  dantil.getModuleCallerLocation()
   // => '/Users/Danny/main.js:2'
 }
 ```
 The contents of `grandchild.js`:
 ```js
 exports.foo = function () {
-  dantil.getModuleCallerPathAndLineNumber()
+  dantil.getModuleCallerLocation()
   // => '/Users/Danny/main.js:5'
 }
 
 exports.bar = function () {
-  dantil.getModuleCallerPathAndLineNumber()
+  dantil.getModuleCallerLocation()
   // => '/Users/Danny/child.js:13'
 }
 ```
