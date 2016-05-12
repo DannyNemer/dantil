@@ -245,7 +245,7 @@ myModule = require('./myModule.js')
 Gets this method's invocation location in the format `filePath:lineNumber:columnNumber`.
 
 #### Returns
-*(string)*:  Returns this method's invocation location..
+*(string)*:  Returns this method's invocation location.
 
 #### Example
 The contents of `foo.js`:
