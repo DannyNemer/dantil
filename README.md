@@ -1490,7 +1490,7 @@ dantil.new2DArray(4, 2)
 ### <a id="dantil-without"></a>`dantil.without(array, [values])`
 <a href="#dantil-without">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1873 "View in source") [&#x24C9;][1]
 
-Creates an array excluding all provided values.
+Creates a new array from `array` excluding all provided values.
 
 #### Arguments
 1. `array` *(Array)*: The array to filter.
