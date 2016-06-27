@@ -952,7 +952,7 @@ Output:
 ### <a id="dantil-logLine"></a>`dantil.logLine([label])`
 <a href="#dantil-logLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1219 "View in source") [&#x24C9;][1]
 
-Prints the calling function name, file path, and line number. This is useful for marking reaching a section of code.
+Prints the file path and line number, prepended with `label` if provided else the invoking function's name. This is useful to mark reaching a section of code.
 
 #### Arguments
 1. `[label]` *(string)*: The label to prepend to the path and line number instead of the calling function name.
@@ -982,7 +982,7 @@ Output:
 ### <a id="dantil-logLineIf"></a>`dantil.logLineIf(value, [label])`
 <a href="#dantil-logLineIf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1252 "View in source") [&#x24C9;][1]
 
-If `value` is truthy, prints the calling function name, file path, and line number. This is useful for marking reaching a section of code.
+If `value` is truthy, prints the file path and line number, prepended with `label` if provided else the invoking function's name. This is useful to mark reaching a section of code.
 
 #### Arguments
 1. `value` *(&#42;)*: The value to check if truthy.
