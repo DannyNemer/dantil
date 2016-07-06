@@ -157,7 +157,7 @@ Prints descriptive, helpful errors messages when `options` is ill-formed, includ
 
 #### Example
 ```js
-var schema = {
+var mySchema = {
   // Optionally accept an `boolean` for 'silent'.
   silent: Boolean,
   // Optionally accept an `Array` of `string`s for 'args'.
@@ -174,7 +174,7 @@ var schema = {
 }
 
 function myFork(options) {
-  if (illFormedOpts(schema, options)) {
+  if (illFormedOpts(mySchema, options)) {
     // => Prints descriptive, helpful error message
 
     throw new Error('Ill-formed options')
