@@ -142,7 +142,7 @@ var dantil = require('dantil')
 ### <a id="dantil-illFormedOpts"></a>`dantil.illFormedOpts(schema, [options], [ignoreUndefined])`
 <a href="#dantil-illFormedOpts">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L60 "View in source") [&#x24C9;][1]
 
-Checks if `options` adheres to `schema` using the [`ill-formed-opts`](https://github.com/DannyNemer/ill-formed-opts) module, thereby simulating static function arguments (i.e., type checking and parameter count).
+Checks if `options` adheres to `schema` using the [`ill-formed-opts`](https://github.com/DannyNemer/ill-formed-opts) module, thereby simulating static function arguments (i.e., type checking and arity).
 <br>
 <br>
 Prints descriptive, helpful errors messages when `options` is ill-formed, including the line number of the offending function call.
