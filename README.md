@@ -174,7 +174,7 @@ var mySchema = {
 }
 
 function myFork(options) {
-  if (illFormedOpts(mySchema, options)) {
+  if (dantil.illFormedOpts(mySchema, options)) {
     // => Prints descriptive, helpful error message
 
     throw new Error('Ill-formed options')
