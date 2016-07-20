@@ -183,14 +183,12 @@ function myFork(options) {
   // ...stuff...
 }
 ```
+The contents of `foo.js`:
 ```js
 myFork({ modulePath: './myModule.js', stdio: 'out' })
-// => Prints: Error: Unrecognized value for 'stdio': 'out'
-//                   Acceptable values for 'stdio': [ 'pipe', 'ignore', 0, 1, 2 ]
-//
-//            /Users/Danny/foo.js:22
-//              { modulePath: './myModule.js', stdio: 'out' }
 ```
+Output:
+<br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-illFormedOpts-example.jpg" alt="dantil.illFormedOpts() example output"/>
 * * *
 
 <!-- /div -->
