@@ -1240,7 +1240,7 @@ for (var i = 0; i < 99; ++i) {
  dantil.count(i % 2 === 0 ? 'even' : 'odd')
 }
 
-dantil.endAll()
+dantil.countEndAll()
 // => Resets all counts to 0
 // => Prints "even: 50 (50.5%)
 //            odd: 49 (49.5%)"
