@@ -1237,7 +1237,7 @@ Does not print counters that are never reached (having not initialized their key
 #### Example
 ```js
 for (var i = 0; i < 99; ++i) {
- dantil.count(i % 2 === 0 ? 'even' : 'odd')
+  dantil.count(i % 2 === 0 ? 'even' : 'odd')
 }
 
 dantil.countEndAll()
