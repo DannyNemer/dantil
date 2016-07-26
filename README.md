@@ -1227,7 +1227,7 @@ Prints (and resets the value of) the number of `dantil.count(label)` invocations
 <!-- div -->
 
 ### <a id="dantil-countEndAll"></a>`dantil.countEndAll`
-<a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1577 "View in source") [&#x24C9;][1]
+<a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1579 "View in source") [&#x24C9;][1]
 
 Prints (and resets the values of) the counter value of each label recorded by `counter.count()`, and each counter's value as a percentage of all counters.
 <br>
@@ -1242,9 +1242,9 @@ for (var i = 0; i < 99; ++i) {
 
 dantil.countEndAll()
 // => Resets all counts to 0
-// => Prints "even: 50 (50.5%)
-//            odd: 49 (49.5%)"
 ```
+Output:
+<br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-countEndAll-example.jpg" alt="dantil.countEndAll() example output"/>
 * * *
 
 <!-- /div -->
@@ -1258,7 +1258,7 @@ dantil.countEndAll()
 <!-- div -->
 
 ### <a id="dantil-clone"></a>`dantil.clone(value)`
-<a href="#dantil-clone">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1597 "View in source") [&#x24C9;][1]
+<a href="#dantil-clone">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1599 "View in source") [&#x24C9;][1]
 
 Creates a shallow clone of `value`.
 
@@ -1285,7 +1285,7 @@ shallow[0] === objects[0]
 <!-- div -->
 
 ### <a id="dantil-isDeepEqual"></a>`dantil.isDeepEqual(value, other, [customizer], [thisArg])`
-<a href="#dantil-isDeepEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1642 "View in source") [&#x24C9;][1]
+<a href="#dantil-isDeepEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1644 "View in source") [&#x24C9;][1]
 
 Performs a deep comparison between two values to determine if they are equivalent using the [`lodash.isEqual`](https://npmjs.com/package/lodash.isequal) module.
 
@@ -1322,7 +1322,7 @@ dantil.isDeepEqual(object, other)
 <!-- div -->
 
 ### <a id="dantil-unary"></a>`dantil.unary(func)`
-<a href="#dantil-unary">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1657 "View in source") [&#x24C9;][1]
+<a href="#dantil-unary">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1659 "View in source") [&#x24C9;][1]
 
 Creates a function that accepts up to one argument, ignoring any additional arguments.
 
@@ -1350,7 +1350,7 @@ Creates a function that accepts up to one argument, ignoring any additional argu
 <!-- div -->
 
 ### <a id="dantil-objectsEqual"></a>`dantil.objectsEqual(a, b)`
-<a href="#dantil-objectsEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1693 "View in source") [&#x24C9;][1]
+<a href="#dantil-objectsEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1695 "View in source") [&#x24C9;][1]
 
 Performs a shallow comparison between two objects to determine if they are equivalent.
 
@@ -1389,7 +1389,7 @@ dantil.objectsEqual({ a: objA, b: objB }, { a: objA, b: objB })
 <!-- div -->
 
 ### <a id="dantil-deleteUndefinedObjectProps"></a>`dantil.deleteUndefinedObjectProps(object)`
-<a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1719 "View in source") [&#x24C9;][1]
+<a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1721 "View in source") [&#x24C9;][1]
 
 Recursively removes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
 <br>
@@ -1409,7 +1409,7 @@ Recursively removes all properties of `object` defined as `undefined`. This is u
 <!-- div -->
 
 ### <a id="dantil-diffObjects"></a>`dantil.diffObjects(object, other, [collapsed])`
-<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1785 "View in source") [&#x24C9;][1]
+<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1787 "View in source") [&#x24C9;][1]
 
 Compares two objects line by line and stylizes the differences for printing.
 
@@ -1474,7 +1474,7 @@ Collapsed output:
 <!-- div -->
 
 ### <a id="dantil-arraysEqual"></a>`dantil.arraysEqual(a, b, [predicate])`
-<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1899 "View in source") [&#x24C9;][1]
+<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1901 "View in source") [&#x24C9;][1]
 
 Performs a shallow comparison between two arrays to determine if they are equivalent.
 <br>
@@ -1522,7 +1522,7 @@ dantil.arraysEqual([ objA, objB ], [ objA, objB ])
 <!-- div -->
 
 ### <a id="dantil-new2DArray"></a>`dantil.new2DArray(length, [subLength=0])`
-<a href="#dantil-new2DArray">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1943 "View in source") [&#x24C9;][1]
+<a href="#dantil-new2DArray">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1945 "View in source") [&#x24C9;][1]
 
 Creates a new two-dimensional array with length `length`.
 
@@ -1548,7 +1548,7 @@ dantil.new2DArray(4, 2)
 <!-- div -->
 
 ### <a id="dantil-without"></a>`dantil.without(array, [values])`
-<a href="#dantil-without">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1969 "View in source") [&#x24C9;][1]
+<a href="#dantil-without">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1971 "View in source") [&#x24C9;][1]
 
 Creates a new array from `array` excluding all provided values.
 
@@ -1577,7 +1577,7 @@ dantil.without([ 3, 1, 4, 1, 5 ], 1, 5)
 <!-- div -->
 
 ### <a id="dantil-cleanFloat"></a>`dantil.cleanFloat(number)`
-<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2003 "View in source") [&#x24C9;][1]
+<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2005 "View in source") [&#x24C9;][1]
 
 Removes any extraneous digits from `number`, which result from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
@@ -1608,7 +1608,7 @@ number = dantil.cleanFloat(number)
 <!-- div -->
 
 ### <a id="dantil-diffStrings"></a>`dantil.diffStrings(expected, actual)`
-<a href="#dantil-diffStrings">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2031 "View in source") [&#x24C9;][1]
+<a href="#dantil-diffStrings">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2033 "View in source") [&#x24C9;][1]
 
 Compares two strings word by word and stylizes the differences for printing.
 
@@ -1638,7 +1638,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
-<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2069 "View in source") [&#x24C9;][1]
+<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2071 "View in source") [&#x24C9;][1]
 
 Formats a string in a `printf()`-like format using Node's `util.format()`.
 
@@ -1661,7 +1661,7 @@ dantil.format('%s:%s %d', 'foo', 'bar', 22)
 <!-- div -->
 
 ### <a id="dantil-kebabToCamelCase"></a>`dantil.kebabToCamelCase(kebabCasedString)`
-<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2084 "View in source") [&#x24C9;][1]
+<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2086 "View in source") [&#x24C9;][1]
 
 Converts kebab cased `string` to camel case.
 
@@ -1683,7 +1683,7 @@ dantil.kebabToCamelCase('my-long-variable-name')
 <!-- div -->
 
 ### <a id="dantil-camelToKebabCase"></a>`dantil.camelToKebabCase(camelCasedString)`
-<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2103 "View in source") [&#x24C9;][1]
+<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2105 "View in source") [&#x24C9;][1]
 
 Converts camel cased `string` to kebab case.
 
@@ -1705,7 +1705,7 @@ dantil.camelToKebabCase('myLongVariableName')
 <!-- div -->
 
 ### <a id="dantil-enquote"></a>`dantil.enquote(string)`
-<a href="#dantil-enquote">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2122 "View in source") [&#x24C9;][1]
+<a href="#dantil-enquote">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2124 "View in source") [&#x24C9;][1]
 
 Encloses `string` in single quotes.
 
