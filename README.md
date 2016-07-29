@@ -1241,7 +1241,7 @@ for (var i = 0; i < 99; ++i) {
 }
 
 dantil.countEndAll()
-// => Resets all counts to 0
+// => Prints counts for all labels and resets all to 0
 ```
 Output:
 <br><img src="https://raw.githubusercontent.com/DannyNemer/dantil/master/doc/img/dantil-countEndAll-example.jpg" alt="dantil.countEndAll() example output"/>
