@@ -15,7 +15,7 @@
     "diff": "^2.2.3",
     "hrtimer": "github:dannynemer/hrtimer",
     "ill-formed-opts": "github:dannynemer/ill-formed-opts",
-    "lodash.isequal": "^4.2.0"
+    "lodash.isequal": "^4.3.1"
   },
   "devDependencies": {
     "docdown": "github:dannynemer/docdown"
