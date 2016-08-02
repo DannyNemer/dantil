@@ -712,13 +712,16 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logObjectAtDepth"></a>`dantil.logObjectAtDepth(object, depth)`
-<a href="#dantil-logObjectAtDepth">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L779 "View in source") [&#x24C9;][1]
+<a href="#dantil-logObjectAtDepth">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L780 "View in source") [&#x24C9;][1]
 
 Prints `object` like `dantil.log()` but recurses `depth` times while formatting. This is useful for inspecting large, complicated objects.
 
 #### Arguments
 1. `object` *(Object)*: The object to print.
 2. `depth` *(number)*: The number of times to recurse while formatting `object`.
+
+#### Returns
+*(Object)*:  Returns `object`.
 
 #### Example
 ```js
@@ -740,7 +743,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logWithLine"></a>`dantil.logWithLine([values])`
-<a href="#dantil-logWithLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L807 "View in source") [&#x24C9;][1]
+<a href="#dantil-logWithLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L809 "View in source") [&#x24C9;][1]
 
 Prints the provided values like `dantil.log()`, along with the calling file path and line number.
 
@@ -769,7 +772,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-dirWithLine"></a>`dantil.dirWithLine([values])`
-<a href="#dantil-dirWithLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L836 "View in source") [&#x24C9;][1]
+<a href="#dantil-dirWithLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L838 "View in source") [&#x24C9;][1]
 
 Prints the provided values like `dantil.dir()`, along with the calling file path and line number.
 
@@ -798,7 +801,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logStderr"></a>`dantil.logStderr([values])`
-<a href="#dantil-logStderr">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L849 "View in source") [&#x24C9;][1]
+<a href="#dantil-logStderr">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L851 "View in source") [&#x24C9;][1]
 
 A version of `dantil.log()` that prints to `stderr`.
 
@@ -812,7 +815,7 @@ A version of `dantil.log()` that prints to `stderr`.
 <!-- div -->
 
 ### <a id="dantil-stylize"></a>`dantil.stylize(value, [options])`
-<a href="#dantil-stylize">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L990 "View in source") [&#x24C9;][1]
+<a href="#dantil-stylize">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L992 "View in source") [&#x24C9;][1]
 
 Formats `value` in color for pretty-printing, recursing `options.depth` times while formatting.
 <br>
@@ -835,7 +838,7 @@ This method is similar to Node's `util.inspect()`, but prints in color by defaul
 <!-- div -->
 
 ### <a id="dantil-logError"></a>`dantil.logError([values])`
-<a href="#dantil-logError">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1020 "View in source") [&#x24C9;][1]
+<a href="#dantil-logError">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1022 "View in source") [&#x24C9;][1]
 
 Prints the provided values like `dantil.log()` prepended with red-colored "Error: ".
 <br>
@@ -858,7 +861,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logErrorWithNewLine"></a>`dantil.logErrorWithNewLine([values])`
-<a href="#dantil-logErrorWithNewLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1037 "View in source") [&#x24C9;][1]
+<a href="#dantil-logErrorWithNewLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1039 "View in source") [&#x24C9;][1]
 
 Prints the provided values like `dantil.logError()`, followed by a trailing newline.
 
@@ -878,7 +881,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logWarning"></a>`dantil.logWarning([values])`
-<a href="#dantil-logWarning">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1059 "View in source") [&#x24C9;][1]
+<a href="#dantil-logWarning">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1061 "View in source") [&#x24C9;][1]
 
 Prints the provided values like `dantil.log()` prepended with yellow-colored "Warning: ".
 <br>
@@ -901,7 +904,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logSuccess"></a>`dantil.logSuccess([values])`
-<a href="#dantil-logSuccess">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1078 "View in source") [&#x24C9;][1]
+<a href="#dantil-logSuccess">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1080 "View in source") [&#x24C9;][1]
 
 Prints the provided values like `dantil.log()` prepended with green-colored "Success: ".
 <br>
@@ -924,7 +927,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logErrorAndPath"></a>`dantil.logErrorAndPath([logThisLine], [values])`
-<a href="#dantil-logErrorAndPath">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1149 "View in source") [&#x24C9;][1]
+<a href="#dantil-logErrorAndPath">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1151 "View in source") [&#x24C9;][1]
 
 Prints the provided values in an error message like `dantil.logError()` followed by the file path and line number of the function call that invoked the currently executing module.
 
@@ -946,7 +949,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logWarningAndPath"></a>`dantil.logWarningAndPath([logThisLine], [values])`
-<a href="#dantil-logWarningAndPath">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1171 "View in source") [&#x24C9;][1]
+<a href="#dantil-logWarningAndPath">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1173 "View in source") [&#x24C9;][1]
 
 Prints the provided values in a warning message like `dantil.logWarning()` followed by the file path and line number of the function call that invoked the currently executing module.
 
@@ -969,7 +972,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logPathAndObject"></a>`dantil.logPathAndObject(object, [logThisLine])`
-<a href="#dantil-logPathAndObject">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1232 "View in source") [&#x24C9;][1]
+<a href="#dantil-logPathAndObject">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1234 "View in source") [&#x24C9;][1]
 
 Prints `object` preceded by the file path and line number of the function call that invoked the currently executing module. Surrounds output with a leading newline and a trailing newline.
 
@@ -996,7 +999,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logTrace"></a>`dantil.logTrace([message])`
-<a href="#dantil-logTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1264 "View in source") [&#x24C9;][1]
+<a href="#dantil-logTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1266 "View in source") [&#x24C9;][1]
 
 Prints the stack trace to the current position with `danti.prettifyStackTrace()` stylization.
 
@@ -1016,7 +1019,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logLine"></a>`dantil.logLine([label])`
-<a href="#dantil-logLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1305 "View in source") [&#x24C9;][1]
+<a href="#dantil-logLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1307 "View in source") [&#x24C9;][1]
 
 Prints the file path and line number, prepended with `label` if provided else the invoking function's name. This is useful to mark reaching a section of code.
 
@@ -1046,7 +1049,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-logLineIf"></a>`dantil.logLineIf(value, [label])`
-<a href="#dantil-logLineIf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1355 "View in source") [&#x24C9;][1]
+<a href="#dantil-logLineIf">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1357 "View in source") [&#x24C9;][1]
 
 If `value` is truthy, prints the file path and line number, prepended with `label` if provided else the invoking function's name. This is useful to mark reaching a section of code.
 
@@ -1077,7 +1080,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-prettifyStackTrace"></a>`dantil.prettifyStackTrace([removePathParens])`
-<a href="#dantil-prettifyStackTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1379 "View in source") [&#x24C9;][1]
+<a href="#dantil-prettifyStackTrace">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1381 "View in source") [&#x24C9;][1]
 
 Modifies V8's default stack trace format (when printing) to stylize output.
 
@@ -1106,7 +1109,7 @@ After:
 <!-- div -->
 
 ### <a id="dantil-assertEqual"></a>`dantil.assertEqual(value, other, [message])`
-<a href="#dantil-assertEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1469 "View in source") [&#x24C9;][1]
+<a href="#dantil-assertEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1471 "View in source") [&#x24C9;][1]
 
 Tests shallow, coercive equality with the equal comparison operator (`==`). If the test fails, prints an error message and the file path and line number to `stderr`. In contrast, Node's `assert.equal()` throws an exception.
 
@@ -1152,7 +1155,7 @@ if (dantil.assertEqual(myArray.length, 100)) {
 <!-- div -->
 
 ### <a id="dantil-time"></a>`dantil.time(label)`
-<a href="#dantil-time">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1513 "View in source") [&#x24C9;][1]
+<a href="#dantil-time">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1515 "View in source") [&#x24C9;][1]
 
 Starts a high-resolution timer (with precision in microseconds) identified by `label`. Use `dantil.timeEnd(label)` to print the timer's current value.
 
@@ -1181,7 +1184,7 @@ dantil.timeEnd('my test')
 <!-- div -->
 
 ### <a id="dantil-timeEnd"></a>`dantil.timeEnd(label)`
-<a href="#dantil-timeEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1523 "View in source") [&#x24C9;][1]
+<a href="#dantil-timeEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1525 "View in source") [&#x24C9;][1]
 
 Prints the current high-resolution value of a timer initiated with `dantil.time(label)`.
 
@@ -1195,7 +1198,7 @@ Prints the current high-resolution value of a timer initiated with `dantil.time(
 <!-- div -->
 
 ### <a id="dantil-count"></a>`dantil.count(label)`
-<a href="#dantil-count">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1550 "View in source") [&#x24C9;][1]
+<a href="#dantil-count">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1552 "View in source") [&#x24C9;][1]
 
 Increments the invocation count for `label`. Use `dantil.end(label)` or `dantil.endAll()` to print the counter's value. This is useful for profiling the number of times a section of code is reached.
 
@@ -1219,7 +1222,7 @@ dantil.countEnd('even')
 <!-- div -->
 
 ### <a id="dantil-countEnd"></a>`dantil.countEnd(label)`
-<a href="#dantil-countEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1560 "View in source") [&#x24C9;][1]
+<a href="#dantil-countEnd">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1562 "View in source") [&#x24C9;][1]
 
 Prints (and resets the value of) the number of `dantil.count(label)` invocations.
 
@@ -1233,7 +1236,7 @@ Prints (and resets the value of) the number of `dantil.count(label)` invocations
 <!-- div -->
 
 ### <a id="dantil-countEndAll"></a>`dantil.countEndAll`
-<a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1583 "View in source") [&#x24C9;][1]
+<a href="#dantil-countEndAll">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1585 "View in source") [&#x24C9;][1]
 
 Prints (and resets the values of) the counter value of each label recorded by `counter.count()`, and each counter's value as a percentage of all counters.
 <br>
@@ -1264,7 +1267,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-clone"></a>`dantil.clone(value)`
-<a href="#dantil-clone">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1603 "View in source") [&#x24C9;][1]
+<a href="#dantil-clone">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1605 "View in source") [&#x24C9;][1]
 
 Creates a shallow clone of `value`.
 
@@ -1291,7 +1294,7 @@ shallow[0] === objects[0]
 <!-- div -->
 
 ### <a id="dantil-isDeepEqual"></a>`dantil.isDeepEqual(value, other, [customizer], [thisArg])`
-<a href="#dantil-isDeepEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1648 "View in source") [&#x24C9;][1]
+<a href="#dantil-isDeepEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1650 "View in source") [&#x24C9;][1]
 
 Performs a deep comparison between two values to determine if they are equivalent using the [`lodash.isEqual`](https://npmjs.com/package/lodash.isequal) module.
 
@@ -1328,7 +1331,7 @@ dantil.isDeepEqual(object, other)
 <!-- div -->
 
 ### <a id="dantil-unary"></a>`dantil.unary(func)`
-<a href="#dantil-unary">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1663 "View in source") [&#x24C9;][1]
+<a href="#dantil-unary">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1665 "View in source") [&#x24C9;][1]
 
 Creates a function that accepts up to one argument, ignoring any additional arguments.
 
@@ -1356,7 +1359,7 @@ Creates a function that accepts up to one argument, ignoring any additional argu
 <!-- div -->
 
 ### <a id="dantil-objectsEqual"></a>`dantil.objectsEqual(a, b)`
-<a href="#dantil-objectsEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1699 "View in source") [&#x24C9;][1]
+<a href="#dantil-objectsEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1701 "View in source") [&#x24C9;][1]
 
 Performs a shallow comparison between two objects to determine if they are equivalent.
 
@@ -1395,7 +1398,7 @@ dantil.objectsEqual({ a: objA, b: objB }, { a: objA, b: objB })
 <!-- div -->
 
 ### <a id="dantil-deleteUndefinedObjectProps"></a>`dantil.deleteUndefinedObjectProps(object)`
-<a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1725 "View in source") [&#x24C9;][1]
+<a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1727 "View in source") [&#x24C9;][1]
 
 Recursively removes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
 <br>
@@ -1415,7 +1418,7 @@ Recursively removes all properties of `object` defined as `undefined`. This is u
 <!-- div -->
 
 ### <a id="dantil-diffObjects"></a>`dantil.diffObjects(object, other, [collapsed])`
-<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1791 "View in source") [&#x24C9;][1]
+<a href="#dantil-diffObjects">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1793 "View in source") [&#x24C9;][1]
 
 Compares two objects line by line and stylizes the differences for printing.
 
@@ -1480,7 +1483,7 @@ Collapsed output:
 <!-- div -->
 
 ### <a id="dantil-arraysEqual"></a>`dantil.arraysEqual(a, b, [predicate])`
-<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1905 "View in source") [&#x24C9;][1]
+<a href="#dantil-arraysEqual">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1907 "View in source") [&#x24C9;][1]
 
 Performs a shallow comparison between two arrays to determine if they are equivalent.
 <br>
@@ -1528,7 +1531,7 @@ dantil.arraysEqual([ objA, objB ], [ objA, objB ])
 <!-- div -->
 
 ### <a id="dantil-new2DArray"></a>`dantil.new2DArray(length, [subLength=0])`
-<a href="#dantil-new2DArray">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1949 "View in source") [&#x24C9;][1]
+<a href="#dantil-new2DArray">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1951 "View in source") [&#x24C9;][1]
 
 Creates a new two-dimensional array with length `length`.
 
@@ -1554,7 +1557,7 @@ dantil.new2DArray(4, 2)
 <!-- div -->
 
 ### <a id="dantil-without"></a>`dantil.without(array, [values])`
-<a href="#dantil-without">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1975 "View in source") [&#x24C9;][1]
+<a href="#dantil-without">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1977 "View in source") [&#x24C9;][1]
 
 Creates a new array from `array` excluding all provided values.
 
@@ -1583,7 +1586,7 @@ dantil.without([ 3, 1, 4, 1, 5 ], 1, 5)
 <!-- div -->
 
 ### <a id="dantil-cleanFloat"></a>`dantil.cleanFloat(number)`
-<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2009 "View in source") [&#x24C9;][1]
+<a href="#dantil-cleanFloat">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2011 "View in source") [&#x24C9;][1]
 
 Removes any extraneous digits from `number`, which result from operations limited by JavaScript's floating point number precision, such as `0.1 * 0.2` (which does not equal `0.02`). This limitation results from being unable to map `0.1` to a finite binary floating point number.
 
@@ -1614,7 +1617,7 @@ number = dantil.cleanFloat(number)
 <!-- div -->
 
 ### <a id="dantil-diffStrings"></a>`dantil.diffStrings(expected, actual)`
-<a href="#dantil-diffStrings">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2037 "View in source") [&#x24C9;][1]
+<a href="#dantil-diffStrings">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2039 "View in source") [&#x24C9;][1]
 
 Compares two strings word by word and stylizes the differences for printing.
 
@@ -1644,7 +1647,7 @@ Output:
 <!-- div -->
 
 ### <a id="dantil-format"></a>`dantil.format(string, [placeholderVals])`
-<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2075 "View in source") [&#x24C9;][1]
+<a href="#dantil-format">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2077 "View in source") [&#x24C9;][1]
 
 Formats a string in a `printf()`-like format using Node's `util.format()`.
 
@@ -1667,7 +1670,7 @@ dantil.format('%s:%s %d', 'foo', 'bar', 22)
 <!-- div -->
 
 ### <a id="dantil-kebabToCamelCase"></a>`dantil.kebabToCamelCase(kebabCasedString)`
-<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2090 "View in source") [&#x24C9;][1]
+<a href="#dantil-kebabToCamelCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2092 "View in source") [&#x24C9;][1]
 
 Converts kebab cased `string` to camel case.
 
@@ -1689,7 +1692,7 @@ dantil.kebabToCamelCase('my-long-variable-name')
 <!-- div -->
 
 ### <a id="dantil-camelToKebabCase"></a>`dantil.camelToKebabCase(camelCasedString)`
-<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2109 "View in source") [&#x24C9;][1]
+<a href="#dantil-camelToKebabCase">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2111 "View in source") [&#x24C9;][1]
 
 Converts camel cased `string` to kebab case.
 
@@ -1711,7 +1714,7 @@ dantil.camelToKebabCase('myLongVariableName')
 <!-- div -->
 
 ### <a id="dantil-enquote"></a>`dantil.enquote(string)`
-<a href="#dantil-enquote">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2128 "View in source") [&#x24C9;][1]
+<a href="#dantil-enquote">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L2130 "View in source") [&#x24C9;][1]
 
 Encloses `string` in single quotes.
 
