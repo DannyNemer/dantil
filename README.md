@@ -1419,18 +1419,15 @@ dantil.objectsEqual({ a: objA, b: objB }, { a: objA, b: objB })
 <!-- div -->
 
 ### <a id="dantil-deleteUndefinedObjectProps"></a>`dantil.deleteUndefinedObjectProps(object)`
-<a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1736 "View in source") [&#x24C9;][1]
+<a href="#dantil-deleteUndefinedObjectProps">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1734 "View in source") [&#x24C9;][1]
 
-Recursively removes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
-<br>
-<br>
-**Note:** This method mutates `object`.
+Clones and recursively removes all properties of `object` defined as `undefined`. This is useful for object comparisons and pretty-printing.
 
 #### Arguments
 1. `object` *(Object)*: The `Object` to purge of properties defined as `undefined`.
 
 #### Returns
-*(Object)*:  Returns `object` without `undefined` properties.
+*(Object)*:  Returns the clone of `object` without `undefined` properties.
 
 * * *
 
