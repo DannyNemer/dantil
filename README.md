@@ -444,14 +444,14 @@ console.log('Output to file complete')
 
 <!-- div -->
 
-### <a id="dantil-writeJSONFile"></a>`dantil.writeJSONFile(path, obj)`
+### <a id="dantil-writeJSONFile"></a>`dantil.writeJSONFile(path, object)`
 <a href="#dantil-writeJSONFile">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L460 "View in source") [&#x24C9;][1]
 
-Stringifies and writes `obj` to a JSON file at `path`.
+Stringifies and writes `object` to a JSON file at `path`.
 
 #### Arguments
 1. `path` *(string)*: The file path to write to.
-2. `obj` *(Object)*: The object to save to `path`.
+2. `object` *(Object)*: The object to save to `path`.
 
 #### Example
 ```js
