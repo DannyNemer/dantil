@@ -826,7 +826,7 @@ A version of `dantil.log()` that prints to `stderr`.
 Formats `value` in color for pretty-printing, recursing `options.depth` times while formatting.
 <br>
 <br>
-This method is similar to Node's `util.inspect()`, but prints in color by default if the terminal supports color.
+This method is similar to Node's `util.inspect()`, but formats in color by default if the terminal supports color.
 
 #### Arguments
 1. `value` *(&#42;)*: The object or value to stylize.
