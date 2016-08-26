@@ -742,7 +742,7 @@ Output:
 ### <a id="dantil-logWithLine"></a>`dantil.logWithLine([values])`
 <a href="#dantil-logWithLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L808 "View in source") [&#x24C9;][1]
 
-Prints the provided values like `dantil.log()`, along with the calling file path and line number.
+Prints the provided values like `dantil.log()`, preceded by this method's invocation location.
 
 #### Arguments
 1. `[values]` *(...&#42;)*: The values and objects to print.
@@ -774,7 +774,7 @@ Output:
 ### <a id="dantil-dirWithLine"></a>`dantil.dirWithLine([values])`
 <a href="#dantil-dirWithLine">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L838 "View in source") [&#x24C9;][1]
 
-Prints the provided values like `dantil.dir()`, along with the calling file path and line number.
+Prints the provided values like `dantil.dir()`, preceded by this method's invocation location.
 
 #### Arguments
 1. `[values]` *(...&#42;)*: The values and objects to print.
