@@ -450,7 +450,7 @@ console.log('Output to file complete')
 Stringifies and writes `object` to a JSON file at `path`.
 
 #### Arguments
-1. `path` *(string)*: The file path to write to.
+1. `path` *(string)*: The file path to which to write.
 2. `object` *(Object)*: The object to save to `path`.
 
 #### Example
