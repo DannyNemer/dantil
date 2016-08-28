@@ -480,7 +480,7 @@ Gets the file path and line number in the format `filePath:lineNumber` of each o
 2. `value` *(&#42;)*: The value for which to search.
 
 #### Returns
-*(Array)*:  Returns the file path and line number of each matched line.
+*(Array)*:  Returns the set of matched file paths and line numbers.
 
 #### Example
 The contents of `foo.js`:
