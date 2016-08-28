@@ -1561,7 +1561,7 @@ Creates a new two-dimensional array with length `length`.
 
 #### Arguments
 1. `length` *(number)*: The length of the new array *(i.e., the first dimension)*.
-2. `[subLength=0]` *(number)*: The length each sub-array *(i.e., the second dimension)*.
+2. `[subLength=0]` *(number)*: The length of each sub-array *(i.e., the second dimension)*.
 
 #### Returns
 *(Array)*:  Returns the new two-dimensional array.
