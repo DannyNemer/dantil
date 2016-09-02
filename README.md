@@ -520,7 +520,7 @@ If `subValue` is provided, gets the line number of the first occurrence of `subV
 3. `[subValue]` *(&#42;)*: The second value for which to search, starting at the location of `value`.
 
 #### Returns
-*(string|undefined)*:  Returns the file path and line number of the matched line, else `undefined`.
+*(string|undefined)*:  Returns the matched file path and line number, else `undefined`.
 
 #### Example
 The contents of `foo.js`:
