@@ -1227,7 +1227,7 @@ Prints the current high-resolution value of a timer initiated with `dantil.time(
 ### <a id="dantil-count"></a>`dantil.count(label)`
 <a href="#dantil-count">#</a> [&#x24C8;](https://github.com/DannyNemer/dantil/blob/master/dantil.js#L1568 "View in source") [&#x24C9;][1]
 
-Increments the invocation count for `label`. Use `dantil.end(label)` or `dantil.endAll()` to print the counter's value. This is useful for profiling the number of times a section of code is reached.
+Increments the invocation count for `label`. Use `dantil.end(label)` or `dantil.endAll()` to print the counter's value. This is useful to profile the number of times a section of code is reached.
 
 #### Arguments
 1. `label` *(string)*: The counter identifier.
